@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+
+html, body {
+  height: 100%;
+}
+
+
+body {
+  background: linear-gradient(to bottom right, transparent, #6597b0),
+  // background: linear-gradient(to bottom right, transparent, #B0BEC5),
+  url('https://res.cloudinary.com/drfmymoki/image/upload/v1678208254/Pattern_wswraz.svg');
+  background-size: 150%;
+  background-position-x: center;
+  background-position-y: 30%;
+  background-repeat: no-repeat;
+  mix-blend-mode: multiply;
+}
