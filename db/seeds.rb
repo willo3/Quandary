@@ -9,3 +9,12 @@
 User.create(email: 'user1@example.com', password: 'password')
 User.create(email: 'user2@example.com', password: 'password')
 User.create(email: 'user3@example.com', password: 'password')
+
+require 'httparty'
+
+response = HTTParty.get('https://api.dilemmerama.net/api/v1/scenarios')
+scenarios = response.parsed_response
+
+scenarios.first(20).each do |scenario|
+  Scenario.create(title: scenario['title'], body: scenario['body'])
+end
