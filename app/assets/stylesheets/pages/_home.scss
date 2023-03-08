@@ -11,6 +11,7 @@ body {
   background-repeat: no-repeat;
   background-blend-mode: hard-light;
   min-height: 100%;
+  background-attachment: fixed;
 }
 
 // This is what makes the background responsive to screen size, please don't change it!
