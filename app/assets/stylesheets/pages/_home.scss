@@ -1,1 +1,65 @@
-// Specific CSS for your home-page
+// This is how the background avoids being borked by bootstrap!
+html, body {
+  height: 100%;
+}
+
+// The background elements are universal and should appear on all pages, even if covered by content
+body {
+  background: linear-gradient(150deg, #ffffff, #9db6c3, #142a3c),
+  url('https://res.cloudinary.com/drfmymoki/image/upload/v1678275563/Pattern_1_huvp98.svg');
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-blend-mode: hard-light;
+  min-height: 100%;
+  background-attachment: fixed;
+}
+
+// This is what makes the background responsive to screen size, please don't change it!
+@media (max-width: 278px) {
+  body {
+    background-size: 800%;
+    background-position-y: 20%;
+  }
+}
+@media (min-width: 279px) and (max-width: 300px) {
+  body {
+    background-size: 600%;
+    background-position-y: 20%;
+  }
+}
+@media (min-width: 301px) and (max-width: 400px) {
+  body {
+    background-size: 650%;
+    background-position-y: 40%;
+  }
+}
+@media (min-width: 401px) and (max-width: 600px) {
+  body {
+    background-size: 475%;
+    background-position-y: 40%;
+  }
+}
+@media (min-width: 601px) and (max-width: 711px) {
+  body {
+    background-size: 350%;
+    background-position-y: 30%;
+  }
+}
+@media (min-width: 712px) and (max-width: 768px) {
+  body {
+    background-size: 300%;
+    background-position-y: 30%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1000px){
+  body {
+    background-size: 250%;
+    background-position-y: 30%;
+  }
+}
+@media (min-width: 1001px) {
+  body {
+    background-size: 200%;
+    background-position-y: 30%;
+  }
+}
