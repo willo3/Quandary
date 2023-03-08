@@ -15,7 +15,7 @@ user3 = User.create(email: 'user3@example.com', password: 'password')
 
 
 puts "Creating games"
-game1 = Game.create(
+game1 = Game.create!(
   room_code: "123456",
   user: user1
   # changes for user_id
