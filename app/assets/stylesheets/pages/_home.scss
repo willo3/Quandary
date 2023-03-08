@@ -1,1 +1,15 @@
-// Specific CSS for your home-page
+// This is how the background avoids being borked by bootstrap!
+html, body {
+  height: 100%;
+}
+
+// The background elements are universal and should appear on all pages, even if covered by content
+body {
+  background: linear-gradient(150deg, #ffffff, #9db6c3, #142a3c),
+  url('https://res.cloudinary.com/drfmymoki/image/upload/v1678275563/Pattern_1_huvp98.svg');
+  background-size: 150%;
+  background-position-x: center;
+  background-position-y: 30%;
+  background-repeat: no-repeat;
+  background-blend-mode: hard-light;
+}
