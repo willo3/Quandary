@@ -15,6 +15,30 @@ body {
 }
 
 // This is what makes the background responsive to screen size, please don't change it!
+@media (orientation:portrait) {
+  #landscape-only {
+    display:none;
+  }
+  #show-in-portrait {
+    display:block;
+  }
+  .navbar {
+    display:none;
+  }
+}
+
+@media (orientation:landscape) {
+  #landscape-only {
+    display:block;
+  }
+  #show-in-portrait {
+    display:none;
+  }
+  .navbar {
+    display:block;
+  }
+}
+
 @media (max-width: 278px) {
   body {
     background-size: 800%;
