@@ -1,5 +1,7 @@
 class Game < ApplicationRecord
   belongs_to :user
+  has_many :game_sessions, dependent: :destroy
+  has_many :dilemmas, dependent: :destroy
   # enum kind: [ :quandary ]
   validates_presence_of :room_code
   # validates_presence_of :min_players
