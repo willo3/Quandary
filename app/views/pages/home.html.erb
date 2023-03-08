@@ -10,35 +10,29 @@
   <div class="row center">
     <div class="col-sm-4 text-center">
       <div class="card">
-        <div class="card-body">
-          <%= link_to new_game_path do %>
-            <div class="card-body">
-              <h4><%= "CREATE A ROOM" %></h4>
-            </div>
-          <% end %>
-        </div>
+        <%= button_to games_path, method: :post do %>
+          <div class="card-body">
+            <h4><%= "CREATE A GAME" %></h4>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="col-sm-4 text-center">
       <div class="card">
-        <div class="card-body">
-          <%= link_to games_path do %>
-            <div class="card-body">
-              <h4><%= "JOIN A ROOM" %></h4>
-            </div>
-          <% end %>
+        <%= link_to games_path do %>
+          <div class="card-body">
+          <h4><%= "JOIN A GAME" %></h4>
         </div>
+        <% end %>
       </div>
     </div>
     <div class="col-sm-4 text-center">
       <div class="card">
-        <div class="card-body">
           <%= link_to new_game_path do %>
             <div class="card-body">
-              <h4><%= "HOW TO PLAY" %></h4>
+            <h4><%= "HOW TO PLAY" %></h4>
             </div>
           <% end %>
-        </div>
       </div>
     </div>
   </div>
