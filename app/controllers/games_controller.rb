@@ -1,6 +1,5 @@
 class GamesController < ApplicationController
   def index
-    # raise
     if params[:room_code]
       @game = Game.find_by(room_code: params[:room_code])
       @player = Player.new(avatar_url: "https://res.cloudinary.com/drfmymoki/image/upload/v1678354431/Quandary%20Avatars/Avatar_Froggo_1_vbq7r2.svg")
