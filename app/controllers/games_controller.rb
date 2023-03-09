@@ -24,17 +24,14 @@ class GamesController < ApplicationController
   def create
     room_code = [('A'..'Z')].map(&:to_a).flatten
     room_code_string = (0...4).map { room_code[rand(room_code.length)] }.join
-    @game = Game.create(room_code: room_code_string, user: current_user)
-    redirect_to game_path(@game)
-# raise
-    # else
-    #   redirect_to root_path
-    # end
+    game = Game.create(room_code: room_code_string, user: current_user)
+    player = Player.new(avatar_url: "https://res.cloudinary.com/drfmymoki/image/upload/v1678354431/Quandary%20Avatars/Avatar_Froggo_1_vbq7r2.svg")
+    player.game = game
+    player.user = current_user
+    if player.save
+      redirect_to game_path(game)
+    else
+      render :home
+    end
   end
-
-  # private
-
-  # def game_params
-  #   params.require(:game).permit(:game_id)
-  # end
 end
