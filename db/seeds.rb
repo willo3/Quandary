@@ -1,7 +1,7 @@
 puts "Cleaning db"
 User.destroy_all
 Game.destroy_all
-GameSession.destroy_all
+Player.destroy_all
 Scenario.destroy_all
 Dilemma.destroy_all
 
@@ -30,19 +30,19 @@ game2 = Game.create(
 )
 
 puts "Creating game_sessions"
-GameSession.create(
+Player.create(
   avatar_url: 'https://res.cloudinary.com/drfmymoki/image/upload/v1678277429/Avatar_Cat_1_Hello_ovfbub.svg',
   game_id: 1,
   user_id: 1
 )
 
-GameSession.create(
+Player.create(
   avatar_url: 'https://res.cloudinary.com/drfmymoki/image/upload/v1678277616/Avatar_Frog_1_Hello_kdqzz9.svg',
   game_id: 2,
   user_id: 2
 )
 
-GameSession.create(
+Player.create(
   avatar_url: 'https://res.cloudinary.com/drfmymoki/image/upload/v1678277787/Avatar_Cat_2_Hello_b5gdo0.svg',
   game_id: 1,
   user_id: 3
