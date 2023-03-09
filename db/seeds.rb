@@ -29,7 +29,7 @@ game2 = Game.create(
   # user_id: 2
 )
 
-puts "Creating game_sessions"
+puts "Creating players"
 Player.create(
   avatar_url: 'https://res.cloudinary.com/drfmymoki/image/upload/v1678277429/Avatar_Cat_1_Hello_ovfbub.svg',
   game_id: 1,

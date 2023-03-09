@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :games do
     resources :dilemmas
+    resources :players, only: :create
   end
 end
