@@ -11,7 +11,7 @@
     <div class="avatars-grid justify-content-center col-sm-8">
       <% @game.players.each do |player|%>
         <div class="avatar-col mt-2"><img src="<%= player.avatar_url %>" class="avatar">
-        <p class="card-text"><%= player.user.email %></p>
+        <p class="card-text"><%= player.user.name %></p>
         </div>
       <% end %>
     </div>
