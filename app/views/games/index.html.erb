@@ -1,18 +1,25 @@
 
 
+<div class="menu-center">
+  <div class="container">
+    <div class="row center">
+      <div class="col-sm-4 offset-sm-4 text-center">
+        <div class="card">
+          <div class="card-body" id="room-code-card">
+         
+          <h1>ENTER ROOM CODE</h1>
 
-<div class="container">
-  <h1>Join new game!</h1>
-</div>
-<div class="row center">
-    <div class="col-sm-4 text-center">
-      <div class="card">
-        <div class="card-body">
-          <%= link_to new_game_path do %>
-            <div class="card-body">
-              <h4><%= "CREATE A ROOM" %></h4>
+            <form action="/games" method='get'>
+              <input type="text" name='room_code'>
+              <input type="submit" name='commit' value='Find Game'>
+            </form>
+            <div class="spacer"></div>
+            <div class="image-frame">
+              <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1678363691/Quandary%20Avatars/Avatar_Birb_Hello_ioslgh.svg" >
             </div>
-          <% end %>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+</div>

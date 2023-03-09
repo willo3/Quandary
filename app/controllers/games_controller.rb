@@ -1,5 +1,13 @@
 class GamesController < ApplicationController
   def index
+    # raise
+    if params[:room_code]
+      @game = Game.find_by(room_code: params[:room_code])
+      redirect_to game_path(@game)
+    else
+      flash[:error] = "Game not found"
+      render :index
+    end
   end
 
   def show
