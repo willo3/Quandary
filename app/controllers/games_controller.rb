@@ -3,7 +3,14 @@ class GamesController < ApplicationController
     # raise
     if params[:room_code]
       @game = Game.find_by(room_code: params[:room_code])
-      redirect_to game_path(@game)
+      @player = Player.new(avatar_url: "https://res.cloudinary.com/drfmymoki/image/upload/v1678354431/Quandary%20Avatars/Avatar_Froggo_1_vbq7r2.svg")
+      @player.game = @game
+      @player.user = current_user
+      if @player.save
+        redirect_to game_path(@game)
+      else
+        render :index, status: :unprocessable_entity
+      end
     else
       flash[:error] = "Game not found"
       render :index
