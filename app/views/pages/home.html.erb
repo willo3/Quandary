@@ -26,16 +26,48 @@
         <% end %>
       </div>
     </div>
-    <div class="col-sm-4 text-center">
-      <div class="card">
-          <%= link_to new_game_path do %>
-            <div class="card-body">
-            <h4><%= "HOW TO PLAY" %></h4>
+    <%# card commented out for modal button creation %>
+
+    <%# <div class="col-sm-4 text-center"> %>
+      <%# <div class="card"> %>
+          <%# <%= link_to new_game_path do %>
+            <%# <div class="card-body">
+            <h4><%= "HOW TO PLAY"</h4>
             </div>
           <% end %>
+      <%# </div>
+    </div> %>
+
+    <!-- Modal code cristian-->
+    <button type="button" class="col-sm-4 text-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+     <h4> HOW TO PLAY </h4>
+    </button>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            To play Quandary, you’ll need three or more players. Once you have your group,
+            all players will be presented with a quandary that has two scenarios. After the start,
+            players will choose between the two scenarios. Once everyone has answered,
+            the game continues until the end. At the end of each round, you will be matched with
+            other players who chose the same scenario as you. If your choice matches the majority,
+            you will be considered the winner. Otherwise, you will lose. The game consists of 10
+            rounds of quandaries, with two scenarios per round.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+<%# Modal code cristian end %>
+
 
 <%# <div class="btn-group btn-group-justified" role="group" aria-label="Basic example">
   <button type="button" class="btn btn-secondary">CREATE A ROOM</button>
