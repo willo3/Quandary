@@ -1,19 +1,15 @@
 puts "Cleaning db"
 DilemmaScenario.destroy_all
+Player.destroy_all
 User.destroy_all
 Game.destroy_all
-Player.destroy_all
 Scenario.destroy_all
 Dilemma.destroy_all
 
-
-
-
 puts "Creating users"
-user1 = User.create(email: 'user1@example.com', password: 'password')
-user2 = User.create(email: 'user2@example.com', password: 'password')
-user3 = User.create(email: 'user3@example.com', password: 'password')
-
+user1 = User.create(name: 'Marco', email: 'user1@example.com', password: 'password')
+user2 = User.create(name: 'Zac', email: 'user2@example.com', password: 'password')
+user3 = User.create(name: 'Nation', email: 'user3@example.com', password: 'password')
 
 puts "Creating games"
 game1 = Game.create(
