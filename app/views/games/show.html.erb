@@ -4,14 +4,15 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Room code: <%= @game.room_code %></h5>
-          <p class="card-text">Hi <%= current_user.email %></p>
           <button type="button width:100%" class="btn btn-secondary btn-rounded">Change Avatar</button>
         </div>
       </div>
     </div>
     <div class="avatars-grid justify-content-center col-sm-8">
       <% @game.players.each do |player|%>
-        <div class="avatar-col mt-2"><img src="<%= player.avatar_url %>" class="avatar"></div>
+        <div class="avatar-col mt-2"><img src="<%= player.avatar_url %>" class="avatar">
+        <p class="card-text"><%= player.user.email %></p>
+        </div>
       <% end %>
     </div>
     <div class="d-grid gap-2 col-6 mx-auto d-md-flex justify-content-md-end">
