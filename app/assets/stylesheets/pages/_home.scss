@@ -14,6 +14,10 @@ body {
   background-attachment: fixed;
 }
 
+.modal-footer img {
+  width: 50%;
+}
+
 // This is what makes the background responsive to screen size, please don't change it!
 @media (orientation:portrait) {
   #landscape-only {
