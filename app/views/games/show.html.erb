@@ -6,13 +6,12 @@
           <h5 class="card-title">Room code: <%= @game.room_code %></h5>
           <p class="card-text">Hi <%= current_user.email %></p>
           <img src="http://placehold.it/140x140" class="avatar">
-          <a href="#" class="btn btn-primary">Change Avatar</a>
+          <button type="button width:100%" class="btn btn-secondary btn-rounded">Change Avatar</button>
         </div>
       </div>
     </div>
 
-
-    <div class="avatars-grid col-sm-8">
+    <div class="avatars-grid justify-content-center col-sm-8">
       <div class="row">
         <div class="avatar-col mt-2"><img src="http://placehold.it/140x140" class="avatar"></div>
         <div class="avatar-col mt-2"><img src="http://placehold.it/140x140" class="avatar"></div>
@@ -31,6 +30,8 @@
         <div class="avatar-col mt-2"><img src="http://placehold.it/140x140" class="avatar"></div>
       </div>
     </div>
-
+    <div class="d-grid gap-2 col-6 mx-auto d-md-flex justify-content-md-end">
+        <button type="button width:100%" class="btn btn-secondary btn-rounded">START GAME</button>
+      </div>
   </div>
 </div>
