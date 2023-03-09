@@ -1,5 +1,5 @@
 class Dilemma < ApplicationRecord
   belongs_to :game
-  belongs_to :scenario1, class_name: "Scenario"
-  belongs_to :scenario2, class_name: "Scenario"
+  has_many :dilemma_scenarios
+  has_many :scenarios, through: :dilemma_scenarios
 end

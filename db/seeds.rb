@@ -1,4 +1,5 @@
 puts "Cleaning db"
+DilemmaScenario.destroy_all
 User.destroy_all
 Game.destroy_all
 Player.destroy_all
@@ -17,17 +18,17 @@ user3 = User.create(email: 'user3@example.com', password: 'password')
 puts "Creating games"
 game1 = Game.create(
   room_code: "ABCD",
-  user: user1
   # changes for user_id
   # user_id: 1
 )
+game1.user = user1
 
 game2 = Game.create(
   room_code: "EFGH",
-  user: user2
   # changes for user_id
   # user_id: 2
 )
+game2.user = user2
 
 puts "Creating players"
 Player.create(
@@ -73,56 +74,71 @@ scenario20 = Scenario.create(content: "Would you rather have a three foot nose")
 
 
 puts "Creating dilemma"
-dilemma1 = Dilemma.create!(
-  game: game1,
-  scenario1: scenario1,
-  scenario2: scenario2
-)
+dilemma1 = Dilemma.new
+dilemma1.game = game1
+dilemma1.save!
+dilemma1.scenarios << scenario1
+dilemma1.scenarios << scenario2
 
 
-dilemma2 = Dilemma.create(
-  scenario1: scenario2,
-  scenario2: scenario18
-)
+dilemma2 = Dilemma.new
+dilemma2.game = game1
+dilemma2.save!
+dilemma2.scenarios << scenario3
+dilemma2.scenarios << scenario4
 
-dilemma3 = Dilemma.create(
-  scenario1: scenario3,
-  scenario2: scenario17
-)
 
-dilemma4 = Dilemma.create(
-  scenario1: scenario4,
-  scenario2: scenario16
-)
+dilemma3 = Dilemma.new
+dilemma3.game = game1
+dilemma3.save!
+dilemma3.scenarios << scenario5
+dilemma3.scenarios << scenario6
 
-dilemma5 = Dilemma.create(
-  scenario1: scenario5,
-  scenario2: scenario15
-)
 
-dilemma6 = Dilemma.create(
-  scenario1: scenario6,
-  scenario2: scenario14
-)
+dilemma4 = Dilemma.new
+dilemma4.game = game1
+dilemma4.save!
+dilemma4.scenarios << scenario7
+dilemma4.scenarios << scenario8
 
-dilemma7 = Dilemma.create(
-  scenario1: scenario7,
-  scenario2: scenario13
-)
+dilemma5 = Dilemma.new
+dilemma5.game = game1
+dilemma5.save!
+dilemma5.scenarios << scenario9
+dilemma5.scenarios << scenario10
 
-dilemma8 = Dilemma.create(
-  scenario1: scenario8,
-  scenario2: scenario12
-)
+dilemma6 = Dilemma.new
+dilemma6.game = game1
+dilemma6.save!
+dilemma6.scenarios << scenario11
+dilemma6.scenarios << scenario12
 
-dilemma9 = Dilemma.create(
-  scenario1: scenario9,
-  scenario2: scenario11
-)
 
-dilemma10 = Dilemma.create(
-  scenario1: scenario10,
-  scenario2: scenario20
-)
+dilemma7 = Dilemma.new
+dilemma7.game = game1
+dilemma7.save!
+dilemma7.scenarios << scenario13
+dilemma7.scenarios << scenario14
+
+
+dilemma8 = Dilemma.new
+dilemma8.game = game1
+dilemma8.save!
+dilemma8.scenarios << scenario15
+dilemma8.scenarios << scenario16
+
+dilemma9 = Dilemma.new
+dilemma9.game = game1
+dilemma9.save!
+dilemma9.scenarios << scenario17
+dilemma9.scenarios << scenario18
+
+
+dilemma10 = Dilemma.new
+dilemma10.game = game1
+dilemma10.save!
+
+dilemma10.scenarios << scenario19
+dilemma10.scenarios << scenario20
 
 puts "Done!"
