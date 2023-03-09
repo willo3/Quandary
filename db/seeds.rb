@@ -15,15 +15,15 @@ user3 = User.create(email: 'user3@example.com', password: 'password')
 
 
 puts "Creating games"
-game1 = Game.create!(
-  room_code: "123456",
+game1 = Game.create(
+  room_code: "ABCD",
   user: user1
   # changes for user_id
   # user_id: 1
 )
 
 game2 = Game.create(
-  room_code: "123456",
+  room_code: "EFGH",
   user: user2
   # changes for user_id
   # user_id: 2
@@ -69,7 +69,7 @@ scenario16 = Scenario.create(content: "Would you rather have a pet Loch Ness Mon
 scenario17 = Scenario.create(content: "Would you rather have the ability to breathe underwater but only in a kiddie pool")
 scenario18 = Scenario.create(content: "Would you rather have a spoonful of horseradish with every meal")
 scenario19 = Scenario.create(content: "Would you rather have a plate of nachos with ghost peppers as the topping")
-scenario20 = Scenario.create(content: "Would you rather have a unibutt")
+scenario20 = Scenario.create(content: "Would you rather have a three foot nose")
 
 
 puts "Creating dilemma"
