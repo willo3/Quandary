@@ -17,12 +17,11 @@ class GamesController < ApplicationController
   end
 
   def show
-    
     @game = Game.find(params[:id])
     @game_first = Game.first
     @dilemmas = @game_first.dilemmas
-    @game.dilemmas = @dilemmas
-
+    @game_first.dilemmas.update_all(game_id: @game.id)
+    # @game.dilemmas << @dilemmas
     @dilemma = @game.dilemmas.first
   end
 
