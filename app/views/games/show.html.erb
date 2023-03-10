@@ -4,32 +4,18 @@
       <div class="card">
 
           <h5 class="card-title">Room code: <%= @game.room_code %></h5>
-          <p class="card-text">Hi <%= current_user.email %></p>
-          <img src="http://placehold.it/140x140" class="avatar">
           <button type="button width:100%" class="btn btn-secondary btn-rounded">Change Avatar</button>
 
       </div>
     </div>
-
     <div class="avatars-grid justify-content-center col-sm-8">
-      <div class="row">
-        <div class="avatar-col mt-2"><img src="http://placehold.it/140x140" class="avatar"></div>
-        <div class="avatar-col mt-2"><img src="http://placehold.it/140x140" class="avatar"></div>
-        <div class="avatar-col mt-2"><img src="http://placehold.it/140x140" class="avatar"></div>
-      </div>
-
-      <div class="row">
-        <div class="avatar-col mt-2"><img src="http://placehold.it/140x140" class="avatar"></div>
-        <div class="avatar-col mt-2"><img src="http://placehold.it/140x140" class="avatar"></div>
-        <div class="avatar-col mt-2"><img src="http://placehold.it/140x140" class="avatar"></div>
-      </div>
-
-      <div class="row">
-        <div class="avatar-col mt-2"><img src="http://placehold.it/140x140" class="avatar"></div>
-        <div class="avatar-col mt-2"><img src="http://placehold.it/140x140" class="avatar"></div>
-        <div class="avatar-col mt-2"><img src="http://placehold.it/140x140" class="avatar"></div>
-      </div>
+      <% @game.players.each do |player|%>
+        <div class="avatar-col mt-2"><img src="<%= player.avatar_url %>" class="avatar">
+        <p class="card-text"><%= player.user.name %></p>
+        </div>
+      <% end %>
     </div>
+    
     <div class="d-grid gap-2 col-6 mx-auto justify-content-md-end">
         <button type="button width:100%" class="btn btn-secondary text-decoration-none btn-rounded">
           <%= link_to dilemmas_show_path do %>
