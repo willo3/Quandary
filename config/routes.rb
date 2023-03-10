@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'results/show'
   get 'dilemmas/show'
   devise_for :users
   root to: "pages#home"
@@ -7,7 +8,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :games do
-    resources :dilemmas
+    resources :dilemmas do
+      resources :results
+    end
     resources :players, only: :create
   end
+
+  # route results
 end
