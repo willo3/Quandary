@@ -1,5 +1,6 @@
 puts "Cleaning db"
 DilemmaScenario.destroy_all
+Result.destroy_all
 Player.destroy_all
 User.destroy_all
 Game.destroy_all

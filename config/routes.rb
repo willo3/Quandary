@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :dilemmas do
       resources :results, only: :index
       resources :scenarios do
-        resources :results, only: :create
+        resources :results, only: :new
         end
       end
     resources :players, only: :create
