@@ -31,16 +31,16 @@
 
 .scenario-card:hover {
   &.scenario-left {
-    background-color: black;
+    background-color: white;
     h1 {
-      color: white;
+      color: black;
     }
   }
 
   &.scenario-right {
-    background-color: white;
+    background-color: black;
     h1 {
-      color: black;
+      color: white;
     }
   }
 }
