@@ -31,16 +31,30 @@
 
 .scenario-card:hover {
   &.scenario-left {
-    background-color: white;
+    background-color: #B0BEC5;
+    z-index: 2;
+    width: 70%;
+    padding: 32px;
+    box-shadow:0 4vh 0 0 #263238 inset,
+       0 -4vh 0 0 #263238 inset,
+       -4vh 0 0 0 #263238 inset,
+       4vh 0 0 0 #263238 inset;
     h1 {
-      color: black;
+      color: #263238;
     }
   }
 
   &.scenario-right {
-    background-color: black;
+    background-color: #263238;
+    z-index: 2;
+    width: 70%;
+    padding: 32px;
+    box-shadow:0 4vh 0 0 #B0BEC5 inset,
+       0 -4vh 0 0 #B0BEC5 inset,
+       -4vh 0 0 0 #B0BEC5 inset,
+       4vh 0 0 0 #B0BEC5 inset;
     h1 {
-      color: white;
+      color: #B0BEC5;
     }
   }
 }
