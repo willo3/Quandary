@@ -6,11 +6,11 @@
     <h2>Would you rather...</h2>
   </div>
 
-  <%= link_to dilemmas_show_path, class: "scenario-card scenario-left" do %>
+  <%= link_to  game_dilemma_scenario_results_path(@game, @dilemma, @dilemma.scenarios.first), data: {turbo_method: :post}, class: "scenario-card scenario-left" do %>
     <h1><%= @dilemma.scenarios.first.content %></h1>
   <% end %>
 
-  <%= link_to dilemmas_show_path, class: "scenario-card scenario-right" do %>
+  <%= link_to  game_dilemma_scenario_results_path(@game, @dilemma, @dilemma.scenarios.second), data: {turbo_method: :post}, class: "scenario-card scenario-right" do %>
     <h1><%= @dilemma.scenarios.second.content %></h1>
   <% end %>
 
