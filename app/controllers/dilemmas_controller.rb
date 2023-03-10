@@ -10,10 +10,7 @@ class DilemmasController < ApplicationController
 
   end
 
-  private
-  def game_params
-    params.require(:dilemma).permit(:game_id)
-  end
+
 end
 
 # ? if 1st dilemma , then load dilemma as Dilemma.find(params:dilemma_id)   /    else load dilemma as Dilemma.find(params:dilemma_id +1

@@ -1,0 +1,50 @@
+.dilemma-section {
+  margin: 0;
+  background-color: pink;
+  height: 100vh;
+  display: flex;
+  z-index: 1;
+}
+
+.question-prompt {
+  background-image: url("BackgroundALT.svg");
+  background-size: 200%;
+  background-position: center;
+  position:fixed;
+  width: 60%;
+  top: 4vh;
+  left: 20%;
+  border-radius:  40vh;
+  padding: 8px 32px 8px 32px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, .4);
+  z-index: 2;
+
+  h2 {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    color: #303F9F;
+  }
+
+  h5 {
+    font-family: 'Golos Text', sans-serif;
+    font-weight: 600;
+    color: #263238;
+  }
+}
+
+.timer {
+  background-image: url("BackgroundALT2.svg");
+  display: flex;
+  position: fixed;
+  bottom: 4vh;
+  left: 50%;
+  aspect-ratio: 1;
+  align-items:center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 3em;
+  padding: 2vh;
+  transform: translate(-50%, 0%);
+  z-index: 2;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, .4);
+}
