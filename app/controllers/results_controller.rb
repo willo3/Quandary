@@ -1,12 +1,12 @@
 class ResultsController < ApplicationController
   def index
-    # raise
     @dilemma = Dilemma.find(params[:dilemma_id])
     @result_a = Result.where(dilemma: @dilemma).and(Result.where(scenario: @dilemma.scenarios.first))
     @result_b = Result.where(dilemma: @dilemma).and(Result.where(scenario: @dilemma.scenarios.second))
   end
 
-  def create
+  def new
+    # raise
     @user = current_user
     @dilemma = Dilemma.find(params[:dilemma_id])
     @scenario = Scenario.find(params[:scenario_id])
