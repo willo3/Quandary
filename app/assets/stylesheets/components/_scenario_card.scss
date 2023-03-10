@@ -8,22 +8,39 @@
   position: fixed;
   top: 0;
   text-decoration: none;
+  padding: 16px;
 
   h1 {
     text-align: center;
     font-family: 'Lobster Two', cursive;
     font-weight: 700;
   }
+
+  &.scenario-left {
+    background-color: purple;
+    color: yellow;
+    left: 0;
+  }
+
+  &.scenario-right {
+    background-color: yellow;
+    color: purple;
+    right: 0;
+  }
 }
 
-.scenario-left {
-  background-color: purple;
-  color: yellow;
-  left: 0;
-}
+.scenario-card:hover {
+  &.scenario-left {
+    background-color: black;
+    h1 {
+      color: white;
+    }
+  }
 
-.scenario-right {
-  background-color: yellow;
-  color: purple;
-  right: 0;
+  &.scenario-right {
+    background-color: white;
+    h1 {
+      color: black;
+    }
+  }
 }
