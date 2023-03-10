@@ -17,7 +17,13 @@ class GamesController < ApplicationController
   end
 
   def show
+    
     @game = Game.find(params[:id])
+    @game_first = Game.first
+    @dilemmas = @game_first.dilemmas
+    @game.dilemmas = @dilemmas
+
+    @dilemma = @game.dilemmas.first
   end
 
   def create
