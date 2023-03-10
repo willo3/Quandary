@@ -1,0 +1,115 @@
+[1mdiff --git a/app/controllers/application_controller.rb b/app/controllers/application_controller.rb[m
+[1mindex 6b4dcfa..ea0be21 100644[m
+[1m--- a/app/controllers/application_controller.rb[m
+[1m+++ b/app/controllers/application_controller.rb[m
+[36m@@ -1,3 +1,15 @@[m
+ class ApplicationController < ActionController::Base[m
+   before_action :authenticate_user![m
+[32m+[m
+[32m+[m[32m   protect_from_forgery with: :exception[m
+[32m+[m
+[32m+[m[32m     before_action :configure_permitted_parameters, if: :devise_controller?[m
+[32m+[m
+[32m+[m[32m     protected[m
+[32m+[m
+[32m+[m[32m          def configure_permitted_parameters[m
+[32m+[m[32m               devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password) }[m
+[32m+[m
+[32m+[m[32m               devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :current_password) }[m
+[32m+[m[32m          end[m
+ end[m
+[1mdiff --git a/app/views/devise/registrations/edit.html.erb b/app/views/devise/registrations/edit.html.erb[m
+[1mindex 976c54b..14cf7e6 100644[m
+[1m--- a/app/views/devise/registrations/edit.html.erb[m
+[1m+++ b/app/views/devise/registrations/edit.html.erb[m
+[36m@@ -4,10 +4,10 @@[m
+   <%= f.error_notification %>[m
+ [m
+   <div class="form-inputs">[m
+[31m-    <%= f.input :username,[m
+[31m-              required: true,[m
+[31m-              autofocus: true,[m
+[31m-              input_html: { autocomplete: "username" }%>[m
+[32m+[m[32m    <%= f.input :name,[m
+[32m+[m[32m                required: true,[m
+[32m+[m[32m                autofocus: true,[m
+[32m+[m[32m                input_html: { autocomplete: "name" }%>[m
+     <%= f.input :email, required: true, autofocus: true %>[m
+ [m
+     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>[m
+[1mdiff --git a/app/views/devise/registrations/new.html.erb b/app/views/devise/registrations/new.html.erb[m
+[1mindex 5bb041d..6bcfb85 100644[m
+[1m--- a/app/views/devise/registrations/new.html.erb[m
+[1m+++ b/app/views/devise/registrations/new.html.erb[m
+[36m@@ -4,10 +4,10 @@[m
+   <%= f.error_notification %>[m
+ [m
+   <div class="form-inputs">[m
+[31m-    <%= f.input :username,[m
+[32m+[m[32m    <%= f.input :name,[m
+                 required: true,[m
+                 autofocus: true,[m
+[31m-                input_html: { autocomplete: "username" }%>[m
+[32m+[m[32m                input_html: { autocomplete: "name" }%>[m
+     <%= f.input :email,[m
+                 required: true,[m
+                 autofocus: true,[m
+[1mdiff --git a/config/initializers/devise.rb b/config/initializers/devise.rb[m
+[1mindex 37de4d1..38a0f50 100644[m
+[1m--- a/config/initializers/devise.rb[m
+[1m+++ b/config/initializers/devise.rb[m
+[36m@@ -244,8 +244,8 @@[m [mDevise.setup do |config|[m
+   # Turn scoped views on. Before rendering "sessions/new", it will first check for[m
+   # "users/sessions/new". It's turned off by default because it's slower if you[m
+   # are using only default views.[m
+[31m-  # config.scoped_views = false[m
+[31m-[m
+[32m+[m[32m  config.scoped_views = true[m
+[32m+[m[41m  [m
+   # Configure the default scope given to Warden. By default it's the first[m
+   # devise role declared in your routes (usually :user).[m
+   # config.default_scope = :user[m
+[1mdiff --git a/db/schema.rb b/db/schema.rb[m
+[1mindex 86343c5..b28f2b8 100644[m
+[1m--- a/db/schema.rb[m
+[1m+++ b/db/schema.rb[m
+[36m@@ -10,7 +10,7 @@[m
+ #[m
+ # It's strongly recommended that you check this file into your version control system.[m
+ [m
+[31m-ActiveRecord::Schema[7.0].define(version: 2023_03_09_173654) do[m
+[32m+[m[32mActiveRecord::Schema[7.0].define(version: 2023_03_09_190304) do[m
+   # These are extensions that must be enabled in order to support this database[m
+   enable_extension "plpgsql"[m
+ [m
+[36m@@ -25,9 +25,13 @@[m [mActiveRecord::Schema[7.0].define(version: 2023_03_09_173654) do[m
+ [m
+   create_table "dilemmas", force: :cascade do |t|[m
+     t.bigint "game_id", null: false[m
+[32m+[m[32m    t.bigint "scenario1_id"[m
+[32m+[m[32m    t.bigint "scenario2_id"[m
+     t.datetime "created_at", null: false[m
+     t.datetime "updated_at", null: false[m
+     t.index ["game_id"], name: "index_dilemmas_on_game_id"[m
+[32m+[m[32m    t.index ["scenario1_id"], name: "index_dilemmas_on_scenario1_id"[m
+[32m+[m[32m    t.index ["scenario2_id"], name: "index_dilemmas_on_scenario2_id"[m
+   end[m
+ [m
+   create_table "games", force: :cascade do |t|[m
+[36m@@ -73,6 +77,7 @@[m [mActiveRecord::Schema[7.0].define(version: 2023_03_09_173654) do[m
+     t.datetime "remember_created_at"[m
+     t.datetime "created_at", null: false[m
+     t.datetime "updated_at", null: false[m
+[32m+[m[32m    t.string "name"[m
+     t.index ["email"], name: "index_users_on_email", unique: true[m
+     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true[m
+   end[m
+[36m@@ -80,6 +85,8 @@[m [mActiveRecord::Schema[7.0].define(version: 2023_03_09_173654) do[m
+   add_foreign_key "dilemma_scenarios", "dilemmas"[m
+   add_foreign_key "dilemma_scenarios", "scenarios"[m
+   add_foreign_key "dilemmas", "games"[m
+[32m+[m[32m  add_foreign_key "dilemmas", "scenarios", column: "scenario1_id"[m
+[32m+[m[32m  add_foreign_key "dilemmas", "scenarios", column: "scenario2_id"[m
+   add_foreign_key "games", "users"[m
+   add_foreign_key "players", "games"[m
+   add_foreign_key "players", "users"[m
