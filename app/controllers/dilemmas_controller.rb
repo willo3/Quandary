@@ -6,6 +6,8 @@ class DilemmasController < ApplicationController
     # @game.dilemmas = @dilemmas
     @game = Game.find(params[:game_id])
     @dilemma = Dilemma.find(params[:id])
+    # @dilemma.game = @game
+
   end
 
   private
