@@ -1,0 +1,29 @@
+.scenario-card {
+  height: 100vh;
+  width: 50%;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  position: fixed;
+  top: 0;
+  text-decoration: none;
+
+  h1 {
+    text-align: center;
+    font-family: 'Lobster Two', cursive;
+    font-weight: 700;
+  }
+}
+
+.scenario-left {
+  background-color: purple;
+  color: yellow;
+  left: 0;
+}
+
+.scenario-right {
+  background-color: yellow;
+  color: purple;
+  right: 0;
+}
