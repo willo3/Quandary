@@ -1,9 +1,23 @@
-<h1>Dilemmas#show</h1>
-<p>Find me in app/views/dilemmas/show.html.erb</p>
+<div class="dilemma-section">
 
+  <div class="question-prompt">
+    <h5>Dilemma 1/10:</h5>
+    <i class="fa-duotone fa-face-monocle"></i>
+    <h2>Would you rather...</h2>
+  </div>
 
-<%=  @dilemma.scenarios.first.content %>
-<%=  @dilemma.scenarios.second.content %>
+  <%= link_to dilemmas_show_path, class: "scenario-card scenario-left" do %>
+    <h1><%= @dilemma.scenarios.first.content %></h1>
+  <% end %>
 
+  <%= link_to dilemmas_show_path, class: "scenario-card scenario-right" do %>
+    <h1><%= @dilemma.scenarios.second.content %></h1>
+  <% end %>
+
+  <div class="timer">
+    <i class="fa-solid fa-clock"></i>
+  </div>
+
+</div>
 
 <%# route = /games/:game_id/dilemmas/:id %>
