@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :games do
     resources :dilemmas do
-      resources :results
-    end
+      resources :results, only: :index
+      resources :scenarios do
+        resources :results, only: :create
+        end
+      end
     resources :players, only: :create
   end
 
