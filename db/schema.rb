@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_09_153305) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_09_190304) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dilemma_scenarios", force: :cascade do |t|
+    t.bigint "dilemma_id", null: false
+    t.bigint "scenario_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dilemma_id"], name: "index_dilemma_scenarios_on_dilemma_id"
+    t.index ["scenario_id"], name: "index_dilemma_scenarios_on_scenario_id"
+  end
 
   create_table "dilemmas", force: :cascade do |t|
     t.bigint "game_id", null: false
@@ -68,10 +77,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_09_153305) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "dilemma_scenarios", "dilemmas"
+  add_foreign_key "dilemma_scenarios", "scenarios"
   add_foreign_key "dilemmas", "games"
   add_foreign_key "dilemmas", "scenarios", column: "scenario1_id"
   add_foreign_key "dilemmas", "scenarios", column: "scenario2_id"
