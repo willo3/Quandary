@@ -57,7 +57,7 @@ scenario7 = Scenario.create(content: "Would you rather have rat tail")
 scenario8 = Scenario.create(content: "Would you rather be able to shoot spaghetti out of your fingers")
 scenario9 = Scenario.create(content: "Would you rather have cheese come out of your nose every time you sneeze")
 scenario10 = Scenario.create(content: "Would you rather have the ability to communicate with plants but every time you do,
- you lose a day of your life")
+you lose a day of your life")
 scenario11 = Scenario.create(content: "Would you rather have the power to turn invisible but every time you do, you age a year")
 scenario12 = Scenario.create(content: "Would you rather have a pet robot that always tells bad jokes")
 scenario13 = Scenario.create(content: "Would you rather the power to fly but you have to wear a sombrero at all times")
