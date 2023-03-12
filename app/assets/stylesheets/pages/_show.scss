@@ -4,6 +4,154 @@
   grid-gap: 16px;
 }
 
+.avatar-main {
+  margin-bottom: 200px !important;
+  margin-left: 80px !important;
+  margin-right: 80px !important;
+}
+
+.start-game-btn {
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+.start-game-btn:hover {
+  background-color: #6c757d;
+}
+
+.btn-rounded {
+  border-radius: 50px !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  text-align: center !important;
+}
+
+.btn-secondary.start-game-btn {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.btn-secondary.start-game-btn:hover {
+  background-color: #495057;
+  border-color: #495057;
+}
+
+.room-code {
+  font-weight:bold!important;
+  font-size: 500%!important;
+  margin-bottom:20px!important;
+  color:inherit!important;
+}
+
+.current-user-name {
+  font-weight:bold!important;
+  font-size: 200%!important;
+  margin-top:10px!important;
+  margin-bottom:20px!important;
+  color:inherit!important;
+}
+
+.team-boxed {
+  color:#313437;
+  background-color:transparent;
+  margin: none;
+}
+
+.team-boxed .item {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.team-boxed .item .box {
+  text-align:center;
+  background-color:transparent;
+  margin: none;
+}
+
+.team-boxed .item img {
+  background-color: rgba(255,255,255,0.60);
+  max-width: 120px;
+  border-color: #313437;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.team-boxed .item .name {
+  font-weight:bold;
+  margin-top:10px;
+  margin-bottom:20px;
+  color: white;
+  text-shadow:
+      0.07em 0 black,
+      0 0.07em black,
+      -0.07em 0 black,
+      0 -0.07em black;
+}
+
+// @media (min-width: 100px) {
+//   .team-boxed .item img {
+//     max-width: 40px;
+//   }
+//   .room-code {
+//     font-weight:bold!important;
+//     font-size: 200%!important;
+//     margin-top:10px!important;
+//     margin-bottom:20px!important;
+//     color:inherit!important;
+//   }
+//   .current-user-name {
+//     font-weight:bold!important;
+//     font-size: 100%!important;
+//     margin-top:10px!important;
+//     margin-bottom:20px!important;
+//     color:inherit!important;
+//   }
+//   .btn-rounded {
+//     border-radius: 50px !important;
+//     font-size: 10px !important;
+//     font-weight: bold !important;
+//     text-align: center !important;
+//   }
+//   .navbar {
+//     display:none;
+//   }
+//   .team-boxed .item .name {
+//     font-size: 100%;
+//   }
+// }
+
+
+// @media (min-width: 576px) and (max-width: 700px){
+//   .team-boxed .item img {
+//     max-width: 40px;
+//   }
+//   .room-code {
+//     font-weight:bold!important;
+//     font-size: 100%!important;
+//     margin-top:10px!important;
+//     margin-bottom:20px!important;
+//     color:inherit!important;
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Smallest device
 // @media (min-width: 100px) and (max-width: 575px) {
 //   .avatars-grid {
@@ -11,11 +159,12 @@
 //   }
 // }
 
-// // Small devices (landscape phones, 576px and up)
+// Small devices (landscape phones, 576px and up)
 // @media (min-width: 576px) {
 //   .avatars-grid {
 //     grid-template-columns: 1fr;
-//   }
+
+
 // }
 
 // // Medium devices (tablets, 768px and up)
