@@ -12,7 +12,7 @@ class DilemmasController < ApplicationController
   def create
 
     @game = Game.find(params[:game_id])
-    @scenarios = Scenario.all.to_a
+    @scenarios = Scenario.all.to_a.shuffle
 
     dilemmas = (1..10).map {
       @dilemma = Dilemma.new
