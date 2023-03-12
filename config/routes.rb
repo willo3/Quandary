@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   resources :games do
     resources :dilemmas do
       resources :results, only: :index
-      resources :scenarios do
-        resources :results, only: :new
+        resources :scenarios do
+          resources :results, only: :new
         end
       end
     resources :players, only: :create
