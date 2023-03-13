@@ -1,10 +1,20 @@
-<h1>Results</h1>
 
-<h1>Scenario 1</h1>
-<p>Count: <%= @result_a.count %></p>
 
-<h1>Scenario 2</h1>
-<p>Count: <%= @result_b.count %></p>
+<%#= @dilemma.id %>
+<%#= @next_dilemma.id %>
+
+<h1 class="title">
+<% if @result_a.count > @result_b.count %>
+  <%= @result_a.count.to_s + " players chose left!" %>
+ <% elsif @result_b.count > @result_a.count %>
+  <%= @result_b.count.to_s + " players chose right!" %>
+<% else %>
+<%= "It's a draw!" %>
+ <% end %>
+</h1>
+
+
+<h1>Your current score: <%= @user.score %></h1>
 
 <%#= @dilemma.id %>
 <%#= @next_dilemma.id %>
@@ -16,8 +26,7 @@
 
 
 
- <% if @result_a.count > @result_b.count %>
-  <%= "Scenario A Wins!" %>
- <% elsif @result_b.count > @result_a.count %>
-  <%= "Scenario B Wins!" %>
- <% end %>
+<%= @user.score %>
+<%= @result.content %>
+<%= @result_a.first.scenario.content %>
+<%= @result_b.first.scenario.content %>
