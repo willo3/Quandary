@@ -6,6 +6,7 @@ class DilemmasController < ApplicationController
     # @game.dilemmas = @dilemmas
     @game = Game.find(params[:game_id])
     @dilemma = Dilemma.find(params[:id])
+    @dilemmas = @game.dilemmas
     # @dilemma.game = @game
   end
 
@@ -14,7 +15,7 @@ class DilemmasController < ApplicationController
     @game = Game.find(params[:game_id])
     @scenarios = Scenario.all.to_a.shuffle
 
-    dilemmas = (1..10).map {
+    @dilemmas = (1..10).map {
       @dilemma = Dilemma.new
       @dilemma.game = @game
       @dilemma.save
@@ -22,7 +23,7 @@ class DilemmasController < ApplicationController
       @dilemma.scenarios << @scenarios.shift
       @dilemma
     }
-    redirect_to game_dilemma_path(@game, dilemmas.first)
+    redirect_to game_dilemma_path(@game, @dilemmas.first)
   end
 end
 
