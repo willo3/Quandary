@@ -19,13 +19,3 @@ class ResultsController < ApplicationController
     end
   end
 end
-
-# def show
-#   @game = Game.find(params[:game_id])
-#   @users = User.find_by(@game)
-#   @dilemmas = Dilemma.find_by(@game).to_a
-#   dilemma_ids = @dilemmas.map {|dilemma|
-#     dilemma.id
-#   }
-#   results = Results.where(:dilemma_id [dilemma_ids]).to_a
-# end

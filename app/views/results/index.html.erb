@@ -6,20 +6,14 @@
 <h1>Scenario 2</h1>
 <p>Count: <%= @result_b.count %></p>
 
-<%#= @dilemma.id %>
-<%#= @next_dilemma.id %>
-<%#= @dilemmas.find_index(@dilemma) + 1 %>
-
 <% if @next_dilemma != nil %>
   <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do %>
     <%= "NEXT DILEMMA" %>
   <% end %>
 <% end %>
 
-
-
- <% if @result_a.count > @result_b.count %>
-  <%= "Scenario A Wins!" %>
- <% elsif @result_b.count > @result_a.count %>
-  <%= "Scenario B Wins!" %>
- <% end %>
+<% if @result_a.count > @result_b.count %>
+<%= "Scenario A Wins!" %>
+<% elsif @result_b.count > @result_a.count %>
+<%= "Scenario B Wins!" %>
+<% end %>
