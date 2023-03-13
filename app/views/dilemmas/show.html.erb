@@ -6,11 +6,11 @@
     <h2>Would you rather...</h2>
   </div>
 
-  <%= link_to dilemmas_show_path, class: "scenario-card scenario-left" do %>
+  <%= link_to  new_game_dilemma_scenario_result_path(@game, @dilemma, @dilemma.scenarios.first),  class: "scenario-card scenario-left" do %>
     <h1><%= @dilemma.scenarios.first.content %></h1>
   <% end %>
 
-  <%= link_to dilemmas_show_path, class: "scenario-card scenario-right" do %>
+  <%= link_to  new_game_dilemma_scenario_result_path(@game, @dilemma, @dilemma.scenarios.second), class: "scenario-card scenario-right" do %>
     <h1><%= @dilemma.scenarios.second.content %></h1>
   <% end %>
 

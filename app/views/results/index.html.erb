@@ -1,0 +1,15 @@
+<h1>Results</h1>
+
+<h1>Scenario 1</h1>
+<p>Count: <%= @result_a.count %></p>
+
+<h1>Scenario 2</h1>
+<p>Count: <%= @result_b.count %></p>
+
+<%#= @dilemma.id %>
+<%#= @next_dilemma.id %>
+<% if @next_dilemma != nil %>
+  <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do %>
+    <%= "NEXT DILEMMA" %>
+  <% end %>
+<% end %>

@@ -1,12 +1,40 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: transparent;
+  vertical-align: middle !important;
 }
+
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 20%;
+}
+
+.navbar-lewagon p {
+  font-weight:bold !important;
+  margin-top:10px !important;
+  margin-bottom:20px !important;
+  color: white !important;
+  text-shadow:
+      0.07em 0 black,
+      0 0.07em black,
+      -0.07em 0 black,
+      0 -0.07em black;
+}
+
+#navbarDropdown {
+  width: 60%;
+  background-color: rgba(255,255,255,0.60);
+  max-width: 120px;
+  border-color: #313437;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  border-radius: 50px !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  margin:none;
 }

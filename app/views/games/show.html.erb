@@ -1,27 +1,39 @@
-<div class="container">
+<div class="container" >
   <div class="row">
     <div class="col-sm-4">
       <div class="card">
-
-          <h5 class="card-title">Room code: <%= @game.room_code %></h5>
-          <button type="button width:100%" class="btn btn-secondary btn-rounded">Change Avatar</button>
-
+        <h5 class="card-title">Room code:</h5>
+        <h1 class="room-code"><%= @game.room_code %></h1>
+        <img src="<%= @game.players.first.avatar_url %>" class="card-img-top">
+        <h1 class="current-user-name"><%= current_user.name %></h1>
+        <button type="button width:100%" class="btn btn-secondary btn-rounded">Change Avatar</button>
       </div>
     </div>
-    <div class="avatars-grid justify-content-center col-sm-8">
-      <% @game.players.each do |player|%>
-        <div class="avatar-col mt-2"><img src="<%= player.avatar_url %>" class="avatar">
-        <p class="card-text"><%= player.user.name %></p>
-        </div>
-      <% end %>
-    </div>
 
-    <div class="d-grid gap-2 col-6 mx-auto justify-content-md-end">
-        <button type="button width:100%" class="btn btn-secondary text-decoration-none btn-rounded">
-          <%= link_to game_dilemma_path(@game, @dilemma) do %>
-            <h5><%= "START A GAME" %></h5>
+    <div class="col-sm-8">
+      <div class="team-boxed">
+        <div class="avatars-grid justify-content-around col-sm-8 item">
+          <% @game.players.each do |player|%>
+            <% unless player.user.id == current_user.id %>
+              <div class="col avatar-col mt-1">
+                <img src="<%= player.avatar_url %>" class="rounded-circle avatar-img">
+                <h3 class="name"><%= player.user.name %></h3>
+              </div>
+            <% end %>
           <% end %>
-        </button>
+        </div>
       </div>
+    </div>
+    <% if @game.user == current_user %>
+      <div class="d-grid gap-2 col-4 mx-auto justify-content-md-end">
+        <%= button_to game_dilemmas_path(@game), {class: "btn btn-secondary btn-rounded text-decoration-none start-game-btn"}, method: :post do %>
+          <%= "START A GAME" %>
+        <% end %>
+      </div>
+    <% end %>
+    <%# <script language="javascript">
+      setTimeout(function(){window.location.reload(1);}, 3000);
+    </script> %>
   </div>
+  <div class="spacer"></div>
 </div>
