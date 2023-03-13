@@ -6,7 +6,12 @@ class GamesController < ApplicationController
       @player.game = @game
       @player.user = current_user
       if @player.save
+        GameChannel.broadcast_to(
+          @game,
+          render_to_string(partial: "players/player", locals: {player: @player})
+        )
         redirect_to game_path(@game)
+        # head :ok
       else
         render :index, status: :unprocessable_entity
       end

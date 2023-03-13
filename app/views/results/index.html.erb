@@ -1,8 +1,3 @@
-
-
-<%#= @dilemma.id %>
-<%#= @next_dilemma.id %>
-
 <h1 class="title">
 <% if @result_a.count > @result_b.count %>
   <%= @result_a.count.to_s + " players chose left!" %>
@@ -23,6 +18,3 @@
     <%= "NEXT DILEMMA" %>
   <% end %>
 <% end %>
-
-
-
