@@ -42,7 +42,8 @@ class GamesController < ApplicationController
       player.game = game
       player.user = current_user
       if player.save
-        redirect_to game_path(game)
+        num_players = game.players.count
+        redirect_to game_path(game), locals: { num_players: num_players }
       else
         render :home
       end

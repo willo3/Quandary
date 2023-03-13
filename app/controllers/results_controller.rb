@@ -19,6 +19,7 @@ class ResultsController < ApplicationController
     @user.save
   end
 
+  
   def new
     @user = current_user
     @dilemma = Dilemma.find(params[:dilemma_id])
