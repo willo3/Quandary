@@ -8,6 +8,8 @@
 
 <%#= @dilemma.id %>
 <%#= @next_dilemma.id %>
+<%#= @dilemmas.find_index(@dilemma) + 1 %>
+
 <% if @next_dilemma != nil %>
   <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do %>
     <%= "NEXT DILEMMA" %>
