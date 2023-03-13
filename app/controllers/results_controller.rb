@@ -7,17 +7,17 @@ class ResultsController < ApplicationController
     @user = current_user
     result = Result.where(dilemma: @dilemma).and(Result.where(user: @user))
     @result = result.last.scenario
-    if @result_a.count > @result_b.count
-      @user.score += 1 if @result.content == @result_a.first.scenario.content
-    elsif @result_b.count > @result_a.count
-      @user.score += 1 if @result.content == @result_b.first.scenario.content
-    elsif @result_b.count == @result_a.count
+
+   # Check if all players have submitted an answer for the current quandary then run this code for all players simulatneously
+
+    if @result_a.count > @result_b.count && @result.content == @result_a.first.scenario.content
+      @user.score += 1
+    elsif @result_b.count > @result_a.count && @result.content == @result_b.first.scenario.content
       @user.score += 1
     end
     @user.score
     @user.save
   end
-
 
   def new
     @user = current_user
