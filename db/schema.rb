@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_13_051255) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_13_081907) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,7 +59,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_051255) do
     t.bigint "scenario_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "player_id"
     t.index ["dilemma_id"], name: "index_results_on_dilemma_id"
+    t.index ["player_id"], name: "index_results_on_player_id"
     t.index ["scenario_id"], name: "index_results_on_scenario_id"
     t.index ["user_id"], name: "index_results_on_user_id"
   end
@@ -79,6 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_051255) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.integer "score"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -92,6 +95,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_051255) do
   add_foreign_key "players", "games"
   add_foreign_key "players", "users"
   add_foreign_key "results", "dilemmas"
+  add_foreign_key "results", "players"
   add_foreign_key "results", "scenarios"
   add_foreign_key "results", "users"
 end

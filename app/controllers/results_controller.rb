@@ -10,8 +10,8 @@ class ResultsController < ApplicationController
     @user = current_user
     @dilemma = Dilemma.find(params[:dilemma_id])
     @scenario = Scenario.find(params[:scenario_id])
-    @result = Result.new(user: @user, dilemma: @dilemma, scenario: @scenario)
     @game = Game.find(params[:game_id])
+    @result = Result.new(user: @user, dilemma: @dilemma, scenario: @scenario)
     if @result.save!
       redirect_to game_dilemma_results_path(@game, @dilemma)
     else
