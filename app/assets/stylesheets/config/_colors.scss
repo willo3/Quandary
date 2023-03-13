@@ -1,10 +1,28 @@
-// Define variables for your color scheme
+// Primary colour (based on the logo):
+$primary: #E52424;
+$primary-dark: #720D0D;
+$primary-medium: #F44336;
+$primary-light: #E57373;
 
-// For example:
-$red: #FD1015;
-$blue: #0D6EFD;
-$yellow: #FFC65A;
-$orange: #E67E22;
-$green: #1EDD88;
-$gray: #0E0000;
-$light-gray: #F4F4F4;
+// Seconary colour:
+$secondary: #455A64;
+$secondary-dark: #263238;
+$secondary-medium: #607D8B;
+$secondary-light: #90A4AE;
+
+// Tertiary colour:
+$tertiary: #303F9F;
+$tertiary-dark: #1A237E;
+$tertiary-medium: #3F51B5;
+$tertiary-light: #7986CB;
+
+// Accent colour:
+$accent: #00796B;
+$accent-dark: #004D40;
+$accent-medium: #009688;
+$accent-light: #4DB6AC;
+
+// Background:
+$background-light: #CFD8DC;
+$background-lighter: #E0F2F1;
+$background-gradient: linear-gradient(to bottom right, #B0BEC5, #263238);
