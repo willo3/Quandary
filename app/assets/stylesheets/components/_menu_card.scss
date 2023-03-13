@@ -1,0 +1,78 @@
+.menu-card {
+  box-shadow: 0px;
+  padding: 16px;
+  margin: 0px;
+  height: 60vh;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h4 {
+    color: white;
+    font-size: 4em;
+    text-align: center;
+  }
+}
+
+#how-to-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $accent;
+  box-shadow: 0px 8px 0px 0px $accent-dark;
+
+  &:hover {
+    background-color: $accent-medium;
+    transform: translate(0px, 8px);
+    box-shadow: none;
+  }
+}
+
+// .menu-button-to {
+//   padding: 0px;
+//   margin: 0px;
+//   border-radius: 16px;
+//   background-color: $tertiary;
+//   box-shadow: 0px 8px 0px 0px $tertiary-dark;
+//   border: 0px;
+// }
+
+.menu-button-to {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+  background-color: $tertiary;
+  box-shadow: 0px 8px 0px 0px $tertiary-dark;
+  border-radius: 20px;
+  border: 0px;
+
+  &:hover {
+    background-color: $tertiary-medium;
+    transform: translate(0px, 8px);
+    box-shadow: none;
+  }
+}
+
+.menu-link-to {
+  text-decoration: none;
+}
+
+#join-game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  margin: 0px;
+  background-color: $secondary;
+  box-shadow: 0px 8px 0px 0px $secondary-dark;
+  border: 0px;
+
+  &:hover {
+    background-color: $secondary-medium;
+    transform: translate(0px, 8px);
+    box-shadow: none;
+  }
+}

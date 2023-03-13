@@ -5,6 +5,7 @@ html, body {
 
 // The background elements are universal and should appear on all pages, even if covered by content
 body {
+  background-color: red;
   background: linear-gradient(150deg, #ffffff, #9db6c3, #142a3c),
   url('https://res.cloudinary.com/drfmymoki/image/upload/v1678275563/Pattern_1_huvp98.svg');
   background-position-x: center;
@@ -12,6 +13,13 @@ body {
   background-blend-mode: hard-light;
   min-height: 100%;
   background-attachment: fixed;
+}
+
+#home-grid {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-column-gap: 16px;
+  height: 60vh;
 }
 
 .modal-footer img {
