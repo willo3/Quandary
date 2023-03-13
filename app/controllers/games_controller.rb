@@ -23,6 +23,9 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @user = current_user
+    @user.score = 0
+    @user.save
     # @game_first = Game.first
     # @dilemmas = @game_first.dilemmas
     # @game_first.dilemmas.update_all(game_id: @game.id)
