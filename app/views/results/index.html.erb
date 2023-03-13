@@ -13,3 +13,11 @@
     <%= "NEXT DILEMMA" %>
   <% end %>
 <% end %>
+
+
+
+ <% if @result_a.count > @result_b.count %>
+  <%= "Scenario A Wins!" %>
+ <% elsif @result_b.count > @result_a.count %>
+  <%= "Scenario B Wins!" %>
+ <% end %>
