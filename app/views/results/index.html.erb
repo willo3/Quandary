@@ -15,7 +15,13 @@
         </ul>
 
       </div>
-
+  <% if @game.user == current_user %>
+    <% if @next_dilemma != nil %>
+      <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do %>
+        <%= "NEXT DILEMMA" %>
+      <% end %>
+    <% end %>
+  <% end %>
   </div>
 
 </div>
