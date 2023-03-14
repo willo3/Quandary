@@ -46,8 +46,8 @@ class Player < ApplicationRecord
               # FRUIT & VEG AVATARS
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678801972/Quandary%20Avatars/Avatar_Carrot_hgomxt.svg',
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678802321/Quandary%20Avatars/Avatar_Aubergine_y6vunb.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678802321/Quandary%20Avatars/Avatar_Tomato_icb2ek.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678802321/Quandary%20Avatars/Avatar_Onion_c2co50.svg',
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678802321/Quandary%20Avatars/Avatar_Tomato_icb2ek.svg',
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678802321/Quandary%20Avatars/Avatar_Onion_c2co50.svg',
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678802321/Quandary%20Avatars/Avatar_Dragonfruit_lvhtio.svg',
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678803978/Quandary%20Avatars/Avatar_Turnip_snruir.svg',
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678803977/Quandary%20Avatars/Avatar_Banana_qsbph9.svg'

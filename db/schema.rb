@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_13_081907) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_14_054318) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,13 +25,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_081907) do
 
   create_table "dilemmas", force: :cascade do |t|
     t.bigint "game_id", null: false
-    t.bigint "scenario1_id"
-    t.bigint "scenario2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["game_id"], name: "index_dilemmas_on_game_id"
-    t.index ["scenario1_id"], name: "index_dilemmas_on_scenario1_id"
-    t.index ["scenario2_id"], name: "index_dilemmas_on_scenario2_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -39,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_081907) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "player_count", default: 1
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
@@ -87,8 +84,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_13_081907) do
   add_foreign_key "dilemma_scenarios", "dilemmas"
   add_foreign_key "dilemma_scenarios", "scenarios"
   add_foreign_key "dilemmas", "games"
-  add_foreign_key "dilemmas", "scenarios", column: "scenario1_id"
-  add_foreign_key "dilemmas", "scenarios", column: "scenario2_id"
   add_foreign_key "games", "users"
   add_foreign_key "players", "games"
   add_foreign_key "players", "users"

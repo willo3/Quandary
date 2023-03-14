@@ -6,6 +6,8 @@ class GamesController < ApplicationController
       @player.game = @game
       @player.user = current_user
       if @player.save
+        @game.player_count += 1
+        @game.save
         GameChannel.broadcast_to(
           @game,
           render_to_string(partial: "players/player", locals: {player: @player})
