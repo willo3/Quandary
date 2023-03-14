@@ -14,7 +14,9 @@
       <div class="team-boxed">
         <div class="avatars-grid justify-content-around col-sm-8 item" data-game-subscription-target="players">
           <% @game.players.each do |player| %>
-            <%= render "players/player", player: player %>
+            <% unless player.user.id == current_user.id %>
+             <%= render "players/player", player: player %>
+             <% end %>
           <% end %>
           <%# @game.players.each do |player|%>
             <%# unless player.user.id == current_user.id %>
@@ -27,11 +29,11 @@
         </div>
       </div>
     </div>
-    <% if @game.user == current_user %>
+    <%# if @game.user == current_user %>
       <div class="d-grid gap-2 col-4 mx-auto justify-content-md-end">
         <%= button_to game_dilemmas_path(@game), {class: "btn btn-secondary btn-rounded text-decoration-none start-game-btn"}, method: :post do %>
           <%= "START A GAME" %>
-        <% end %>
+        <%# end %>
       </div>
     <% end %>
   </div>

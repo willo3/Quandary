@@ -9,3 +9,6 @@ application.register("game-subscription", GameSubscriptionController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ResultSubscriptionController from "./result_subscription_controller"
+application.register("result-subscription", ResultSubscriptionController)

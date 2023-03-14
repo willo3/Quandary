@@ -12,6 +12,7 @@ class GamesController < ApplicationController
         )
         redirect_to game_path(@game)
         # head :ok
+
       else
         render :index, status: :unprocessable_entity
       end
@@ -42,8 +43,7 @@ class GamesController < ApplicationController
       player.game = game
       player.user = current_user
       if player.save
-        num_players = game.players.count
-        redirect_to game_path(game), locals: { num_players: num_players }
+        redirect_to game_path(game)
       else
         render :home
       end

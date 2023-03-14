@@ -1,20 +1,11 @@
-<h1 class="title">
-<% if @result_a.count > @result_b.count %>
-  <%= @result_a.count.to_s + " players chose left!" %>
- <% elsif @result_b.count > @result_a.count %>
-  <%= @result_b.count.to_s + " players chose right!" %>
-<% else %>
-<%= "It's a draw!" %>
- <% end %>
-</h1>
+<div class="container" data-controller="result-subscription" data-result-subscription-result-id-value="<%= @result.id %>">
 
 
-<h1>Your current score: <%= @user.score %></h1>
+<%# we inject the html stuff here %>
+  <div data-result-subscription-target="players">
+      <div class="waiting-for-players">
+        <h1>Waiting for other players to answer...</h1>
+      </div>
+  </div>
 
-<%#= @dilemma.id %>
-<%#= @next_dilemma.id %>
-<% if @next_dilemma != nil %>
-  <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do %>
-    <%= "NEXT DILEMMA" %>
-  <% end %>
-<% end %>
+</div>
