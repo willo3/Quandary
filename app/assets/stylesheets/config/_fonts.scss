@@ -8,15 +8,5 @@ $body-font: 'Golos Text', 'sans-serif';
 $button-font: 'Tilt neon', 'cursive';
 $dilemma-font: 'Tilt neon', 'cursive';
 $headers-font: 'Golos Text', 'sans-serif';
-
-
-
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+$accent-font-main: 'Lobster Two', 'cursive';
+$accent-font-alt: 'Lobster', 'cursive';
