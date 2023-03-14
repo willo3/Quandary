@@ -1,0 +1,22 @@
+
+<div class="fully-answered">
+
+  <h1 class="title">
+    <% if @result_a.count > @result_b.count %>
+      <% @result_a.count.to_s + " players chose left!" %>
+    <% elsif @result_b.count > @result_a.count %>
+      <% @result_b.count.to_s + " players chose right!" %>
+    <% else %>
+      <% "It's a draw!" %>
+    <% end %>
+  </h1>
+
+  <h1>Your current score: <%= @user.score %></h1>
+
+  <% if @next_dilemma != nil %>
+    <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do %>
+      <%= "NEXT DILEMMA" %>
+    <% end %>
+  <% end %>
+
+</div>

@@ -10,7 +10,7 @@ Dilemma.destroy_all
 puts "Creating users"
 user1 = User.create(name: 'Marco', email: 'user1@example.com', password: 'password')
 user2 = User.create(name: 'Zac', email: 'user2@example.com', password: 'password')
-user3 = User.create(name: 'Nation', email: 'user3@example.com', password: 'password')
+user3 = User.create(name: 'Ivan', email: 'user3@example.com', password: 'password')
 
 puts "Creating games"
 game1 = Game.create(
@@ -47,27 +47,29 @@ Player.create(
 )
 
 puts "Creating scenario"
-scenario1 = Scenario.create!(content: "Would you rather lose all of your money")
-scenario2 = Scenario.create!(content: "Would rather lose all of your memories")
-scenario3 = Scenario.create(content: "Would you rather eat a live octopus")
-scenario4 = Scenario.create(content: "Would you rather lick a public toilet seat")
-scenario5 = Scenario.create(content: "Would you rather have a unibrow")
-scenario6 = Scenario.create(content: "Would you rather have a mullet")
-scenario7 = Scenario.create(content: "Would you rather have rat tail")
-scenario8 = Scenario.create(content: "Would you rather be able to shoot spaghetti out of your fingers")
-scenario9 = Scenario.create(content: "Would you rather have cheese come out of your nose every time you sneeze")
-scenario10 = Scenario.create(content: "Would you rather have the ability to communicate with plants but every time you do,
+scenario1 = Scenario.create!(content: "Lose all of your money")
+scenario2 = Scenario.create!(content: "Lose all of your memories")
+scenario3 = Scenario.create(content: "Eat a live octopus")
+scenario4 = Scenario.create(content: "Lick a public toilet seat")
+scenario5 = Scenario.create(content: "Have a unibrow")
+scenario6 = Scenario.create(content: "Have a mullet")
+scenario7 = Scenario.create(content: "Have a prehensile monkey tail")
+scenario8 = Scenario.create(content: "Shoot spaghetti out of your fingers at random moments")
+scenario9 = Scenario.create(content: "Have cheese come out of your nose every time you sneeze")
+scenario10 = Scenario.create(content: "Have the ability to communicate with animals but every time you do,
 you lose a day of your life")
-scenario11 = Scenario.create(content: "Would you rather have the power to turn invisible but every time you do, you age a year")
-scenario12 = Scenario.create(content: "Would you rather have a pet robot that always tells bad jokes")
-scenario13 = Scenario.create(content: "Would you rather the power to fly but you have to wear a sombrero at all times")
-scenario14 = Scenario.create(content: "Would you rather have the power to turn invisible but every time you do, you fart loudly")
-scenario15 = Scenario.create(content: "Would you rather have a pet Bigfoot that's always stealing your socks")
-scenario16 = Scenario.create(content: "Would you rather have a pet Loch Ness Monster that's always trying to sell you timeshares")
-scenario17 = Scenario.create(content: "Would you rather have the ability to breathe underwater but only in a kiddie pool")
-scenario18 = Scenario.create(content: "Would you rather have a spoonful of horseradish with every meal")
-scenario19 = Scenario.create(content: "Would you rather have a plate of nachos with ghost peppers as the topping")
-scenario20 = Scenario.create(content: "Would you rather have a three foot nose")
+scenario11 = Scenario.create(content: "Have the power to turn invisible but every time you do, you age a year")
+scenario12 = Scenario.create(content: "Have a pet robot that always tells bad jokes")
+scenario13 = Scenario.create(content: "The power to fly but you have to wear a sombrero at all times")
+scenario14 = Scenario.create(content: "Have the power to turn invisible but every time you do, you fart loudly and constantly")
+scenario15 = Scenario.create(content: "Have a pet Bigfoot that's always stealing your socks")
+scenario16 = Scenario.create(content: "Have a pet Loch Ness Monster that's always trying to sell you timeshares")
+scenario17 = Scenario.create(content: "Have the ability to breathe underwater but only in a kiddie pool")
+scenario18 = Scenario.create(content: "Eat a spoonful of horseradish with every meal")
+scenario19 = Scenario.create(content: "Eat a plate of nachos with ghost peppers as the topping")
+scenario20 = Scenario.create(content: "Have a three foot nose")
+scenario21 = Scenario.create(content: "Have ears the size of plates")
+scenario22 = Scenario.create(content: "Have noses for ears and an ear for a nose")
 
 
 puts "Creating dilemma"
