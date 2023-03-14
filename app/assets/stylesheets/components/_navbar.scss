@@ -55,3 +55,21 @@
 a {
   font-family: $button-font;
 }
+
+.dropdown-menu {
+  transform: translateY(6px);
+  border-radius: 8px;
+  padding: 0px;
+  font-size: 1.5rem;
+}
+
+.dropdown-item {
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: $secondary-dark;
+
+  &:hover {
+    background-color: $background-light;
+    color: $secondary-medium;
+  }
+}
