@@ -21,11 +21,19 @@
   align-items: center;
   background-color: $accent;
   box-shadow: 0px 8px 0px 0px $accent-dark;
+  background-image: url('icon_question.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
 
   &:hover {
     background-color: $accent-medium;
     transform: translate(0px, 8px);
     box-shadow: none;
+
+    h4 {
+      color: $background-light;
+    }
   }
 }
 
@@ -48,11 +56,20 @@
   box-shadow: 0px 8px 0px 0px $tertiary-dark;
   border-radius: 20px;
   border: 0px;
+  background-image: url('icon_build.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
 
   &:hover {
     background-color: $tertiary-medium;
     transform: translate(0px, 8px);
     box-shadow: none;
+    color: $background-light;
+
+    h4 {
+      color: $background-light;
+    }
   }
 }
 
@@ -69,10 +86,19 @@
   background-color: $secondary;
   box-shadow: 0px 8px 0px 0px $secondary-dark;
   border: 0px;
+  background-image: url('icon_wavinghand.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
 
   &:hover {
     background-color: $secondary-medium;
     transform: translate(0px, 8px);
     box-shadow: none;
+    color: $background-light;
+
+    h4 {
+      color: $background-light;
+    }
   }
 }
