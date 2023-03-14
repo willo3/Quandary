@@ -7,22 +7,27 @@ class ResultsController < ApplicationController
     @user = current_user
     result = Result.where(dilemma: @dilemma).and(Result.where(user: @user))
     @result = result.last.scenario
+    @results_total = @result_a.count + @result_b.count
+    @players_total = Game.find(params[:game_id]).player_count
 
-    # How do I count the scenarios?
-    if @dilemma.scenarios.count == (@result_a.count + @result_b.count)
-      html = render_to_string(partial: "players/player_count", formats: [:html])
-      ResultChannel.broadcast_to(@dilemma, html)
-    end
 
-    # This is currently working, kinda
+  #  ResultChannel.broadcast_to(
+  #     @result,
+  #     render_to_string(partial: "players/player_count", locals: {game: @game})
+  #   )
+  #   redirect_to game_dilemma_results_path(@game, @dilemma)
+
+    return if @players_total == @results_total
+      # this is meant to run to calculate scores only when the player number and answer numer is the same
     if @result_a.count > @result_b.count && @result.content == @result_a.first.scenario.content
       @user.score += 1
     elsif @result_b.count > @result_a.count && @result.content == @result_b.first.scenario.content
       @user.score += 1
     end
     @user.score
-    @user.save
+    @user.save 
   end
+
 
   def new
     @user = current_user
