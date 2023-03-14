@@ -5,10 +5,12 @@
         <h5 class="card-title">Room code:</h5>
         <h1 class="room-code"><%= @game.room_code %></h1>
         <img src="<%= @game.players.first.avatar_url %>" class="card-img-top">
-        <h1 class="current-user-name"><%= current_user.name %></h1>
         <%= link_to "Change avatar", new_user_session_path, class: "quandary-button tertiary-button change-avatar-button" %>
       </div>
     </div>
+
+
+
 
     <div class="col-sm-8">
       <div class="team-boxed">
