@@ -2,23 +2,19 @@
   import { createConsumer } from "@rails/actioncable"
 
   export default class extends Controller {
-    static values = { resultId: Number }
+    static values = { dilemmaId: Number }
     static targets = ["players"]
 
     connect() {
       this.channel = createConsumer().subscriptions.create(
-        { channel: "ResultChannel", id: this.resultIdValue },
+        { channel: "DilemmaChannel", id: this.dilemmaIdValue },
         {
           received: data => {
             console.log("Received data:", data)
             this.playersTarget.insertAdjacentHTML("beforeend", data)
           }
         }
-      }
-    )
-    console.log(`Subscribed to the chatroom with the id ${this.resultIdValue}.`)
+      )
+      console.log(`Subscribed to the dilemma with the id ${this.dilemmaIdValue}`)
+    }
   }
-
-
-
-
