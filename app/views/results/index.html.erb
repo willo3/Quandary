@@ -1,12 +1,21 @@
-<div class="container" data-controller="result-subscription" data-result-subscription-result-id-value="<%= @result.id %>">
+<div class="container" data-controller="result-subscription" data-result-subscription-dilemma-id-value="<%= @dilemma.id %>">
 
 
 <%# we inject the html stuff here %>
-  <div data-result-subscription-target="players">
+  <div >
       <div class="waiting-for-players">
-        <h1>Waiting for other players to answer...</h1>
+        <p>You chose <%= @scenario.content %></p>
+
+        <hr>
+        <h2>Other people chose</h2>
+        <ul data-result-subscription-target="players">
+          <% @dilemma.other_results(current_user).each do |result| %>
+            <li><%= result.user.name %> chose <%= result.scenario.content %></li>
+          <% end %>
+        </ul>
+
       </div>
+
   </div>
 
 </div>
- 

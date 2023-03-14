@@ -6,26 +6,21 @@ class ResultsController < ApplicationController
     @next_dilemma = Dilemma.where("id > ?", @dilemma.id).order(id: :asc).first
     @user = current_user
     result = Result.where(dilemma: @dilemma).and(Result.where(user: @user))
-    @result = result.last.scenario
+    @scenario = result.last.scenario
     @results_total = @result_a.count + @result_b.count
     @players_total = Game.find(params[:game_id]).player_count
 
-
-  #  ResultChannel.broadcast_to(
-  #     @result,
-  #     render_to_string(partial: "players/player_count", locals: {game: @game})
-  #   )
-  #   redirect_to game_dilemma_results_path(@game, @dilemma)
-
-    return if @players_total == @results_total
+    if @players_total == @results_total
+      # This isn't working for now - Jake
       # this is meant to run to calculate scores only when the player number and answer numer is the same
-    if @result_a.count > @result_b.count && @result.content == @result_a.first.scenario.content
-      @user.score += 1
-    elsif @result_b.count > @result_a.count && @result.content == @result_b.first.scenario.content
-      @user.score += 1
+      # if @result_a.count > @result_b.count && @result.content == @result_a.first.scenario.content
+      #   @user.score += 1
+      # elsif @result_b.count > @result_a.count && @result.content == @result_b.first.scenario.content
+      #   @user.score += 1
+      # end
+      # @user.score
+      # @user.save
     end
-    @user.score
-    @user.save 
   end
 
 
@@ -36,6 +31,10 @@ class ResultsController < ApplicationController
     @game = Game.find(params[:game_id])
     @result = Result.new(user: @user, dilemma: @dilemma, scenario: @scenario)
     if @result.save!
+      DilemmaChannel.broadcast_to(
+        @dilemma,
+        "#{current_user.name} chose #{@scenario.content}"
+      )
       redirect_to game_dilemma_results_path(@game, @dilemma)
     else
       redirect_to game_dilemma_path(@game, @dilemma)
