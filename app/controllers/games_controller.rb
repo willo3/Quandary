@@ -6,7 +6,12 @@ class GamesController < ApplicationController
       @player.game = @game
       @player.user = current_user
       if @player.save
+        GameChannel.broadcast_to(
+          @game,
+          render_to_string(partial: "players/player", locals: {player: @player})
+        )
         redirect_to game_path(@game)
+        # head :ok
       else
         render :index, status: :unprocessable_entity
       end
@@ -18,6 +23,9 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @user = current_user
+    @user.score = 0
+    @user.save
     # @game_first = Game.first
     # @dilemmas = @game_first.dilemmas
     # @game_first.dilemmas.update_all(game_id: @game.id)
@@ -34,7 +42,8 @@ class GamesController < ApplicationController
       player.game = game
       player.user = current_user
       if player.save
-        redirect_to game_path(game)
+        num_players = game.players.count
+        redirect_to game_path(game), locals: { num_players: num_players }
       else
         render :home
       end
