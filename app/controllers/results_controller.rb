@@ -8,8 +8,13 @@ class ResultsController < ApplicationController
     result = Result.where(dilemma: @dilemma).and(Result.where(user: @user))
     @result = result.last.scenario
 
-   # Check if all players have submitted an answer for the current quandary then run this code for all players simulatneously
+    # How do I count the scenarios?
+    if @dilemma.scenarios.count == (@result_a.count + @result_b.count)
+      html = render_to_string(partial: "players/player_count", formats: [:html])
+      ResultChannel.broadcast_to(@dilemma, html)
+    end
 
+    # This is currently working, kinda
     if @result_a.count > @result_b.count && @result.content == @result_a.first.scenario.content
       @user.score += 1
     elsif @result_b.count > @result_a.count && @result.content == @result_b.first.scenario.content
@@ -19,7 +24,6 @@ class ResultsController < ApplicationController
     @user.save
   end
 
-  
   def new
     @user = current_user
     @dilemma = Dilemma.find(params[:dilemma_id])
