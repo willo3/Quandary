@@ -21,14 +21,14 @@ export default class extends Controller {
 
   #insertPlayerOrGoToDilemma(data) {
     console.log({data})
-    // window.location.replace(data)
+    window.location.replace(data)
 
     if (this.#isValidHttpUrl(data)) {
       console.log("THIS IS A VALID URL")
       window.location.href = data
     } else {
       console.log("this is not a valid url. Continue to insert player")
-      // this.playersTarget.insertAdjacentHTML("beforeend", data)
+      this.playersTarget.insertAdjacentHTML("beforeend", data)
     }
   }
 
