@@ -14,7 +14,7 @@ export default class extends Controller {
         }
       }
     )
-    console.log(`Subscribed to the chatroom with the id ${this.chatroomIdValue}.`)
+    console.log(`Subscribed to the chatroom with the id ${this.resultIdValue}.`)
   }
 }
 
