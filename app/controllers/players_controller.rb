@@ -13,4 +13,7 @@ class PlayersController < ApplicationController
   #     render :index, status: :unprocessable_entity
   #   end
   # end
+
+
+
 end
