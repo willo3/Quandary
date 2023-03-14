@@ -1,5 +1,25 @@
-<div class="container" id="show-in-portrait">
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Hide the logo after 2 seconds
+      setTimeout(function() {
+        $(".logo").fadeOut(1000);
+        $(".menu").fadeIn(2000);
+      }, 2000);
+    });
+  </script>
+</head>
+
+<div class="logo">
+  <%= image_tag "https://res.cloudinary.com/drfmymoki/image/upload/v1678838191/Quandary%20Branding/Quandary_Full_Title_Logo_Shadow_Dark_Halo_Glow_fhqgi3.svg" %>
+</div>
+
+
+<div class="menu" style="display:none;" >
+<div  id="show-in-portrait">
   <h1>ROTATE YOUR DEVICE!</h1>
+<img src="https://res.cloudinary.com/drfmymoki/image/upload/v1678838191/Quandary%20Branding/Quandary_Full_Title_Logo_Shadow_Dark_Halo_Glow_fhqgi3.svg" alt="">
 </div>
 
 <div class="container" id="landscape-only">
@@ -54,4 +74,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

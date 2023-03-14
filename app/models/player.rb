@@ -33,32 +33,31 @@ class Player < ApplicationRecord
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678799364/Quandary%20Avatars/Avatar_Froggo_2_Shout_idovpd.svg',
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678799366/Quandary%20Avatars/Avatar_Froggo_3_Shout_gxws8w.svg',
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678800502/Quandary%20Avatars/Avatar_Shiba_Excite_gtfg9c.svg',
-              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678800502/Quandary%20Avatars/Avatar_Shiba_Love_ncooed.svg',
+              'https://res.cloudinary.com/drfmymoki/image/upload/v1678800502/Quandary%20Avatars/Avatar_Shiba_Love_ncooed.svg',
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678801025/Quandary%20Avatars/Avatar_Imp_Smiley_eurtmo.svg',
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678801026/Quandary%20Avatars/Avatar_Imp_Uwu_ewaj02.svg',
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678801025/Quandary%20Avatars/Avatar_Imp_Super_Happy_lmkn7h.svg',
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678800873/Quandary%20Avatars/Avatar_Imp_Excite_tpqozu.svg',
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678801285/Quandary%20Avatars/Avatar_Imp_Wink_d6bxbz.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678827234/Quandary%20Avatars/Avatar_Octopus_1_Smile_rtmwf1.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678827235/Quandary%20Avatars/Avatar_Octopus_1_Happy_iwns4n.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678827234/Quandary%20Avatars/Avatar_Octopus_1_Excite_scdwoz.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678827235/Quandary%20Avatars/Avatar_Octopus_2_Smile_hsh7p5.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678827235/Quandary%20Avatars/Avatar_Octopus_2_Happy_pyavha.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678827235/Quandary%20Avatars/Avatar_Octopus_2_Excite_s18r4i.svg',
+              'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_1_Smile_bmnk38.svg',
+              'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_1_Happy_q3rpep.svg',
+              'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_1_Excite_ms3c4r.svg',
+              'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_2_Smile_dvo0zc.svg',
+              'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_2_Happy_kzg8yi.svg',
+              'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_2_Excite_alg8ya.svg'
               # WEIRD AVATARS
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678801972/Quandary%20Avatars/Avatar_BatCat_i9owzj.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678801972/Quandary%20Avatars/Avatar_GhostCat_eziln7.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678802691/Quandary%20Avatars/Avatar_CatLollipop_brnnb7.svg',
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678801972/Quandary%20Avatars/Avatar_BatCat_i9owzj.svg',
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678801972/Quandary%20Avatars/Avatar_GhostCat_eziln7.svg',
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678802691/Quandary%20Avatars/Avatar_CatLollipop_brnnb7.svg',
               # FRUIT & VEG AVATARS
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678801972/Quandary%20Avatars/Avatar_Carrot_hgomxt.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678802321/Quandary%20Avatars/Avatar_Aubergine_y6vunb.svg',
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678801972/Quandary%20Avatars/Avatar_Carrot_hgomxt.svg',
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678802321/Quandary%20Avatars/Avatar_Aubergine_y6vunb.svg',
               # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678802321/Quandary%20Avatars/Avatar_Tomato_icb2ek.svg',
               # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678802321/Quandary%20Avatars/Avatar_Onion_c2co50.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678802321/Quandary%20Avatars/Avatar_Dragonfruit_lvhtio.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678803978/Quandary%20Avatars/Avatar_Turnip_snruir.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678803977/Quandary%20Avatars/Avatar_Banana_qsbph9.svg'
-
-              ]
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678802321/Quandary%20Avatars/Avatar_Dragonfruit_lvhtio.svg',
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678803978/Quandary%20Avatars/Avatar_Turnip_snruir.svg',
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678803977/Quandary%20Avatars/Avatar_Banana_qsbph9.svg'
+            ]
   belongs_to :game
   belongs_to :user
 end

@@ -51,13 +51,13 @@ class GamesController < ApplicationController
       "NIGG", "PORN", "PRON", "TITT", "WEED", "ANAL", "BDSM", "BOOB", "BUTT", "CAWK", "CLIT", "CNUT", "COCK", "COON",
       "CRAP", "LICK", "DAGO", "DAMN", "SLAP", "SUCK", "DIKE", "DINK", "DONG", "HUMP", "DUMB", "DYKE", "ECHI", "FAGS",
       "FCUK", "FIST", "FOAH", "FOOK", "FROT", "FUKS", "FUXA", "BANG", "GOOK", "GURO", "HOAR", "HOER", "HOMO", "HORE",
-      "JACK", "BAIT", "JAPP", "JERK", "JISM", "JIZM", "JIZZ", "JUGGS", "KAWK", "KIKE", "KINK", "KNOB", "KOCK", "KUMM",
+      "JACK", "BAIT", "JAPP", "JERK", "JISM", "JIZM", "JIZZ", "JUGS", "KAWK", "KIKE", "KINK", "KNOB", "KOCK", "KUMM",
       "KUMS", "KUNT", "KYKE", "LUST", "MICK", "MILF", "MING", "MOFO", "MUFF", "NAZI", "NIGG", "NOGG", "NUDE", "SACK",
       "GASM", "ORGY", "PAKI", "PANT", "PEDO", "PHUK", "PIMP", "PISS", "POLE", "POOF", "POON", "TANG", "POOP", "PORN",
       "PRIK", "PRIC", "PUBE", "PUSI", "QEEF", "QUIM", "RAPE", "RIMM", "SCAT", "SEKS", "SHAG", "SHIT", "SHIZ", "SLAG",
       "SLUT", "SMEG", "SMUT", "SPAC", "SPIC", "SPIK", "SUCK", "TARD", "TITS", "TITT", "TOSS", "TURD", "TUSH", "TWAT",
       "VAJJ", "VADJ", "WANG", "YAOI", "BANG", "BUMM", "BUTT", "HOOR", "CNVT", "BVTT", "SLVT", "PVSS", "KVMS", "KVMZ",
-      "CVMS", "CVMZ", "LVST"
+      "CVMS", "CVMZ", "LVST", "FAQQ", "FAKK", "BARE"
     ]
     room_code = ""
     loop do
