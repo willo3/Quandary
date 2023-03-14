@@ -14,3 +14,98 @@
 h4 {
   font-family: 'Tilt neon', 'cursive';
 }
+
+h2 {
+  margin-bottom: 16px;
+  font-family: 'Lobster', 'cursive';
+  color: $primary;
+  font-size: 3em;
+  font-weight: 700;
+  text-shadow: 0px 0px 4px white;
+}
+
+.title {
+  font-size: 750%;
+}
+
+.menu-center {
+  display: flex;
+  height: 100vh;
+}
+
+.card {
+  width: 90%;
+  max-width: 400px;
+  background-color:rgba(255,255,255, .7);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card img {
+  max-width: 300px;
+}
+
+.card h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.card input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border-color: rgb(193, 193, 193);
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+
+.image-frame {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+#room-code-card img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.spacer {
+  padding-top: 200px;
+}
+
+.spacer-small {
+  padding-top: 100px;
+}
+
+.find-game-button {
+  width: 100%;
+  font-family: 'Tilt Neon', 'cursive';
+
+  input[type="submit"] {
+    border: 0px;
+    background: transparent;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+}
