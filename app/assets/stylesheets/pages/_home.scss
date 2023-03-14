@@ -5,7 +5,6 @@ html, body {
 
 // The background elements are universal and should appear on all pages, even if covered by content
 body {
-  background-color: red;
   background: linear-gradient(150deg, #ffffff, #9db6c3, #142a3c),
   url('https://res.cloudinary.com/drfmymoki/image/upload/v1678275563/Pattern_1_huvp98.svg');
   background-position-x: center;
@@ -22,8 +21,36 @@ body {
   height: 60vh;
 }
 
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
 .modal-footer img {
   width: 50%;
+  transform: scaleX(-1);
+  position: relative;
+  bottom: -16px;
+  left: -16px;
+}
+
+.modal-close-button {
+  align-self: flex-end;
+  button[type="button"] {
+    border: 0px;
+    background: transparent;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    font-family: $button-font;
+    // font-size: 1.5rem;
+    color: white;
+
+    &:hover {
+      background: transparent;
+    }
+  }
 }
 
 // This is what makes the background responsive to screen size, please don't change it!

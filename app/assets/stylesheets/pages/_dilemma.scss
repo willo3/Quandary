@@ -1,6 +1,5 @@
 .dilemma-section {
   margin: 0;
-  background-color: pink;
   height: 100vh;
   display: flex;
   z-index: 2;
@@ -12,23 +11,15 @@
   background-position: center;
   position:fixed;
   width: 60%;
-  top: 4vh;
+  top: 32px;
   left: 20%;
-  border-radius:  40vh;
+  border-radius:  100px;
   padding: 8px 32px 8px 32px;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, .4);
   z-index: 3;
 
   h2 {
     text-align: center;
-    font-family: 'Lobster', cursive;
-    color: #303F9F;
-  }
-
-  h5 {
-    font-family: 'Golos Text', sans-serif;
-    font-weight: 600;
-    color: #263238;
   }
 }
 
@@ -36,14 +27,14 @@
   background-image: url("BackgroundALT2.svg");
   display: flex;
   position: fixed;
-  bottom: 4vh;
+  bottom: 32px;
   left: 50%;
   aspect-ratio: 1;
   align-items:center;
   justify-content: center;
   border-radius: 50%;
-  font-size: 3em;
-  padding: 2vh;
+  font-size: 3rem;
+  padding: 16px;
   transform: translate(-50%, 0%);
   z-index: 3;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, .4);

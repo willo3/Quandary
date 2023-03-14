@@ -18,23 +18,28 @@
   width: 100%;
   border-radius: 100px;
   margin: 16px 0px;
-  font-family: 'Tilt Neon', 'cursive';
-  font-size: 1.5em;
+  font-family: $button-font;
+  // font-size: 1.5rem;
   border: 0px;
+}
+
+.modal-content {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, .8);
 }
 
 .room-code {
   font-weight:bold!important;
   font-size: 500%!important;
-  margin-bottom:20px!important;
+  margin-bottom:16px!important;
   color:inherit!important;
 }
 
 .current-user-name {
   font-weight:bold!important;
   font-size: 200%!important;
-  margin-top:10px!important;
-  margin-bottom:20px!important;
+  margin-top:16px!important;
+  margin-bottom:16px!important;
   color:inherit!important;
 }
 
@@ -56,6 +61,7 @@
   margin: none;
 }
 
+
 .team-boxed .item img {
   background-color: rgba(255,255,255,0.60);
   max-width: 120px;
@@ -66,9 +72,10 @@
 
 .team-boxed .item .name {
   font-weight:bold;
-  margin-top:10px;
-  margin-bottom:20px;
+  margin-top:16px;
+  margin-bottom:16px;
   color: white;
+  font-size: 1em;
   text-shadow:
       0.07em 0 black,
       0 0.07em black,
