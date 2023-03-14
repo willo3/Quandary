@@ -9,10 +9,13 @@
   top: 0;
   text-decoration: none;
   padding: 16px;
+  transition: .2s;
+  transition-timing-function: ease-out;
 
-  h1 {
+  h6 {
     text-align: center;
-    font-family: 'Lobster Two', cursive;
+    font-size: 4em;
+    font-family: 'Tilt Neon', cursive;
     font-weight: 700;
   }
 
@@ -30,31 +33,33 @@
 }
 
 .scenario-card:hover {
+  transition: .2s;
+  transition-timing-function: ease-in;
+
   &.scenario-left {
-    background-color: #B0BEC5;
     z-index: 2;
-    width: 70%;
     padding: 32px;
-    box-shadow:0 4vh 0 0 #263238 inset,
-       0 -4vh 0 0 #263238 inset,
-       -4vh 0 0 0 #263238 inset,
-       4vh 0 0 0 #263238 inset;
-    h1 {
-      color: #263238;
+    background-image: url('BackgroundALT4.svg');
+    box-shadow:0 12px 0 0 yellow inset,
+       0 -12px 0 0 yellow inset,
+       -12px 0 0 0 yellow inset,
+       12px 0 0 0 yellow inset;
+    h6 {
+      font-size: 5em;
     }
   }
 
   &.scenario-right {
-    background-color: #263238;
     z-index: 2;
-    width: 70%;
     padding: 32px;
-    box-shadow:0 4vh 0 0 #B0BEC5 inset,
-       0 -4vh 0 0 #B0BEC5 inset,
-       -4vh 0 0 0 #B0BEC5 inset,
-       4vh 0 0 0 #B0BEC5 inset;
-    h1 {
-      color: #B0BEC5;
+    background-image: url('BackgroundALT3.svg');
+    box-shadow:0 -12px 0 0 purple inset,
+       0 12px 0 0 purple inset,
+       -12px 0 0 0 purple inset,
+       12px 0 0 0 purple inset;
+    h6 {
+      color: purple;
+      font-size: 5em;
     }
   }
 }

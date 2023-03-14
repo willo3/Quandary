@@ -6,11 +6,11 @@
   </div>
 
   <%= link_to  new_game_dilemma_scenario_result_path(@game, @dilemma, @dilemma.scenarios.first),  class: "scenario-card scenario-left" do %>
-    <h1><%= @dilemma.scenarios.first.content %></h1>
+    <h6><%= @dilemma.scenarios.first.content %></h6>
   <% end %>
 
   <%= link_to  new_game_dilemma_scenario_result_path(@game, @dilemma, @dilemma.scenarios.second), class: "scenario-card scenario-right" do %>
-    <h1><%= @dilemma.scenarios.second.content %></h1>
+    <h6><%= @dilemma.scenarios.second.content %></h6>
   <% end %>
 
   <div class="timer">
