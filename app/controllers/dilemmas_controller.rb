@@ -8,6 +8,16 @@ class DilemmasController < ApplicationController
     @dilemma = Dilemma.find(params[:id])
     @dilemmas = @game.dilemmas
     # @dilemma.game = @game
+
+    puts "GAMEID"
+    puts @game.id
+
+    if @game.user == current_user
+      GameChannel.broadcast_to(
+        @game,
+        game_dilemma_url(@game)
+      )
+    end
   end
 
   def create
