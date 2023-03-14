@@ -15,8 +15,8 @@
         <div class="avatars-grid justify-content-around col-sm-8 item" data-game-subscription-target="players">
           <% @game.players.each do |player| %>
             <% unless player.user.id == current_user.id %>
-             <%= render "players/player", player: player %>
-             <% end %>
+            <%= render "players/player", player: player %>
+            <% end %>
           <% end %>
           <%# @game.players.each do |player|%>
             <%# unless player.user.id == current_user.id %>

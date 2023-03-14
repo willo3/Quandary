@@ -1,10 +1,10 @@
 class GameChannel < ApplicationCable::Channel
-  @counter = 1
+  # @counter = 1
 
   def subscribed
     game = Game.find(params[:id])
     stream_for game
-    @counter += 1
+    # @counter += 1
   end
 
   def connections_info
