@@ -1,40 +1,56 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: transparent;
-  vertical-align: middle !important;
+  padding: 16px 4px 16px 4px;
 }
-
-
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 20%;
+.navbar-lewagon .navbar-brand {
+  padding: 0px;
+  margin: 0px;
+
+  img {
+    width: 20%;
+  }
 }
 
 .navbar-lewagon p {
   font-weight:bold !important;
-  margin-top:10px !important;
-  margin-bottom:20px !important;
   color: white !important;
+  margin: 0px;
+  padding: 0px;
   text-shadow:
       0.07em 0 black,
       0 0.07em black,
       -0.07em 0 black,
       0 -0.07em black;
+  padding-right: 16px;
 }
 
 #navbarDropdown {
-  width: 60%;
+  float: right;
+  width: 100%;
   background-color: rgba(255,255,255,0.60);
-  max-width: 120px;
+  max-width: 72px;
   border-color: #313437;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   border-radius: 50px !important;
   font-size: 20px !important;
   font-weight: bold !important;
   text-align: center !important;
-  margin:none;
+  margin: 0px;
+  padding:0px;
+}
+
+#username {
+  display: flex;
+  align-items: center;
+  font-family: 'Tilt Neon', cursive;
+}
+
+a {
+  font-family: 'Tilt Neon', cursive;
 }

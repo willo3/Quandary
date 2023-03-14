@@ -1,47 +1,34 @@
 <div class="container" id="show-in-portrait">
-<h1>ROTATE YOUR DEVICE!</h1>
+  <h1>ROTATE YOUR DEVICE!</h1>
 </div>
 
 <div class="container" id="landscape-only">
   <h1>Welcome Stranger!</h1>
   <p>Actually, do we know each other?</p>
 
-  <div class="row center">
-    <div class="col-sm-4 text-center">
-      <div class="card">
-        <%= button_to games_path, method: :post do %>
-          <div class="card-body">
-            <h4><%= "CREATE A GAME" %></h4>
-          </div>
-        <% end %>
+  <div id="home-grid">
+
+    <%= button_to games_path, method: :post, class:"menu-button-to" do %>
+      <div class="menu-card" id="create-game">
+        <h4><%= "CREATE A GAME" %></h4>
+      </div>
+    <% end %>
+
+    <%= link_to games_path, class:"menu-link-to" do %>
+      <div class="menu-card" id="join-game">
+        <h4><%= "JOIN GAME" %></h4>
+      </div>
+    <% end %>
+
+    <div type="button" id="how-to-play-whole" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      <div class="menu-card" id="how-to-play">
+        <h4><%= "HOW TO PLAY" %></h4>
       </div>
     </div>
-    <div class="col-sm-4 text-center">
-      <div class="card">
-        <%= link_to games_path do %>
-          <div class="card-body">
-          <h4><%= "JOIN A GAME" %></h4>
-        </div>
-        <% end %>
-      </div>
-    </div>
-    <%# card commented out for modal button creation %>
 
-    <%# <div class="col-sm-4 text-center"> %>
-      <%# <div class="card"> %>
-          <%# <%= link_to new_game_path do %>
-            <%# <div class="card-body">
-            <h4><%= "HOW TO PLAY"</h4>
-            </div>
-          <% end %>
-      <%# </div>
-    </div> %>
+  </div>
 
-    <!-- Modal code cristian-->
-    <button type="button" class="col-sm-4 text-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-      <h4> HOW TO PLAY </h4>
-    </button>
-
+    <%# HOW TO PLAY MODAL: %>
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -66,4 +53,4 @@
       </div>
     </div>
   </div>
-<%# Modal code cristian end %>
+</div>
