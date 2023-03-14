@@ -11,6 +11,7 @@ class ResultsController < ApplicationController
     @players_total = Game.find(params[:game_id]).player_count
 
     if @players_total == @results_total
+      # This isn't working for now - Jake
       # this is meant to run to calculate scores only when the player number and answer numer is the same
       # if @result_a.count > @result_b.count && @result.content == @result_a.first.scenario.content
       #   @user.score += 1
