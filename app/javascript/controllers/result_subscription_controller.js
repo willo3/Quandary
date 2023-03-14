@@ -14,9 +14,9 @@
             this.playersTarget.insertAdjacentHTML("beforeend", data)
           }
         }
-      )
-      console.log(`Subscribed to the chatroom with the id ${this.chatroomIdValue}.`)
-    }
+      }
+    )
+    console.log(`Subscribed to the chatroom with the id ${this.resultIdValue}.`)
   }
 
 
