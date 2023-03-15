@@ -42,3 +42,4 @@ class ResultsController < ApplicationController
       redirect_to game_dilemma_path(@game, @dilemma)
     end
   end
+end
