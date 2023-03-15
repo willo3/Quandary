@@ -1,19 +1,25 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: transparent;
-  padding: 16px 4px 16px 4px;
+  height: 94px;
+  max-height: 94px;
+  padding: 8px 8px 8px 8px;
+
+  .container-fluid {
+    padding: 0px;
+    margin: 0px;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand {
+.navbar-brand {
   padding: 0px;
   margin: 0px;
 
   img {
-    width: 20%;
+    height: 78px;
   }
 }
 
@@ -33,9 +39,11 @@
 
 #navbarDropdown {
   float: right;
-  width: 100%;
   background-color: rgba(255,255,255,0.60);
-  max-width: 72px;
+  min-height: 48px;
+  min-width: 48px;
+  aspect-ratio: 1;
+  max-height: 7vh;
   border-color: #313437;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   border-radius: 50px !important;

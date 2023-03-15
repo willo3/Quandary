@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import HomeFadeController from "./home_fade_controller"
+application.register("home-fade", HomeFadeController)
+
 import GameSubscriptionController from "./game_subscription_controller"
 application.register("game-subscription", GameSubscriptionController)
 
