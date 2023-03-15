@@ -20,8 +20,8 @@ export default class extends Controller {
   }
 
   #insertPlayerOrGoToDilemma(data) {
-    console.log({data})
-    window.location.replace(data)
+    // console.log({data})
+    // window.location.replace(data)
 
     if (this.#isValidHttpUrl(data)) {
       console.log("THIS IS A VALID URL")

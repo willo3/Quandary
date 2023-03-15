@@ -27,19 +27,18 @@ class ResultsController < ApplicationController
   end
 
   def new
-      @user = current_user
-      @dilemma = Dilemma.find(params[:dilemma_id])
-      @scenario = Scenario.find(params[:scenario_id])
-      @game = Game.find(params[:game_id])
-      @result = Result.new(user: @user, dilemma: @dilemma, scenario: @scenario)
-      if @result.save!
-        DilemmaChannel.broadcast_to(
-          @dilemma,
-          "#{current_user.name} chose #{@scenario.content}"
-        )
-        redirect_to game_dilemma_results_path(@game, @dilemma)
-      else
-        redirect_to game_dilemma_path(@game, @dilemma)
-      end
+    @user = current_user
+    @dilemma = Dilemma.find(params[:dilemma_id])
+    @scenario = Scenario.find(params[:scenario_id])
+    @game = Game.find(params[:game_id])
+    @result = Result.new(user: @user, dilemma: @dilemma, scenario: @scenario)
+    if @result.save!
+      DilemmaChannel.broadcast_to(
+        @dilemma,
+        "#{current_user.name} chose: #{@scenario.content}"
+      )
+      redirect_to game_dilemma_results_path(@game, @dilemma)
+    else
+      redirect_to game_dilemma_path(@game, @dilemma)
     end
   end

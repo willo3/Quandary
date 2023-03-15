@@ -11,10 +11,36 @@
         {
           received: data => {
             console.log("Received data:", data)
-            this.playersTarget.insertAdjacentHTML("beforeend", data)
+            this.#insertPlayerAnswerOrGoToDilemma(data)
           }
         }
       )
       console.log(`Subscribed to the dilemma with the id ${this.dilemmaIdValue}`)
     }
+
+    disconnect() {
+      console.log("disconnecting!")
+      this.channel.unsubscribe()
+    }
+
+    #insertPlayerAnswerOrGoToDilemma(data) {
+      if (this.#isValidHttpUrl(data)) {
+        console.log("THIS IS A VALID URL")
+        window.location.href = data
+      } else {
+        console.log("this is a player answer")
+        this.playersTarget.insertAdjacentHTML("beforeend", data)
+      }
+    }
+
+    #isValidHttpUrl(string) {
+      let url;
+      try {
+        url = new URL(string);
+      } catch (_) {
+        return false;
+      }
+      return url.protocol === "http:" || url.protocol === "https:";
+    }
+
   }
