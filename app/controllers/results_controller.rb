@@ -12,27 +12,25 @@ class ResultsController < ApplicationController
     @game = @dilemma.game
 
 
-    if @players_total == @results_total
-      if @result_a.count > @result_b.count && @scenario.content == @result_a.first.scenario.content
-        @user.score += 1
-      elsif @result_b.count > @result_a.count && @scenario.content == @result_b.first.scenario.content
-        @user.score += 1
+      if @players_total == @results_total
+        if @result_a.count > @result_b.count && @scenario.content == @result_a.first.scenario.content
+          @user.score += 1
+        elsif @result_b.count > @result_a.count && @scenario.content == @result_b.first.scenario.content
+          @user.score += 1
+        end
+        @user.score
+        @user.save
       end
-      @user.score
-      @user.save
-    end
 
-    # @button = false
-    # if @players_total == @results_total
-      # @button = true
-    DilemmaChannel.broadcast_to(
-      @dilemma,
-      { players: @players_total, results: @results_total }
-    )
-    # end
-    # if @players_total == @results_total
-    # end
-
+        # creating a message and broadcasting
+    message = {
+      players: @players_total,
+      results: @results_total,
+      result_a: @result_a.count,
+      result_b: @result_b.count,
+      score: @user.score
+    }
+    DilemmaChannel.broadcast_to(@dilemma, message)
   end
 
 
