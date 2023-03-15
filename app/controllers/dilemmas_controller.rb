@@ -6,7 +6,10 @@ class DilemmasController < ApplicationController
     # @game.dilemmas = @dilemmas
     @game = Game.find(params[:game_id])
     @dilemma = Dilemma.find(params[:id])
+
     @dilemmas = @game.dilemmas
+    # TEMPORARY
+    @old_dilemma = Dilemma.find(@dilemma.id - 1)
     # @dilemma.game = @game
 
     puts "GAMEID"
@@ -17,7 +20,13 @@ class DilemmasController < ApplicationController
         @game,
         game_dilemma_url(@game)
       )
+
+      DilemmaChannel.broadcast_to(
+        @old_dilemma,
+        game_dilemma_url(@game, @dilemma)
+      )
     end
+
   end
 
   def create

@@ -34,7 +34,7 @@ class ResultsController < ApplicationController
     if @result.save!
       DilemmaChannel.broadcast_to(
         @dilemma,
-        "#{current_user.name} chose #{@scenario.content}"
+        "#{current_user.name} chose: #{@scenario.content}"
       )
       redirect_to game_dilemma_results_path(@game, @dilemma)
     else
