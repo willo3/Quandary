@@ -9,6 +9,7 @@ class ResultsController < ApplicationController
     @scenario = result.last.scenario
     @results_total = @result_a.count + @result_b.count
     @players_total = Game.find(params[:game_id]).player_count
+    @game = @dilemma.game
 
     if @players_total == @results_total
       # This isn't working for now - Jake
