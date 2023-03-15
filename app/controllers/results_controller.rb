@@ -32,7 +32,7 @@ class ResultsController < ApplicationController
     # end
     # if @players_total == @results_total
     # end
-
+# comment to make GIT WORK!
   end
 
 
