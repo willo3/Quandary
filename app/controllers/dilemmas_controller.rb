@@ -35,7 +35,7 @@ class DilemmasController < ApplicationController
     @game = Game.find(params[:game_id])
     @scenarios = Scenario.all.to_a.shuffle
 
-    @dilemmas = (1..10).map {
+    @dilemmas = (1..5).map {
       @dilemma = Dilemma.new
       @dilemma.game = @game
       @dilemma.save
@@ -46,11 +46,3 @@ class DilemmasController < ApplicationController
     redirect_to game_dilemma_path(@game, @dilemmas.first)
   end
 end
-
-
-
-
-
-
-# ? if 1st dilemma , then load dilemma as Dilemma.find(params:dilemma_id)   /    else load dilemma as Dilemma.find(params:dilemma_id +1
-# on results show page, clicking next, the next button links to current dilemma +1
