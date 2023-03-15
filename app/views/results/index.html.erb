@@ -3,25 +3,27 @@
 
 <%# we inject the html stuff here %>
   <div >
-      <div class="waiting-for-players">
-        <p>You chose <%= @scenario.content %></p>
+    <div class="waiting-for-players">
+      <p>You chose <%= @scenario.content %></p>
 
-        <hr>
-        <h2>Other people chose</h2>
-        <ul data-result-subscription-target="players">
-          <% @dilemma.other_results(current_user).each do |result| %>
-            <li><%= result.user.name %> chose <%= result.scenario.content %></li>
+      <hr>
+      <h2>Other people chose</h2>
+      <ul data-result-subscription-target="players">
+        <% @dilemma.other_results(current_user).each do |result| %>
+          <li><%= result.user.name %> chose <%= result.scenario.content %></li>
+        <% end %>
+      </ul>
+
+    </div>
+    <div class="invisible" <% "d-none" unless @game.user == current_user %>" data-result-subscription-target="button">
+      <% if @game.user == current_user %>
+        <% if @next_dilemma != nil %>
+          <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do %>
+            <%= "NEXT DILEMMA" %>
           <% end %>
-        </ul>
-
-      </div>
-  <% if @game.user == current_user %>
-    <% if @next_dilemma != nil %>
-      <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do %>
-        <%= "NEXT DILEMMA" %>
+        <% end %>
       <% end %>
-    <% end %>
-  <% end %>
+    </div>
   </div>
 
 <div class="spacer"></div>

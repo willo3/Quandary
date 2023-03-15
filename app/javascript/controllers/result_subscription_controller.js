@@ -3,7 +3,7 @@
 
   export default class extends Controller {
     static values = { dilemmaId: Number }
-    static targets = ["players"]
+    static targets = ["players", "button"]
 
     connect() {
       this.channel = createConsumer().subscriptions.create(
@@ -24,12 +24,19 @@
     }
 
     #insertPlayerAnswerOrGoToDilemma(data) {
+      console.log("ANY MESSAGE")
       if (this.#isValidHttpUrl(data)) {
         console.log("THIS IS A VALID URL")
         window.location.href = data
       } else {
+        let sum = data.results >= data.players
+        console.log(sum)
+        if (sum) {
+          this.buttonTarget.classList.remove("invisible")
+        }
+
         console.log("this is a player answer")
-        this.playersTarget.insertAdjacentHTML("beforeend", data)
+        this.playersTarget.insertAdjacentHTML("beforeend", data.message)
       }
     }
 
