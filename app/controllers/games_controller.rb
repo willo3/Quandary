@@ -19,7 +19,7 @@ class GamesController < ApplicationController
           render :index, status: :unprocessable_entity
         end
       else
-        # COmment out the broadcast if the avatar appears twice
+        # Comment out the broadcast if the avatar appears twice
         GameChannel.broadcast_to(
           @game,
           render_to_string(partial: "players/player", locals: {player: @player})
