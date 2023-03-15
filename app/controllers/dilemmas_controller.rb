@@ -9,7 +9,8 @@ class DilemmasController < ApplicationController
 
     @dilemmas = @game.dilemmas
     # TEMPORARY
-    @old_dilemma = Dilemma.find(@dilemma.id - 1)
+    @old_dilemma = Dilemma.where("id < ?", @dilemma.id).order(id: :desc).first
+    # Dilemma.find(@dilemma.id - 1)
     # @dilemma.game = @game
 
     puts "GAMEID"
