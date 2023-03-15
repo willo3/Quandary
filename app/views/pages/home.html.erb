@@ -1,16 +1,3 @@
-<head>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      // Hide the logo after 2 seconds
-      setTimeout(function() {
-        $(".logo").fadeOut(1000);
-        $(".menu").fadeIn(2000);
-      }, 2000);
-    });
-  </script>
-</head>
-
 <div class="logo">
   <%= image_tag "https://res.cloudinary.com/drfmymoki/image/upload/v1678838191/Quandary%20Branding/Quandary_Full_Title_Logo_Shadow_Dark_Halo_Glow_fhqgi3.svg" %>
 </div>
@@ -19,11 +6,11 @@
 <div class="menu" style="display:none;" >
   <div  id="show-in-portrait">
     <h1>ROTATE YOUR DEVICE!</h1>
-  <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1678838191/Quandary%20Branding/Quandary_Full_Title_Logo_Shadow_Dark_Halo_Glow_fhqgi3.svg" alt="">
+    <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1678838191/Quandary%20Branding/Quandary_Full_Title_Logo_Shadow_Dark_Halo_Glow_fhqgi3.svg" alt="">
   </div>
 
   <div class="container" id="landscape-only">
-    <h2>Welcome to Quandary! Let's dive right in!</h2 >
+    <h2>Welcome to Quandary! Let's dive right in!</h2>
 
     <div id="home-grid">
 
@@ -44,35 +31,44 @@
           <h4><%= "HOW TO PLAY" %></h4>
         </div>
       </div>
-
     </div>
+  </div>
+</div>
 
-      <%# HOW TO PLAY MODAL: %>
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 id="staticBackdropLabel">How to play Quandary?</h3>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              To play Quandary, you’ll need three or more players. Once you have your group,
-              all players will be presented with a quandary that has two scenarios. After the start,
-              players will choose between the two scenarios. Once everyone has answered,
-              the game continues until the end. At the end of each round, you will be matched with
-              other players who chose the same scenario as you. If your choice matches the majority,
-              you will be considered the winner. Otherwise, you will lose. The game consists of 10
-              rounds of quandaries, with two scenarios per round.
-            </div>
-            <div class="modal-footer">
-            <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1678363691/Quandary%20Avatars/Avatar_Cat_1_Excited_hyi7m6.svg">
-              <div class="quandary-button secondary-button modal-close-button">
-                <button type="button" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
+<%# HOW TO PLAY MODAL: %>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="staticBackdropLabel">How to play Quandary?</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        To play Quandary, you’ll need three or more players. Once you have your group,
+        all players will be presented with a quandary that has two scenarios. After the start,
+        players will choose between the two scenarios. Once everyone has answered,
+        the game continues until the end. At the end of each round, you will be matched with
+        other players who chose the same scenario as you. If your choice matches the majority,
+        you will be considered the winner. Otherwise, you will lose. The game consists of 10
+        rounds of quandaries, with two scenarios per round.
+      </div>
+      <div class="modal-footer">
+        <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1678363691/Quandary%20Avatars/Avatar_Cat_1_Excited_hyi7m6.svg">
+        <div class="quandary-button secondary-button modal-close-button">
+          <button type="button" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Hide the logo after 2 seconds
+    setTimeout(function() {
+      $(".logo").fadeOut(1000);
+      $(".menu").fadeIn(2000);
+    }, 2000);
+  });
+</script>
