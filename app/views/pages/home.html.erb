@@ -1,61 +1,120 @@
-<div class="logo">
-  <%= image_tag "https://res.cloudinary.com/drfmymoki/image/upload/v1678838191/Quandary%20Branding/Quandary_Full_Title_Logo_Shadow_Dark_Halo_Glow_fhqgi3.svg" %>
-</div>
+<% if user_signed_in? %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<% else %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="display:none">
+<% end %>
+  <div class="container-fluid">
+    <%= link_to "/", class: "navbar-brand" do %>
+      <%= image_tag "https://res.cloudinary.com/drfmymoki/image/upload/v1678621465/Quandary%20Avatars/Q_Logo_Shadow_o6wurs.svg" %>
+    <% end %>
 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div class="menu" style="display:none;" >
-  <div  id="show-in-portrait">
-    <h1>ROTATE YOUR DEVICE!</h1>
-    <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1678838191/Quandary%20Branding/Quandary_Full_Title_Logo_Shadow_Dark_Halo_Glow_fhqgi3.svg" alt="">
-  </div>
-
-  <div class="container" id="landscape-only">
-    <h2>Welcome to Quandary! Let's dive right in!</h2>
-
-    <div id="home-grid">
-
-      <%= button_to games_path, method: :post, class:"menu-button-to" do %>
-        <div class="menu-card" id="create-game">
-          <h4><%= "CREATE A GAME" %></h4>
-        </div>
-      <% end %>
-
-      <%= link_to games_path, class:"menu-link-to" do %>
-        <div class="menu-card" id="join-game">
-          <h4><%= "JOIN GAME" %></h4>
-        </div>
-      <% end %>
-
-      <div type="button" id="how-to-play-whole" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        <div class="menu-card" id="how-to-play">
-          <h4><%= "HOW TO PLAY" %></h4>
-        </div>
+    <div class="navbar-right-control">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <% if user_signed_in? %>
+            <div id="username">
+              <li class="nav-item active">
+                <p class="name"><%= current_user.name %> </p>
+              </li>
+            </div>
+            <li class="nav-item dropdown">
+              <%= image_tag "https://res.cloudinary.com/drfmymoki/image/upload/v1678354431/Quandary%20Avatars/Avatar_Cat_1_jqehqo.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" id="navbar-dropdown-menu" aria-labelledby="navbarDropdown">
+                <%# <%= link_to "Action", "#", class: "dropdown-item" %>
+                <%# <%= link_to "Another action", "#", class: "dropdown-item" %>
+                <%= link_to "LOG OUT", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+            <div class="nav-text">
+              <li class="nav-item">
+                <%= link_to "LOG IN", new_user_session_path, class: "nav-link quandary-button tertiary-button" %>
+              </li>
+            </div>
+            <div class="nav-text">
+              <li class="nav-item">
+                <%= link_to "SIGN UP",  new_user_registration_path, class: "nav-link quandary-button primary-button" %>
+              </li>
+            </div>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
 </div>
 
-<%# HOW TO PLAY MODAL: %>
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 id="staticBackdropLabel">How to play Quandary?</h3>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<% if user_signed_in? %>
+<div class="logo" style="display:none">
+<% else %>
+<div class="logo">
+<% end %>
+  <%= image_tag "https://res.cloudinary.com/drfmymoki/image/upload/v1678838191/Quandary%20Branding/Quandary_Full_Title_Logo_Shadow_Dark_Halo_Glow_fhqgi3.svg" %>
+</div>
+
+<div id="main-container">
+
+  <% if user_signed_in? %>
+  <div class="menu">
+  <% else %>
+  <div class="menu" style="display:none">
+  <% end %>
+    <div  id="show-in-portrait">
+      <h1>ROTATE YOUR DEVICE!</h1>
+      <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1678838191/Quandary%20Branding/Quandary_Full_Title_Logo_Shadow_Dark_Halo_Glow_fhqgi3.svg" alt="">
+    </div>
+
+    <div class="container" id="landscape-only">
+      <h2>Welcome to Quandary! Let's dive right in!</h2>
+
+      <div id="home-grid">
+
+        <%= button_to games_path, method: :post, class:"menu-button-to" do %>
+          <div class="menu-card" id="create-game">
+            <h4><%= "CREATE A GAME" %></h4>
+          </div>
+        <% end %>
+
+        <%= link_to games_path, class:"menu-link-to" do %>
+          <div class="menu-card" id="join-game">
+            <h4><%= "JOIN GAME" %></h4>
+          </div>
+        <% end %>
+
+        <div type="button" id="how-to-play-whole" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <div class="menu-card" id="how-to-play">
+            <h4><%= "HOW TO PLAY" %></h4>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        To play Quandary, you’ll need three or more players. Once you have your group,
-        all players will be presented with a quandary that has two scenarios. After the start,
-        players will choose between the two scenarios. Once everyone has answered,
-        the game continues until the end. At the end of each round, you will be matched with
-        other players who chose the same scenario as you. If your choice matches the majority,
-        you will be considered the winner. Otherwise, you will lose. The game consists of 10
-        rounds of quandaries, with two scenarios per round.
-      </div>
-      <div class="modal-footer">
-        <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1678363691/Quandary%20Avatars/Avatar_Cat_1_Excited_hyi7m6.svg">
-        <div class="quandary-button secondary-button modal-close-button">
-          <button type="button" data-bs-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+  <%# HOW TO PLAY MODAL: %>
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 id="staticBackdropLabel">How to play Quandary?</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          To play Quandary, you’ll need three or more players. Once you have your group,
+          all players will be presented with a quandary that has two scenarios. After the start,
+          players will choose between the two scenarios. Once everyone has answered,
+          the game continues until the end. At the end of each round, you will be matched with
+          other players who chose the same scenario as you. If your choice matches the majority,
+          you will be considered the winner. Otherwise, you will lose. The game consists of 10
+          rounds of quandaries, with two scenarios per round.
+        </div>
+        <div class="modal-footer">
+          <img src="https://res.cloudinary.com/drfmymoki/image/upload/v1678363691/Quandary%20Avatars/Avatar_Cat_1_Excited_hyi7m6.svg">
+          <div class="quandary-button secondary-button modal-close-button">
+            <button type="button" data-bs-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>
@@ -64,11 +123,21 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-  $(document).ready(function() {
-    // Hide the logo after 2 seconds
-    setTimeout(function() {
-      $(".logo").fadeOut(1000);
-      $(".menu").fadeIn(2000);
-    }, 2000);
-  });
+  const user = $("#username")
+  console.log(user)
+  console.log(user.length)
+
+  if (user.length == 0) {
+    console.log("Guest")
+    $(document).ready(function() {
+      // Hide the logo after 2 seconds
+      setTimeout(function() {
+        $(".logo").fadeOut(1000);
+        $(".menu").fadeIn(2000);
+        $(".navbar").fadeIn(2000);
+      }, 2000);
+    });
+  } else {
+    console.log("Logged in")
+  }
 </script>

@@ -11,6 +11,13 @@
 @import "components/index";
 @import "pages/index";
 
+#main-container {
+  width: 80%;
+  margin: 16px auto;
+  margin-top: 16px;
+  height: calc(100vh - 126px);
+}
+
 p {
   font-family: $body-font;
 }
@@ -97,7 +104,6 @@ h1 {
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
   }
 }
-
 
 .image-frame {
   position: absolute;
@@ -233,5 +239,56 @@ h1 {
 
   .quandary-button {
     width: 100%;
+  }
+}
+
+// ===============
+
+@media (max-width: 278px) {
+  body {
+    background-size: 800%;
+    background-position-y: 20%;
+  }
+}
+@media (min-width: 279px) and (max-width: 300px) {
+  body {
+    background-size: 600%;
+    background-position-y: 20%;
+  }
+}
+@media (min-width: 301px) and (max-width: 400px) {
+  body {
+    background-size: 650%;
+    background-position-y: 40%;
+  }
+}
+@media (min-width: 401px) and (max-width: 600px) {
+  body {
+    background-size: 475%;
+    background-position-y: 40%;
+  }
+}
+@media (min-width: 601px) and (max-width: 711px) {
+  body {
+    background-size: 350%;
+    background-position-y: 30%;
+  }
+}
+@media (min-width: 712px) and (max-width: 768px) {
+  body {
+    background-size: 300%;
+    background-position-y: 30%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1000px){
+  body {
+    background-size: 250%;
+    background-position-y: 30%;
+  }
+}
+@media (min-width: 1001px) {
+  body {
+    background-size: 200%;
+    background-position-y: 30%;
   }
 }
