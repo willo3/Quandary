@@ -11,20 +11,30 @@ class ResultsController < ApplicationController
     @players_total = Game.find(params[:game_id]).player_count
     @game = @dilemma.game
 
-    if @players_total == @results_total
-      # This isn't working for now - Jake
-  #     # need to add some logic to make this work even if only one answer has been chosen by everyone
 
+    if @players_total == @results_total
       if @result_a.count > @result_b.count && @scenario.content == @result_a.first.scenario.content
         @user.score += 1
-
       elsif @result_b.count > @result_a.count && @scenario.content == @result_b.first.scenario.content
         @user.score += 1
       end
       @user.score
       @user.save
     end
+
+    # @button = false
+    # if @players_total == @results_total
+      # @button = true
+        DilemmaChannel.broadcast_to(
+          @dilemma,
+          { players: @players_total, results: @results_total }
+        )
+    # end
+    # if @players_total == @results_total
+    # end
+
   end
+
 
   def new
     @user = current_user
@@ -32,10 +42,12 @@ class ResultsController < ApplicationController
     @scenario = Scenario.find(params[:scenario_id])
     @game = Game.find(params[:game_id])
     @result = Result.new(user: @user, dilemma: @dilemma, scenario: @scenario)
+
     if @result.save!
       DilemmaChannel.broadcast_to(
         @dilemma,
-        "#{current_user.name} chose: #{@scenario.content}"
+        # "#{current_user.name} chose: #{@scenario.content}"
+        { message:"#{current_user.name} chose: #{@scenario.content}" }
       )
       redirect_to game_dilemma_results_path(@game, @dilemma)
     else

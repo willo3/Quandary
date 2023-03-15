@@ -27,6 +27,7 @@ class DilemmasController < ApplicationController
       )
     end
 
+
   end
 
   def create
