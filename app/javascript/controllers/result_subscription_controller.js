@@ -40,7 +40,7 @@ export default class extends Controller {
 
       document.getElementById('resulta').innerHTML='Result A Count:'+ data.result_a
       document.getElementById('resultb').innerHTML='Result B Count:'+ data.result_b
-      document.getElementById('score').innerHTML='Your Score:'+ data.result_b
+      document.getElementById('score').innerHTML='Your Score:'+ data.score
 
     }
   }

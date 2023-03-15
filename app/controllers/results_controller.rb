@@ -25,14 +25,12 @@ class ResultsController < ApplicationController
     # creating a message and broadcasting
     message = {
       players: @players_total,
-      results: @results_total,
       result_a: @result_a.count,
       result_b: @result_b.count,
       score: @user.score
     }
     DilemmaChannel.broadcast_to(@dilemma, message)
   end
-
 
   def new
     @user = current_user
