@@ -25,10 +25,10 @@ class ResultsController < ApplicationController
     # @button = false
     # if @players_total == @results_total
       # @button = true
-        DilemmaChannel.broadcast_to(
-          @dilemma,
-          { players: @players_total, results: @results_total }
-        )
+    DilemmaChannel.broadcast_to(
+      @dilemma,
+      { players: @players_total, results: @results_total }
+    )
     # end
     # if @players_total == @results_total
     # end
