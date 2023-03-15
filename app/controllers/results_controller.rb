@@ -12,17 +12,17 @@ class ResultsController < ApplicationController
     @game = @dilemma.game
 
 
-      if @players_total == @results_total
-        if @result_a.count > @result_b.count && @scenario.content == @result_a.first.scenario.content
-          @user.score += 1
-        elsif @result_b.count > @result_a.count && @scenario.content == @result_b.first.scenario.content
-          @user.score += 1
-        end
-        @user.score
-        @user.save
+    if @players_total == @results_total
+      if @result_a.count > @result_b.count && @scenario.content == @result_a.first.scenario.content
+        @user.score += 1
+      elsif @result_b.count > @result_a.count && @scenario.content == @result_b.first.scenario.content
+        @user.score += 1
       end
+      @user.score
+      @user.save
+    end
 
-        # creating a message and broadcasting
+    # creating a message and broadcasting
     message = {
       players: @players_total,
       results: @results_total,
