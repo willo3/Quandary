@@ -13,8 +13,9 @@
 
 #main-container {
   width: 80%;
-  margin: 0 auto;
+  margin: 16px auto;
   margin-top: 16px;
+  height: calc(100vh - 126px);
 }
 
 p {
