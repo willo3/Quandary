@@ -23,14 +23,14 @@ class ResultsController < ApplicationController
     end
 
     # creating a message and broadcasting
-    # message = {
-    #   players: @players_total,
-    #   result_a: @result_a.count,
-    #   result_b: @result_b.count,
-    #   results: @results_total,
-    #   score: @user.score
-    # }
-    # DilemmaChannel.broadcast_to(@dilemma, message)
+    message = {
+      players: @players_total,
+      result_a: @result_a.count,
+      result_b: @result_b.count,
+      results: @results_total,
+      score: @user.score
+    }
+    DilemmaChannel.broadcast_to(@dilemma, message)
   end
 
   def new

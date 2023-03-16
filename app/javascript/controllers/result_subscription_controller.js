@@ -26,6 +26,13 @@ export default class extends Controller {
     this.channel.unsubscribe()
   }
 
+  let sum = data.results >= data.players
+      console.log(sum)
+      if (sum) {
+        this.buttonTarget.classList.remove("d-none")
+        this.buttonTarget.classList.add("appear")
+      }
+      
   #insertPlayerAnswerOrGoToDilemma(data) {
     console.log("ANY MESSAGE")
     if (this.#isValidHttpUrl(data)) {
@@ -66,12 +73,12 @@ export default class extends Controller {
       //   this.buttonTarget.classList.add("appear")
       // }
 
-      // console.log("this is a player answer")
-      // this.playersTarget.insertAdjacentHTML("beforeend", data.message)
+      console.log("this is a player answer")
+      this.playersTarget.insertAdjacentHTML("beforeend", data.message)
 
-      // document.getElementById('resulta').innerHTML='Result A Count:'+ data.result_a
-      // document.getElementById('resultb').innerHTML='Result B Count:'+ data.result_b
-      // document.getElementById('score').innerHTML='Your Score:'+ data.score
+      document.getElementById('resulta').innerHTML='Result A Count:'+ data.result_a
+      document.getElementById('resultb').innerHTML='Result B Count:'+ data.result_b
+      document.getElementById('score').innerHTML='Your Score:'+ data.score
     }
   }
 
