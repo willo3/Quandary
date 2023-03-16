@@ -7,15 +7,15 @@ class ResultsController < ApplicationController
     @user = current_user
     result = Result.where(dilemma: @dilemma).and(Result.where(user: @user))
     @scenario = result.last.scenario
-    @results_total = @result_a.count + @result_b.count
+    @results_total = @result_a.length + @result_b.length
     @players_total = Game.find(params[:game_id]).player_count
     @game = @dilemma.game
 
 
     if @players_total == @results_total
-      if @result_a.count > @result_b.count && @scenario.content == @result_a.first.scenario.content
+      if @result_a.length > @result_b.length && @scenario.content == @result_a.first.scenario.content
         @user.score += 1
-      elsif @result_b.count > @result_a.count && @scenario.content == @result_b.first.scenario.content
+      elsif @result_b.length > @result_a.length && @scenario.content == @result_b.first.scenario.content
         @user.score += 1
       end
       @user.score
@@ -27,6 +27,7 @@ class ResultsController < ApplicationController
       players: @players_total,
       result_a: @result_a.count,
       result_b: @result_b.count,
+      results: @results_total,
       score: @user.score
     }
     DilemmaChannel.broadcast_to(@dilemma, message)
