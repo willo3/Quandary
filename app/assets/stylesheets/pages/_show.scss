@@ -16,6 +16,8 @@
 
 .change-avatar-button {
   width: 100%;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 .start-game-button {
@@ -28,19 +30,25 @@
 
 .modal-content {
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, .9);
 }
 
 .room-code {
   font-weight:bold!important;
   margin-bottom:16px!important;
-  color:inherit!important;
+  color: inherit!important;
 }
 
 .current-user-name {
   font-weight:bold!important;
   margin-top:16px!important;
   margin-bottom:16px!important;
+  color: white;
+  text-shadow:
+      0.07em 0 black,
+      0 0.07em black,
+      -0.07em 0 black,
+      0 -0.07em black;
 }
 
 .team-boxed {
@@ -102,12 +110,20 @@
     background-size: 800%;
     background-position-y: 20%;
   }
+
+  #lobby-title {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 279px) and (max-width: 300px) {
   body {
     background-size: 600%;
     background-position-y: 20%;
+  }
+
+  #lobby-title {
+    font-size: 1rem;
   }
 }
 
@@ -120,9 +136,64 @@
   #lobby-grid {
     grid-template-columns: 50% 50%;
   }
+
+  .change-avatar-button {
+    font-size: 1rem;
+  }
+
+  .card {
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h4 {
+      font-size: 1.5rem;
+    }
+  }
+
+  #lobby-title {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 401px) and (max-width: 600px) {
+  body {
+    background-size: 475%;
+    background-position-y: 40%;
+  }
+
+  #lobby-grid {
+    grid-template-columns: 40% 60%;
+  }
+
+  .change-avatar-button {
+    font-size: .8rem;
+  }
+
+  .card {
+    h3 {
+      font-size: 1rem;
+    }
+
+    h1 {
+      font-size: 1rem;
+    }
+
+    h4 {
+      font-size: 1rem;
+    }
+  }
+
+  #lobby-title {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
   body {
     background-size: 475%;
     background-position-y: 40%;
@@ -149,19 +220,9 @@
       font-size: 1.5rem;
     }
   }
-}
 
-@media (min-width: 601px) and (max-width: 711px) {
-  body {
-    background-size: 350%;
-    background-position-y: 30%;
-  }
-}
-
-@media (min-width: 712px) and (max-width: 768px) {
-  body {
-    background-size: 300%;
-    background-position-y: 30%;
+  #lobby-title {
+    font-size: 1.25rem;
   }
 }
 
@@ -169,6 +230,32 @@
   body {
     background-size: 250%;
     background-position-y: 30%;
+  }
+
+  #lobby-grid {
+    grid-template-columns: 40% 60%;
+  }
+
+  .change-avatar-button {
+    font-size: 1rem;
+  }
+
+  .card {
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h4 {
+      font-size: 1.5rem;
+    }
+  }
+
+  #lobby-title {
+    font-size: 1.5rem;
   }
 }
 

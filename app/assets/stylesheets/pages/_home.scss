@@ -70,6 +70,17 @@ body {
   }
 }
 
+.modal-body {
+  li {
+    list-style: none;
+  }
+
+  p {
+    font-size: 1.25rem;
+    font-family: $button-font;
+  }
+}
+
 // This is what makes the background responsive to screen size, please don't change it!
 @media (orientation:portrait) {
   #landscape-only {

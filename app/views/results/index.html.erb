@@ -77,7 +77,7 @@
     <h2>+1</h2>
   </div>
 
-  <div class="timer result-timer">
+  <div class="timer result-timer" style="text-align: center;">
     <h5>Number of players: <%= @players_total %></h5>
     <h5>Your score: <%= @user.score %></h5>
       <% if @game.user == current_user %>
@@ -85,11 +85,11 @@
           <% if @next_dilemma != nil %>
             <%# code for next dilemma button commented out %>
           <%# <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma), class: "btn btn-primary" do %>
-            <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do %>
+            <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma), class: "quandary-button tertiary-button change-avatar-button" do %>
             <%= "NEXT DILEMMA" %>
             <% end %>
           <% else %>
-            <%= link_to leaderboard_game_path(@game) do %>
+            <%= link_to leaderboard_game_path(@game), class: "quandary-button tertiary-button change-avatar-button" do %>
               <%= "PODIUM" %>
             <% end %>
           <% end %>
@@ -97,3 +97,4 @@
       <% end %>
   </div>
 </div>
+

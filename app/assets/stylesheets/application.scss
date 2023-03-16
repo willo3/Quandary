@@ -39,12 +39,13 @@ h5 {
 h4 {
   font-family: $button-font;
   font-family: 1.5rem;
+  color: secondary-black;
 }
 
 h3 {
   font-family: $headers-font;
   font-size: 2rem;
-  color: $primary;
+  color: $secondary-dark;
 }
 
 h2 {
@@ -59,6 +60,7 @@ h1 {
   font-family: $body-font;
   font-size: 4rem;
   font-weight: 700;
+  color: $primary;
 }
 
 .menu-center {
