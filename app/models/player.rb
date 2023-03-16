@@ -39,12 +39,12 @@ class Player < ApplicationRecord
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678801025/Quandary%20Avatars/Avatar_Imp_Super_Happy_lmkn7h.svg',
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678800873/Quandary%20Avatars/Avatar_Imp_Excite_tpqozu.svg',
               'https://res.cloudinary.com/drfmymoki/image/upload/v1678801285/Quandary%20Avatars/Avatar_Imp_Wink_d6bxbz.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_1_Smile_bmnk38.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_1_Happy_q3rpep.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_1_Excite_ms3c4r.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_2_Smile_dvo0zc.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_2_Happy_kzg8yi.svg',
-              'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_2_Excite_alg8ya.svg'
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_1_Smile_bmnk38.svg',
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_1_Happy_q3rpep.svg',
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_1_Excite_ms3c4r.svg',
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_2_Smile_dvo0zc.svg',
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_2_Happy_kzg8yi.svg',
+              # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678835703/Quandary%20Avatars/Avatar_Octopus_2_Excite_alg8ya.svg'
               # WEIRD AVATARS
               # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678801972/Quandary%20Avatars/Avatar_BatCat_i9owzj.svg',
               # 'https://res.cloudinary.com/drfmymoki/image/upload/v1678801972/Quandary%20Avatars/Avatar_GhostCat_eziln7.svg',
