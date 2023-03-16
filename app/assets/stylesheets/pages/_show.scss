@@ -16,6 +16,8 @@
 
 .change-avatar-button {
   width: 100%;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 .start-game-button {
@@ -34,13 +36,19 @@
 .room-code {
   font-weight:bold!important;
   margin-bottom:16px!important;
-  color:inherit!important;
+  color: inherit!important;
 }
 
 .current-user-name {
   font-weight:bold!important;
   margin-top:16px!important;
   margin-bottom:16px!important;
+  color: white;
+  text-shadow:
+      0.07em 0 black,
+      0 0.07em black,
+      -0.07em 0 black,
+      0 -0.07em black;
 }
 
 .team-boxed {
