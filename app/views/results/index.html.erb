@@ -32,12 +32,15 @@
     </div>
   </div>
 
+<%# <div class="container" data-controller="result-subscription" data-result-subscription-dilemma-id-value="<%= @dilemma.id %>
 <div class="spacer"></div>
 
 <h3>Number of players: <%= @players_total %></h3>
 <h3 id='resulta'>Result A Count: <%= @result_a.count %></h3>
 <h3 id='resultb'>Result B Count: <%= @result_b.count %></h3>
 <h3>Player choice: <%= @scenario.content %></h3>
+  <%# <div class="avatar-container">
+    <%= image_tag @user.avatar.url, alt: @user.name, class: "avatar" %>
+  <%# </div> %>
 <h3 id='score'>Your score: <%= @user.score %></h3>
-
 </div>
