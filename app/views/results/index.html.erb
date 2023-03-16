@@ -81,7 +81,9 @@
       <% if @game.user == current_user %>
         <div data-result-subscription-target="button" class=<%= "d-none" unless @results_total >= @players_total %> >
           <% if @next_dilemma != nil %>
-            <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do %>
+            <%# code for next dilemma button commented out %>
+          <%# <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma), class: "btn btn-primary" do %>
+            <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do
               <%= "NEXT DILEMMA" %>
             <% end %>
           <% else %>
