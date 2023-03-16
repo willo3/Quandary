@@ -23,14 +23,14 @@ class ResultsController < ApplicationController
     end
 
     # creating a message and broadcasting
-    # message = {
-    #   players: @players_total,
-    #   result_a: @result_a.count,
-    #   result_b: @result_b.count,
-    #   results: @results_total,
-    #   score: @user.score
-    # }
-    # DilemmaChannel.broadcast_to(@dilemma, message)
+    message = {
+      players: @players_total,
+      result_a: @result_a.count,
+      result_b: @result_b.count,
+      results: @results_total,
+      score: @user.score
+    }
+    DilemmaChannel.broadcast_to(@dilemma, message)
   end
 
   def new
@@ -46,8 +46,7 @@ class ResultsController < ApplicationController
       DilemmaChannel.broadcast_to(
         @dilemma,
         # "#{current_user.name} chose: #{@scenario.content}"
-        render_to_string(partial: "players/player", locals: {player: @player, scenario: @scenario}),
-
+        render_to_string(partial: "players/player", locals: { player: @player, scenario: @scenario })
       )
       redirect_to game_dilemma_results_path(@game, @dilemma)
     else
