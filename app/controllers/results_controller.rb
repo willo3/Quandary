@@ -46,8 +46,7 @@ class ResultsController < ApplicationController
       DilemmaChannel.broadcast_to(
         @dilemma,
         # "#{current_user.name} chose: #{@scenario.content}"
-        render_to_string(partial: "players/player", locals: {player: @player, scenario: @scenario}),
-
+        render_to_string(partial: "players/player", locals: { player: @player, scenario: @scenario })
       )
       redirect_to game_dilemma_results_path(@game, @dilemma)
     else

@@ -26,13 +26,6 @@ export default class extends Controller {
     this.channel.unsubscribe()
   }
 
-  let sum = data.results >= data.players
-      console.log(sum)
-      if (sum) {
-        this.buttonTarget.classList.remove("d-none")
-        this.buttonTarget.classList.add("appear")
-      }
-      
   #insertPlayerAnswerOrGoToDilemma(data) {
     console.log("ANY MESSAGE")
     if (this.#isValidHttpUrl(data)) {
@@ -66,12 +59,12 @@ export default class extends Controller {
         // insert in the div with target two
       }
 
-      // let sum = data.results >= data.players
-      // console.log(sum)
-      // if (sum) {
-      //   this.buttonTarget.classList.remove("d-none")
-      //   this.buttonTarget.classList.add("appear")
-      // }
+      let sum = data.results >= data.players
+      console.log(sum)
+      if (sum) {
+        this.buttonTarget.classList.remove("d-none")
+        this.buttonTarget.classList.add("appear")
+      }
 
       console.log("this is a player answer")
       this.playersTarget.insertAdjacentHTML("beforeend", data.message)
