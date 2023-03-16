@@ -35,7 +35,7 @@
 
   &.result-timer {
     font-size: 1rem;
-    padding: 16px;
+    padding: 16px 32px;
   }
 
   &.dilemma-timer {
@@ -124,19 +124,19 @@
 .win-result-left {
   z-index: 2;
   background-image: url('BackgroundALT4.svg');
-  box-shadow:0 12px 0 0 yellow inset,
-     0 -12px 0 0 yellow inset,
-     -12px 0 0 0 yellow inset,
-     12px 0 0 0 yellow inset;
+  box-shadow:0 12px 0 0 white inset,
+     0 -12px 0 0 white inset,
+     -12px 0 0 0 white inset,
+     12px 0 0 0 white inset;
 }
 
 .win-result-right {
   z-index: 2;
   background-image: url('BackgroundALT3.svg');
-  box-shadow:0 -12px 0 0 purple inset,
-     0 12px 0 0 purple inset,
-     -12px 0 0 0 purple inset,
-     12px 0 0 0 purple inset;
+  box-shadow:0 -12px 0 0 white inset,
+     0 12px 0 0 white inset,
+     -12px 0 0 0 white inset,
+     12px 0 0 0 white inset;
 }
 
 // Should appear only on the winning card (the one with most votes):
