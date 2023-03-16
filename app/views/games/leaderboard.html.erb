@@ -7,6 +7,8 @@
         <div></div>
       </div>
       <div class="profile">
+
+      
         <div class="person second">
             <% unless @ranked_players[1].nil? %>
           <div class="num">2</div>
@@ -16,6 +18,9 @@
               <h2 class="points"><i class="fa-solid fa-medal"></i> <%= @ranked_players[1].user.score %></h2>
             <% end %>
         </div>
+
+
+
         <div class="person first">
           <div class="num"></div>
           <div class="icon">
