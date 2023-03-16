@@ -1,6 +1,6 @@
 <%# SECTION CURRENTLY NOT USED IN THE FRONT END, COVERED BY SECTION BELOW: %>
 
-<div class="container" data-controller="result-subscription" data-result-subscription-dilemma-id-value="<%= @dilemma.id %>">
+<div class="container" data-result-subscription-dilemma-id-value="<%= @dilemma.id %>">
 <%# we inject the html stuff here %>
   <div >
     <div class="waiting-for-players">
@@ -44,11 +44,12 @@
   <% else %>
   <div class="scenario-card scenario-left" id="result-card">
   <% end %>
-    <div id="results-avatars-grid" data-game-subscription-target="players">
+    <div id="results-avatars-grid" data-game-subscription-target="players" data-game-subscription-scenario-one-id-value="<%= @dilemma.scenarions.first.id %>" data-game-subscription-target="scenario-one">
       <% @game.players.each do |player| %>
-        <% unless player.user.id == current_user.id %>
+        <% selected_result = player.user.results.find_by(dilemma: @dilemma) %>
+        <% if selected_result && selected_result.scenario == @dilemma.scenarios.first %>
           <div class="results-avatars-grid-items">
-            <%= render "players/player", player: player %>
+            <%= render "players/player", player: player, scenario: nil %>
           </div>
         <% end %>
       <% end %>
@@ -62,11 +63,12 @@
   <% else %>
   <div class="scenario-card scenario-right" id="result-card">
   <% end %>
-    <div id="results-avatars-grid" data-game-subscription-target="players">
+    <div id="results-avatars-grid" data-game-subscription-target="players" data-game-subscription-scenario-second-id-value="<%= @dilemma.scenarions.second.id %>" data-game-subscription-target="scenario-two">
       <% @game.players.each do |player| %>
-        <% unless player.user.id == current_user.id %>
+        <% selected_result = player.user.results.find_by(dilemma: @dilemma) %>
+        <% if selected_result && selected_result.scenario == @dilemma.scenarios.second %>
           <div class="results-avatars-grid-items">
-            <%= render "players/player", player: player %>
+            <%= render "players/player", player: player, scenario: nil %>
           </div>
         <% end %>
       <% end %>

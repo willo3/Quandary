@@ -11,7 +11,7 @@ class GamesController < ApplicationController
           @game.save
           GameChannel.broadcast_to(
             @game,
-            render_to_string(partial: "players/player", locals: {player: @player})
+            render_to_string(partial: "players/player", locals: {player: @player, scenario: nil })
           )
           redirect_to game_path(@game)
           # head :ok
@@ -25,7 +25,7 @@ class GamesController < ApplicationController
         # Comment out the broadcast if the avatar appears twice
         GameChannel.broadcast_to(
           @game,
-          render_to_string(partial: "players/player", locals: {player: @player})
+          render_to_string(partial: "players/player", locals: {player: @player, scenario: nil})
         )
         redirect_to game_path(@game)
       end
