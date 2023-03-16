@@ -87,7 +87,7 @@
             <%= "NEXT DILEMMA" %>
             <% end %>
           <% else %>
-            <%= link_to leaderboard_game_path(@game) do %>
+            <%= link_to leaderboard_game_path(@game), class: "quandary-button tertiary-button change-avatar-button" do %>
               <%= "PODIUM" %>
             <% end %>
           <% end %>
@@ -95,3 +95,4 @@
       <% end %>
   </div>
 </div>
+
