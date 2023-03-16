@@ -1,0 +1,607 @@
+
+
+.one .sort{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 14.1px;
+}
+
+.one .sort .day{
+  padding: 0.4rem 1.2rem;
+  margin: 0 0.1rem;
+  cursor: pointer;
+}
+
+.one .sort .day.active,
+.one .sort .day:active{
+  background: rgba(210, 255, 213, 0.3);
+  border-radius: 25px;
+}
+
+::selection{
+  background: rgba(210, 255, 213, 0.3);
+}
+
+.photo{
+  width: 40%;
+  background-color: rgba(255,255,255,0.60);
+  border-radius: 50%;
+  border: 5px solid cyan;
+  box-shadow: 0 0 20px cyan;
+  margin: 1rem 0;
+}
+
+.winner{
+  width: 60%;
+  background-color: rgba(255,255,255,0.60);
+  border-radius: 50%;
+  border: 5px solid gold;
+  box-shadow: 0 0 20px gold;
+  margin: 1rem 0;
+}
+
+.profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.profile .person{
+  display: flex;
+  margin: 1rem 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile .person.first{
+  z-index: 10;
+  transform: translateY(-20%);
+}
+
+.first .fa-crown{
+  color: gold;
+  filter: drop-shadow(0px 0px 5px gold);
+}
+
+.first .points {
+  color: gold;
+}
+
+.num{
+  color: white;
+  font-size: 60px;
+  font-family: $accent-font-alt;
+}
+
+.fa-caret-up{
+  color: cyan;
+  font-size: 21px;
+}
+
+.fa-trophy{
+  color: cyan;
+  font-size: 21px;
+}
+
+.link{
+  margin: 0.2rem 0;
+  color: #fff;
+  margin-top: -0.3rem;
+  font-size: 60px;
+}
+
+.points{
+  color: cyan;
+  font-size: 40px;
+}
+
+
+.second{
+  margin-right: -0.7rem !important;
+}
+
+.third{
+  margin-left: -0.7rem !important;
+}
+
+.p_img{
+  width: 50px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+}
+
+.others{
+  display: flex;
+  width: 100%;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 30px;
+  background: rgba(210, 255, 213, 0.3);
+}
+
+.info .points{
+  margin-left: 0.2rem;
+  margin-right: 1.2rem;
+}
+
+.info .link{
+  margin: 0 1rem;
+}
+
+.rank{
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  flex-direction: column-reverse;
+}
+
+.rank i{
+  margin-top: -5px !important;
+}
+
+.rank .num{
+  margin: 0 !important;
+}
+
+
+
+
+
+.numeroUno {
+  position: relative;
+  overflow: visible;
+  max-width: 450px;
+  width: 10vw;
+  height: auto;
+  .medalion {
+    transform: scale(0);
+    transform-origin: 51% 81%;
+    animation: oneAnimation 0.5s 0.6s forwards ease;
+  }
+  .glory_rays_rapper {
+    transform: scale(0);
+    animation: scaleRays 0.5s 0.4s forwards ease;
+    transform-origin: 51% 81%;
+    .glory_rays {
+      transform-origin: 51% 81%;
+      /* animation: rotateRays 1s 0.4s forwards ease; */
+    }
+  }
+
+  .left_branch,
+  .right_branch {
+    .bottom_leafs {
+      .leaf_rapper {
+        .leaf {
+          transform: scale(0) rotate(-50deg);
+          animation: stemAnimation 0.6s 1.1s forwards ease;
+        }
+        &:nth-child(2) {
+          .leaf {
+            animation-delay: 1.2s;
+          }
+        }
+      }
+    }
+    .stem_rapper {
+      transform-origin: 36% 78%;
+      transform: rotate(2deg);
+      animation: leftStemRotate 3s 1.9s infinite linear;
+      .stem {
+        transform: scale(0) rotate(-50deg);
+        transform-origin: 36% 78%;
+        animation: stemAnimation 0.6s 1.3s forwards ease;
+      }
+    }
+  }
+
+  .left_branch {
+    .bottom_leafs {
+      .leaf_rapper {
+        transform-origin: 37% 78%;
+        transform: rotate(4deg);
+        animation: leftLeafRotate 3s 1.7s infinite ease;
+        &:nth-child(2) {
+          animation-delay: 1s;
+        }
+        .leaf {
+          transform-origin: 37% 78%;
+        }
+      }
+    }
+    .stem_rapper {
+      .top_leaf {
+        transform-origin: 10% 38%;
+        transform: rotate(-9deg);
+        animation: rightTopLeafRotate 3s 2.2s infinite ease;
+        .leaf {
+          transform: scale(0);
+          animation: scaleToOne 0.6s 1.85s forwards ease;
+          transform-origin: 10% 36%;
+        }
+      }
+      .left {
+        .leaf_rapper {
+          &:nth-child(1) {
+            transform-origin: 8% 51%;
+            transform: rotate(-4deg);
+            animation: rightLeafRotate 3s 2.3s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(50deg);
+              animation: stemAnimation 0.6s 1.7s forwards ease;
+              transform-origin: 8% 51%;
+            }
+          }
+          &:nth-child(2) {
+            transform-origin: 10% 52%;
+            transform: rotate(-4deg);
+            animation: rightLeafRotate 3s 2.25s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(50deg);
+              animation: stemAnimation 0.6s 1.65s forwards ease;
+              transform-origin: 10% 52%;
+            }
+          }
+          &:nth-child(3) {
+            transform-origin: 10% 59%;
+            transform: rotate(-4deg);
+            animation: rightLeafRotate 3s 2.2s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(50deg);
+              animation: stemAnimation 0.6s 1.6s forwards ease;
+              transform-origin: 10% 59%;
+            }
+          }
+          &:nth-child(4) {
+            transform-origin: 17% 69%;
+            transform: rotate(-4deg);
+            animation: rightLeafRotate 3s 2.15s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(50deg);
+              animation: stemAnimation 0.6s 1.55s forwards ease;
+              transform-origin: 17% 69%;
+            }
+          }
+        }
+      }
+      .right {
+        .leaf_rapper {
+          &:nth-child(1) {
+            transform-origin: 10% 43%;
+            transform: rotate(-4deg);
+            animation: rightLeafRotate 3s 2.6s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(-50deg);
+              animation: stemAnimation 0.6s 1.8s forwards ease;
+              transform-origin: 10% 43%;
+            }
+          }
+          &:nth-child(2) {
+            transform-origin: 12% 52%;
+            transform: rotate(-4deg);
+            animation: rightLeafRotate 3s 2.55s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(-50deg);
+              animation: stemAnimation 0.6s 1.75s forwards ease;
+              transform-origin: 12% 52%;
+            }
+          }
+          &:nth-child(3) {
+            transform-origin: 13% 59%;
+            transform: rotate(-4deg);
+            animation: rightLeafRotate 3s 2.5s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(-50deg);
+              animation: stemAnimation 0.6s 1.7s forwards ease;
+              transform-origin: 13% 59%;
+            }
+          }
+          &:nth-child(4) {
+            transform-origin: 20% 69%;
+            transform: rotate(-4deg);
+            animation: rightLeafRotate 3s 2.45s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(-50deg);
+              animation: stemAnimation 0.6s 1.65s forwards ease;
+              transform-origin: 20% 69%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .right_branch {
+    .bottom_leafs {
+      .leaf_rapper {
+        transform-origin: 63% 78%;
+        transform: rotate(-4deg);
+        animation: rightLeafRotate 3s 1.7s infinite ease;
+        &:nth-child(2) {
+          animation-delay: 1s;
+        }
+        .leaf {
+          transform: scale(0) rotate(50deg);
+          transform-origin: 63% 78%;
+        }
+      }
+    }
+    .stem_rapper {
+      transform-origin: 67% 78%;
+      transform: rotate(-2deg);
+      animation: rightStemRotate 3s 1.9s infinite linear;
+      .top_leaf {
+        transform-origin: 90% 38%;
+        transform: rotate(9deg);
+        animation: leftTopLeafRotate 3s 2.2s infinite ease;
+        .leaf {
+          transform: scale(0);
+          animation: scaleToOne 0.6s 1.85s forwards ease;
+          transform-origin: 90% 36%;
+        }
+      }
+      .left {
+        .leaf_rapper {
+          &:nth-child(1) {
+            transform-origin: 93% 43%;
+            transform: rotate(4deg);
+            animation: leftLeafRotate 3s 2.6s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(50deg);
+              animation: stemAnimation 0.6s 1.8s forwards ease;
+              transform-origin: 93% 43%;
+            }
+          }
+          &:nth-child(2) {
+            transform-origin: 90% 52%;
+            transform: rotate(4deg);
+            animation: leftLeafRotate 3s 2.55s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(50deg);
+              animation: stemAnimation 0.6s 1.75s forwards ease;
+              transform-origin: 90% 52%;
+            }
+          }
+          &:nth-child(3) {
+            transform-origin: 87% 59%;
+            transform: rotate(4deg);
+            animation: leftLeafRotate 3s 2.5s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(50deg);
+              animation: stemAnimation 0.6s 1.7s forwards ease;
+              transform-origin: 87% 59%;
+            }
+          }
+          &:nth-child(4) {
+            transform-origin: 80% 69%;
+            transform: rotate(4deg);
+            animation: leftLeafRotate 3s 2.45s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(50deg);
+              animation: stemAnimation 0.6s 1.65s forwards ease;
+              transform-origin: 80% 69%;
+            }
+          }
+        }
+      }
+      .right {
+        .leaf_rapper {
+          &:nth-child(1) {
+            transform-origin: 93% 51%;
+            transform: rotate(4deg);
+            animation: leftLeafRotate 3s 2.3s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(-50deg);
+              animation: stemAnimation 0.6s 1.7s forwards ease;
+              transform-origin: 93% 51%;
+            }
+          }
+          &:nth-child(2) {
+            transform-origin: 91% 52%;
+            transform: rotate(4deg);
+            animation: leftLeafRotate 3s 2.25s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(-50deg);
+              animation: stemAnimation 0.6s 1.65s forwards ease;
+              transform-origin: 91% 52%;
+            }
+          }
+          &:nth-child(3) {
+            transform-origin: 90% 59%;
+            transform: rotate(4deg);
+            animation: leftLeafRotate 3s 2.2s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(-50deg);
+              animation: stemAnimation 0.6s 1.6s forwards ease;
+              transform-origin: 90% 59%;
+            }
+          }
+          &:nth-child(4) {
+            transform-origin: 83% 69%;
+            transform: rotate(4deg);
+            animation: leftLeafRotate 3s 2.15s infinite ease;
+            .leaf {
+              transform: scale(0) rotate(-50deg);
+              animation: stemAnimation 0.6s 1.55s forwards ease;
+              transform-origin: 83% 69%;
+            }
+          }
+        }
+      }
+      .stem {
+        transform: scale(0) rotate(50deg);
+        transform-origin: 67% 78%;
+      }
+    }
+  }
+  .one {
+    transform-origin: 50% 50%;
+    transform: scale(0);
+    animation: oneAnimation 0.8s 1s forwards ease;
+  }
+  .sparks {
+    opacity: 0;
+    transform: scale(0.6);
+    transform-origin: 50% 50%;
+    animation: fadeInSparkRapper 2s 1.7s forwards ease;
+    .spark {
+      opacity: 0;
+      animation: fadeInSparks 5s infinite ease;
+      @for $f from 1 to 15 {
+        &:nth-child(#{$f}) {
+          animation-delay: $f * 0.4s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes stemAnimation {
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes leftLeafRotate {
+  0% {
+    transform: rotate(4deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+  100% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes rightLeafRotate {
+  0% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes leftTopLeafRotate {
+  0% {
+    transform: rotate(9deg);
+  }
+  50% {
+    transform: rotate(-9deg);
+  }
+  100% {
+    transform: rotate(9deg);
+  }
+}
+
+@keyframes rightTopLeafRotate {
+  0% {
+    transform: rotate(-9deg);
+  }
+  50% {
+    transform: rotate(9deg);
+  }
+  100% {
+    transform: rotate(-9deg);
+  }
+}
+
+@keyframes leftStemRotate {
+  0% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes rightStemRotate {
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes scaleToOne {
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes oneAnimation {
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInSparkRapper {
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInSparks {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleRays {
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes rotateRays {
+  100% {
+    transform: rotate(180deg);
+  }
+}
