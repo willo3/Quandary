@@ -14,10 +14,20 @@ h4 {
   grid-gap: 16px;
 }
 
-.avatar-main {
-  margin-bottom: 200px !important;
-  margin-left: 80px !important;
-  margin-right: 80px !important;
+.card-img-top {
+  flex-grow: 2;
+}
+
+#lobby-grid {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-column-gap: 16px;
+  height: calc(100vh - 210px) ;
+
+  .card {
+    align-items: center;
+    height: 100%;
+  }
 }
 
 .change-avatar-button {
@@ -29,7 +39,6 @@ h4 {
   border-radius: 100px;
   margin: 16px 0px;
   font-family: $button-font;
-  // font-size: 1.5rem;
   border: 0px;
 }
 
@@ -47,10 +56,8 @@ h4 {
 
 .current-user-name {
   font-weight:bold!important;
-  font-size: 200%!important;
   margin-top:16px!important;
   margin-bottom:16px!important;
-  color:inherit!important;
 }
 
 .team-boxed {
@@ -93,101 +100,88 @@ h4 {
       0 -0.07em black;
 }
 
-// @media (min-width: 100px) {
-//   .team-boxed .item img {
-//     max-width: 40px;
-//   }
-//   .room-code {
-//     font-weight:bold!important;
-//     font-size: 200%!important;
-//     margin-top:10px!important;
-//     margin-bottom:20px!important;
-//     color:inherit!important;
-//   }
-//   .current-user-name {
-//     font-weight:bold!important;
-//     font-size: 100%!important;
-//     margin-top:10px!important;
-//     margin-bottom:20px!important;
-//     color:inherit!important;
-//   }
-//   .btn-rounded {
-//     border-radius: 50px !important;
-//     font-size: 10px !important;
-//     font-weight: bold !important;
-//     text-align: center !important;
-//   }
-//   .navbar {
-//     display:none;
-//   }
-//   .team-boxed .item .name {
-//     font-size: 100%;
-//   }
-// }
+// ===============
 
 
-// @media (min-width: 576px) and (max-width: 700px){
-//   .team-boxed .item img {
-//     max-width: 40px;
-//   }
-//   .room-code {
-//     font-weight:bold!important;
-//     font-size: 100%!important;
-//     margin-top:10px!important;
-//     margin-bottom:20px!important;
-//     color:inherit!important;
-//   }
-// }
+// ==HORIZONTAL STUFF==
+@media (max-width: 278px) {
+  body {
+    background-size: 800%;
+    background-position-y: 20%;
+  }
+}
 
+@media (min-width: 279px) and (max-width: 300px) {
+  body {
+    background-size: 600%;
+    background-position-y: 20%;
+  }
+}
 
+@media (min-width: 301px) and (max-width: 400px) {
+  body {
+    background-size: 650%;
+    background-position-y: 40%;
+  }
 
+  #lobby-grid {
+    grid-template-columns: 50% 50%;
+  }
+}
 
+@media (min-width: 401px) and (max-width: 600px) {
+  body {
+    background-size: 475%;
+    background-position-y: 40%;
+  }
 
+  #lobby-grid {
+    grid-template-columns: 40% 60%;
+  }
 
+  .change-avatar-button {
+    font-size: 1rem;
+  }
 
+  .card {
+    h3 {
+      font-size: 1.25rem;
+    }
 
+    h1 {
+      font-size: 2rem;
+    }
 
+    h4 {
+      font-size: 1.5rem;
+    }
+  }
+}
 
+@media (min-width: 601px) and (max-width: 711px) {
+  body {
+    background-size: 350%;
+    background-position-y: 30%;
+  }
+}
 
+@media (min-width: 712px) and (max-width: 768px) {
+  body {
+    background-size: 300%;
+    background-position-y: 30%;
+  }
+}
 
+@media (min-width: 769px) and (max-width: 1000px){
+  body {
+    background-size: 250%;
+    background-position-y: 30%;
+  }
+}
 
-
-
-
-
-
-// Smallest device
-// @media (min-width: 100px) and (max-width: 575px) {
-//   .avatars-grid {
-//     grid-template-columns: 1fr;
-//   }
-// }
-
-// Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
-//   .avatars-grid {
-//     grid-template-columns: 1fr;
-
-
-// }
-
-// // Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) {
-//   .avatars-grid {
-//     grid-template-columns: 1fr 1fr;
-//   }
-// }
-
-// // Large devices (desktops, 992px and up)
-// @media (min-width: 992px) {
-//   .avatars-grid {
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }
-
-// // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) {
-//   .avatars-grid {
-//     grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }
+@media (min-width: 1001px) {
+  body {
+    background-size: 200%;
+    background-position-y: 30%;
+  }
+}

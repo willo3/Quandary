@@ -25,17 +25,127 @@
 
 .timer {
   background-image: url("BackgroundALT2.svg");
-  display: flex;
   position: fixed;
   bottom: 32px;
   left: 50%;
-  aspect-ratio: 1;
-  align-items:center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 3rem;
-  padding: 16px;
+  border-radius: 200px;
   transform: translate(-50%, 0%);
   z-index: 3;
   box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, .4);
+
+  &.result-timer {
+    font-size: 1rem;
+    padding: 16px;
+  }
+
+  &.dilemma-timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 76px;
+    width: 76px;
+    font-size: 56px;
+  }
 }
+
+#result-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h6 {
+    font-size: 2rem;
+    transform: translateY(-122px);
+  }
+}
+
+#results-avatars-grid {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  height: 40vh;
+  gap: 0px;
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+}
+
+.results-avatars-grid-items {
+  display: flex;
+  width: 100%;
+  padding: 8px;
+}
+
+.player-set {
+  width: 100%;
+
+  p {
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    font-weight:bold !important;
+    color: white !important;
+    margin: 0px;
+    padding: 0px;
+    text-shadow:
+        0.07em 0 black,
+        0 0.07em black,
+        -0.07em 0 black,
+        0 -0.07em black;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+#result-space {
+  h5 {
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+.dilemma-result-section {
+  .question-prompt {
+    display: none;
+  }
+
+  .scenario-card {
+    pointer-events: none;
+  }
+}
+
+.scenario-card {
+  h2 {
+    visibility: hidden;
+  }
+}
+
+.win-result-left {
+  z-index: 2;
+  background-image: url('BackgroundALT4.svg');
+  box-shadow:0 12px 0 0 yellow inset,
+     0 -12px 0 0 yellow inset,
+     -12px 0 0 0 yellow inset,
+     12px 0 0 0 yellow inset;
+}
+
+.win-result-right {
+  z-index: 2;
+  background-image: url('BackgroundALT3.svg');
+  box-shadow:0 -12px 0 0 purple inset,
+     0 12px 0 0 purple inset,
+     -12px 0 0 0 purple inset,
+     12px 0 0 0 purple inset;
+}
+
+// Should appear only on the winning card (the one with most votes):
+// h2 {
+//   visibility: visible;
+//   color: white;
+//   text-shadow:
+//       0.07em 0 black,
+//       0 0.07em black,
+//       -0.07em 0 black,
+//       0 -0.07em black;
+//   }

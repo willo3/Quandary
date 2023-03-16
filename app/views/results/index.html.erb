@@ -1,6 +1,6 @@
+<%# SECTION CURRENTLY NOT USED IN THE FRONT END, COVERED BY SECTION BELOW: %>
+
 <div class="container" data-controller="result-subscription" data-result-subscription-dilemma-id-value="<%= @dilemma.id %>">
-
-
 <%# we inject the html stuff here %>
   <div >
     <div class="waiting-for-players">
@@ -39,8 +39,58 @@
 <h3 id='resulta'>Result A Count: <%= @result_a.count %></h3>
 <h3 id='resultb'>Result B Count: <%= @result_b.count %></h3>
 <h3>Player choice: <%= @scenario.content %></h3>
-  <%# <div class="avatar-container">
-    <%= image_tag @user.avatar.url, alt: @user.name, class: "avatar" %>
-  <%# </div> %>
-<h3 id='score'>Your score: <%= @user.score %></h3>
+<h3>Your score: <%= @user.score %></h3>
+</div>
+
+<%# =============== %>
+
+<%# THIS IS THE SECTION CURRENTLY USED FOR FRONTEND: %>
+
+<div class="dilemma-section dilemma-result-section">
+
+  <div class="question-prompt">
+    <h5>You chose:</h5>
+    <h2><%= @scenario.content %></h2>
+  </div>
+
+  <% if @scenario.content == @dilemma.scenarios.first.content %>
+  <div class="scenario-card scenario-left win-result-left" id="result-card">
+  <% else %>
+  <div class="scenario-card scenario-left" id="result-card">
+  <% end %>
+    <div id="results-avatars-grid" data-game-subscription-target="players">
+      <% @game.players.each do |player| %>
+        <% unless player.user.id == current_user.id %>
+          <div class="results-avatars-grid-items">
+            <%= render "players/player", player: player %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <h6><%= @dilemma.scenarios.first.content %></h6>
+    <h2>+1</h2>
+  </div>
+
+  <% if @scenario.content == @dilemma.scenarios.second.content %>
+  <div class="scenario-card scenario-right win-result-right" id="result-card">
+  <% else %>
+  <div class="scenario-card scenario-right" id="result-card">
+  <% end %>
+    <div id="results-avatars-grid" data-game-subscription-target="players">
+      <% @game.players.each do |player| %>
+        <% unless player.user.id == current_user.id %>
+          <div class="results-avatars-grid-items">
+            <%= render "players/player", player: player %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <h6><%= @dilemma.scenarios.second.content %></h6>
+    <h2>+1</h2>
+  </div>
+
+  <div class="timer result-timer">
+    <h5>Number of players: <%= @players_total %></h5>
+    <h5>Your score: <%= @user.score %></h5>
+  </div>
 </div>
