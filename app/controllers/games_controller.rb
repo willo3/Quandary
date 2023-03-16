@@ -36,6 +36,12 @@ class GamesController < ApplicationController
     # @dilemma = @game.dilemmas.first
   end
 
+  def leaderboard
+    @game = Game.find(params[:id])
+    @users = @game.users
+    
+  end
+
   def create
     # Next 2 lines are original room code generator
     # room_code = [('A'..'Z')].map(&:to_a).flatten

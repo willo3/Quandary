@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :games do
+    member do
+      get :leaderboard
+    end
     resources :dilemmas do
       resources :results, only: :index
         resources :scenarios do
@@ -19,5 +22,5 @@ Rails.application.routes.draw do
 
   # route results
 
-  
+
 end
