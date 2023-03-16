@@ -57,7 +57,7 @@ class GamesController < ApplicationController
       "PRIK", "PRIC", "PUBE", "PUSI", "QEEF", "QUIM", "RAPE", "RIMM", "SCAT", "SEKS", "SHAG", "SHIT", "SHIZ", "SLAG",
       "SLUT", "SMEG", "SMUT", "SPAC", "SPIC", "SPIK", "SUCK", "TARD", "TITS", "TITT", "TOSS", "TURD", "TUSH", "TWAT",
       "VAJJ", "VADJ", "WANG", "YAOI", "BANG", "BUMM", "BUTT", "HOOR", "CNVT", "BVTT", "SLVT", "PVSS", "KVMS", "KVMZ",
-      "CVMS", "CVMZ", "LVST", "FAQQ", "FAKK", "BARE"
+      "CVMS", "CVMZ", "LVST", "FAQQ", "FAKK", "BARE", "PQQP", "CQCK"
     ]
     room_code = ""
     loop do
