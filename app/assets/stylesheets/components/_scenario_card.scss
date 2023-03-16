@@ -13,14 +13,14 @@
   transition-timing-function: ease-out;
 
   &.scenario-left {
-    background-color: purple;
-    color: yellow;
+    background-color: #552583;
+    color: #FDB927;
     left: 0;
   }
 
   &.scenario-right {
-    background-color: yellow;
-    color: purple;
+    background-color: #FDB927;
+    color: #552583;
     right: 0;
   }
 }
@@ -32,18 +32,36 @@
   &.scenario-left {
     z-index: 2;
     background-image: url('BackgroundALT4.svg');
-    box-shadow:0 12px 0 0 yellow inset,
-       0 -12px 0 0 yellow inset,
-       -12px 0 0 0 yellow inset,
-       12px 0 0 0 yellow inset;
+    box-shadow:0 12px 0 0 white inset,
+      0 -12px 0 0 white inset,
+      -12px 0 0 0 white inset,
+      12px 0 0 0 white inset;
   }
 
   &.scenario-right {
     z-index: 2;
     background-image: url('BackgroundALT3.svg');
-    box-shadow:0 -12px 0 0 purple inset,
-       0 12px 0 0 purple inset,
-       -12px 0 0 0 purple inset,
-       12px 0 0 0 purple inset;
+    box-shadow:0 -12px 0 0 white inset,
+      0 12px 0 0 white inset,
+      -12px 0 0 0 white inset,
+      12px 0 0 0 white inset;
   }
+}
+
+.scenario-card:active {
+  color: white;
+
+    &.scenario-left {
+      box-shadow:0 -24px 0 0 white inset,
+      0 24px 0 0 white inset,
+      -24px 0 0 0 white inset,
+      24px 0 0 0 white inset;
+    }
+
+    &.scenario-right {
+      box-shadow:0 -24px 0 0 white inset,
+      0 24px 0 0 white inset,
+      -24px 0 0 0 white inset,
+      24px 0 0 0 white inset;
+    }
 }
