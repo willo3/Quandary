@@ -15,6 +15,7 @@
       </ul>
 
     </div>
+
     <% if @game.user == current_user %>
       <div data-result-subscription-target="button" class=<%= "invisible" unless @results_total >= @players_total %> >
         <% if @next_dilemma != nil %>
@@ -34,5 +35,9 @@
 <h3>Player choice: <%= @scenario.content %></h3>
 <h3>Your score: <%= @user.score %></h3>
 
-
 </div>
+
+
+
+        <%= link_to  %>
+            <%= "" %>
