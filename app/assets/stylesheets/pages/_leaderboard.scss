@@ -139,13 +139,13 @@ audio { display:none;}
   margin: 0 !important;
 }
 
-.fade {
-  animation: fadein 2s;
-  -moz-animation: fadein 2s; /* Firefox */
-  -webkit-animation: fadein 2s; /* Safari and Chrome */
-  -o-animation: fadein 2s; /* Opera */
-  animation-fill-mode: forwards; /* retain final state after animation */
-}
+// .fade {
+//   animation: fadein 2s;
+//   -moz-animation: fadein 2s; /* Firefox */
+//   -webkit-animation: fadein 2s; /* Safari and Chrome */
+//   -o-animation: fadein 2s; /* Opera */
+//   animation-fill-mode: forwards; /* retain final state after animation */
+// }
 @keyframes fadein {
   from {
     opacity: 0;
