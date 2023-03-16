@@ -2,21 +2,29 @@ class GamesController < ApplicationController
   def index
     if params[:room_code]
       @game = Game.find_by(room_code: params[:room_code])
-      @player = Player.new(avatar_url: Player::AVATARS.sample)
-      @player.game = @game
-      @player.user = current_user
-      if @player.save
-        @game.player_count += 1
-        @game.save
+      unless @game.players.where(user: current_user).any?
+        @player = Player.new(avatar_url: Player::AVATARS.sample)
+        @player.game = @game
+        @player.user = current_user
+        if @player.save
+          @game.player_count += 1
+          @game.save
+          GameChannel.broadcast_to(
+            @game,
+            render_to_string(partial: "players/player", locals: {player: @player})
+          )
+          redirect_to game_path(@game)
+          # head :ok
+        else
+          render :index, status: :unprocessable_entity
+        end
+      else
+        # Comment out the broadcast if the avatar appears twice
         GameChannel.broadcast_to(
           @game,
           render_to_string(partial: "players/player", locals: {player: @player})
         )
         redirect_to game_path(@game)
-        # head :ok
-
-      else
-        render :index, status: :unprocessable_entity
       end
     else
       flash[:error] = "Game not found"
@@ -36,10 +44,50 @@ class GamesController < ApplicationController
     # @dilemma = @game.dilemmas.first
   end
 
+  def leaderboard
+    @game = Game.find(params[:id])
+    @ranked_players = @game.players.joins(:user).order('users.score' => :desc).to_a
+    until @ranked_players.size >= 3
+      @ranked_players << nil
+    end
+ end
+
   def create
     # Next 2 lines are original room code generator
     # room_code = [('A'..'Z')].map(&:to_a).flatten
     # room_code_string = (0...4).map { room_code[rand(room_code.length)] }.join
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     # Profanity check
     profane_words =   [
@@ -57,7 +105,7 @@ class GamesController < ApplicationController
       "PRIK", "PRIC", "PUBE", "PUSI", "QEEF", "QUIM", "RAPE", "RIMM", "SCAT", "SEKS", "SHAG", "SHIT", "SHIZ", "SLAG",
       "SLUT", "SMEG", "SMUT", "SPAC", "SPIC", "SPIK", "SUCK", "TARD", "TITS", "TITT", "TOSS", "TURD", "TUSH", "TWAT",
       "VAJJ", "VADJ", "WANG", "YAOI", "BANG", "BUMM", "BUTT", "HOOR", "CNVT", "BVTT", "SLVT", "PVSS", "KVMS", "KVMZ",
-      "CVMS", "CVMZ", "LVST", "FAQQ", "FAKK", "BARE"
+      "CVMS", "CVMZ", "LVST", "FAQQ", "FAKK", "BARE", "PQQP", "CQCK"
     ]
     room_code = ""
     loop do

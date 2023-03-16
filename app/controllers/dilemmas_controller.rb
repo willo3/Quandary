@@ -9,7 +9,8 @@ class DilemmasController < ApplicationController
 
     @dilemmas = @game.dilemmas
     # TEMPORARY
-    @old_dilemma = Dilemma.find(@dilemma.id - 1)
+    @old_dilemma = Dilemma.where("id < ?", @dilemma.id).order(id: :desc).first
+    # Dilemma.find(@dilemma.id - 1)
     # @dilemma.game = @game
 
     puts "GAMEID"
@@ -33,16 +34,18 @@ class DilemmasController < ApplicationController
   def create
 
     @game = Game.find(params[:game_id])
-    @scenarios = Scenario.all.to_a.shuffle
-
-    @dilemmas = (1..5).map {
-      @dilemma = Dilemma.new
-      @dilemma.game = @game
-      @dilemma.save
-      @dilemma.scenarios << @scenarios.shift
-      @dilemma.scenarios << @scenarios.shift
-      @dilemma
-    }
+    @dilemmas = @game.dilemmas
+    if @dilemmas.empty?
+      @scenarios = Scenario.all.to_a.shuffle
+      @dilemmas = (1..5).map {
+        @dilemma = Dilemma.new
+        @dilemma.game = @game
+        @dilemma.save
+        @dilemma.scenarios << @scenarios.shift
+        @dilemma.scenarios << @scenarios.shift
+        @dilemma
+      }
+    end
     redirect_to game_dilemma_path(@game, @dilemmas.first)
   end
 end
