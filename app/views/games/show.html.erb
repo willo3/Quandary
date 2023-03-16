@@ -1,41 +1,44 @@
 <%= render "shared/navbar" %>
-<div class="container" data-controller="game-subscription" data-game-subscription-game-id-value="<%= @game.id %>">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="card">
-        <h3 class="card-title">Room code:</h3>
-        <h1><%= @game.room_code %></h1>
-        <img src="<%= @game.players.first.avatar_url %>" class="card-img-top">
-        <h4 class="current-user-name"><%= current_user.name %></h4>
-        <%= link_to "Change avatar", new_user_session_path, class: "quandary-button tertiary-button change-avatar-button" %>
-      </div>
-    </div>
+<div class="main-container" id="lobby-container">
+  <div class="container" data-controller="game-subscription" data-game-subscription-game-id-value="<%= @game.id %>">
 
-    <div class="col-sm-8">
-      <div class="team-boxed">
-        <div class="avatars-grid justify-content-around col-sm-8 item" data-game-subscription-target="players">
-          <% @game.players.each do |player| %>
-            <% unless player.user.id == current_user.id %>
-            <%= render "players/player", player: player %>
+    <div id="lobby-grid">
+      <div class="player-section">
+        <div class="card">
+          <h3 class="card-title">Room code:</h3>
+          <h1><%= @game.room_code %></h1>
+          <img src="<%= @game.players.first.avatar_url %>" class="card-img-top">
+          <h4 class="current-user-name"><%= current_user.name %></h4>
+          <%= link_to "Change avatar", new_user_session_path, class: "quandary-button tertiary-button change-avatar-button" %>
+        </div>
+      </div>
+
+      <div class="avatars-section">
+        <div class="team-boxed">
+          <div class="avatars-grid justify-content-around col-sm-8 item" data-game-subscription-target="players">
+            <% @game.players.each do |player| %>
+              <% unless player.user.id == current_user.id %>
+              <%= render "players/player", player: player %>
+              <% end %>
             <% end %>
-          <% end %>
-          <%# @game.players.each do |player|%>
-            <%# unless player.user.id == current_user.id %>
-              <!--div class="col avatar-col mt-1">
-                <img src="<%#= player.avatar_url %>" class="rounded-circle avatar-img">
-                <h3 class="name"><%#= player.user.name %></h3>
-              </div-->
+            <%# @game.players.each do |player|%>
+              <%# unless player.user.id == current_user.id %>
+                <!--div class="col avatar-col mt-1">
+                  <img src="<%#= player.avatar_url %>" class="rounded-circle avatar-img">
+                  <h3 class="name"><%#= player.user.name %></h3>
+                </div-->
+              <%# end %>
             <%# end %>
-          <%# end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <% if @game.user == current_user %>
-    <%= button_to game_dilemmas_path(@game), method: :post, class: "quandary-button primary-button start-game-button" do %>
-        <%= "START A GAME" %>
+    <% if @game.user == current_user %>
+      <%= button_to game_dilemmas_path(@game), method: :post, class: "quandary-button primary-button start-game-button" do %>
+          <%= "START A GAME" %>
+      <% end %>
     <% end %>
-  <% end %>
 
+  </div>
 </div>
