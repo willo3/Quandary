@@ -32,7 +32,8 @@ export default class extends Controller {
       let sum = data.results >= data.players
       console.log(sum)
       if (sum) {
-        this.buttonTarget.classList.remove("invisible")
+        this.buttonTarget.classList.remove("d-none")
+        this.buttonTarget.classList.add("appear")
       }
 
       console.log("this is a player answer")

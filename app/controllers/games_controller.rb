@@ -19,6 +19,9 @@ class GamesController < ApplicationController
           render :index, status: :unprocessable_entity
         end
       else
+        @player = Player.find_by(user: current_user)
+        @player.game = @game
+        @player.user = current_user
         # Comment out the broadcast if the avatar appears twice
         GameChannel.broadcast_to(
           @game,
@@ -50,7 +53,14 @@ class GamesController < ApplicationController
     until @ranked_players.size >= 3
       @ranked_players << nil
     end
- end
+
+    @old_dilemma = @game.dilemmas.last
+    DilemmaChannel.broadcast_to(
+      @old_dilemma,
+      # "#{current_user.name} chose: #{@scenario.content}"
+      leaderboard_game_url(@game)
+    )
+  end
 
   def create
     # Next 2 lines are original room code generator
