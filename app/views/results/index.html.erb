@@ -16,20 +16,6 @@
 
     </div>
 
-
-    <% if @game.user == current_user %>
-      <div data-result-subscription-target="button" class=<%= "invisible" unless @results_total >= @players_total %> >
-        <% if @next_dilemma != nil %>
-          <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do %>
-            <%= "NEXT DILEMMA" %>
-          <% end %>
-        <% else %>
-          <%= link_to leaderboard_game_path(@game) do %>
-            <%= "PODIUM" %>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
   </div>
 
 <%# <div class="container" data-controller="result-subscription" data-result-subscription-dilemma-id-value="<%= @dilemma.id %>
@@ -46,7 +32,7 @@
 
 <%# THIS IS THE SECTION CURRENTLY USED FOR FRONTEND: %>
 
-<div class="dilemma-section dilemma-result-section">
+<div class="dilemma-section dilemma-result-section" data-controller="result-subscription" data-result-subscription-dilemma-id-value="<%= @dilemma.id %>">
 
   <div class="question-prompt">
     <h5>You chose:</h5>
@@ -92,5 +78,20 @@
   <div class="timer result-timer">
     <h5>Number of players: <%= @players_total %></h5>
     <h5>Your score: <%= @user.score %></h5>
+      <% if @game.user == current_user %>
+        <div data-result-subscription-target="button" class=<%= "d-none" unless @results_total >= @players_total %> >
+          <% if @next_dilemma != nil %>
+            <%# code for next dilemma button commented out %>
+          <%# <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma), class: "btn btn-primary" do %>
+            <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do %>
+            <%= "NEXT DILEMMA" %>
+            <% end %>
+          <% else %>
+            <%= link_to leaderboard_game_path(@game) do %>
+              <%= "PODIUM" %>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
   </div>
 </div>
