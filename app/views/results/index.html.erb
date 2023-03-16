@@ -32,10 +32,15 @@
 
 <%# THIS IS THE SECTION CURRENTLY USED FOR FRONTEND: %>
 
-<div class="dilemma-section dilemma-result-section" data-controller="result-subscription" data-result-subscription-dilemma-id-value="<%= @dilemma.id %>">
+<div class="dilemma-section dilemma-result-section" 
+  data-controller="result-subscription" 
+  data-result-subscription-dilemma-id-value="<%= @dilemma.id %>"
+  data-result-subscription-one-value="<%= @dilemma.scenarios.first.id %>"
+  data-result-subscription-two-value="<%= @dilemma.scenarios.second.id %>"
+>
 
   <div class="question-prompt">
-    <h5>You chose:</h5>
+    <h5>You chose:</h5>re
     <h2><%= @scenario.content %></h2>
   </div>
 
@@ -44,7 +49,9 @@
   <% else %>
   <div class="scenario-card scenario-left" id="result-card">
   <% end %>
-    <div id="results-avatars-grid" data-game-subscription-target="players" data-game-subscription-scenario-one-id-value="<%= @dilemma.scenarions.first.id %>" data-game-subscription-target="scenario-one">
+    <div id="results-avatars-grid" 
+      data-game-subscription-target="players" 
+      data-result-subscription-target="scenaria">
       <% @game.players.each do |player| %>
         <% selected_result = player.user.results.find_by(dilemma: @dilemma) %>
         <% if selected_result && selected_result.scenario == @dilemma.scenarios.first %>
@@ -63,7 +70,9 @@
   <% else %>
   <div class="scenario-card scenario-right" id="result-card">
   <% end %>
-    <div id="results-avatars-grid" data-game-subscription-target="players" data-game-subscription-scenario-second-id-value="<%= @dilemma.scenarions.second.id %>" data-game-subscription-target="scenario-two">
+    <div id="results-avatars-grid" 
+      data-game-subscription-target="players" 
+      data-result-subscription-target="scenarib">
       <% @game.players.each do |player| %>
         <% selected_result = player.user.results.find_by(dilemma: @dilemma) %>
         <% if selected_result && selected_result.scenario == @dilemma.scenarios.second %>
