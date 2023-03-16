@@ -52,7 +52,7 @@
   font-family: $accent-font-alt;
 }
 
-.fa-caret-up{
+.fa-award{
   color: cyan;
   font-size: 21px;
 }
@@ -74,6 +74,10 @@
   font-size: 40px;
 }
 
+.winner-points {
+  color: gold;
+  font-size: 40px;
+}
 
 .second{
   margin-right: -0.7rem !important;
@@ -133,6 +137,77 @@
 .rank .num{
   margin: 0 !important;
 }
+
+.fade {
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+  animation-fill-mode: forwards; /* retain final state after animation */
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Define the classes for each element with different animation delays */
+.fade1 {
+
+  animation: fadein 2s 0s forwards;
+  animation-delay: 0s; /* no delay for first element */
+}
+
+.fade2 {
+  animation: fadein 2s 1s forwards;
+  animation-delay: 2s; /* delay of 2s for second element */
+  opacity: 0; /* start with opacity 0 */
+}
+
+.fade3 {
+  animation: fadein 2s 1s forwards;
+  animation-delay: 4s; /* delay of 4s for third element */
+  opacity: 0; /* start with opacity 0 */
+}
+
+/* Set animation fill mode to retain final state */
+.fade2, .fade3 {
+  animation-fill-mode: forwards;
+}
+
+@-moz-keyframes fadein { /* Firefox */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
+@-o-keyframes fadein { /* Opera */
+  from {
+      opacity:0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
+
+
+
+
 
 
 
