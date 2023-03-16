@@ -83,8 +83,8 @@
           <% if @next_dilemma != nil %>
             <%# code for next dilemma button commented out %>
           <%# <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma), class: "btn btn-primary" do %>
-            <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do
-              <%= "NEXT DILEMMA" %>
+            <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do %>
+            <%= "NEXT DILEMMA" %>
             <% end %>
           <% else %>
             <%= link_to leaderboard_game_path(@game) do %>
