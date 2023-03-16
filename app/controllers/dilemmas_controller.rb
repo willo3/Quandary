@@ -32,7 +32,6 @@ class DilemmasController < ApplicationController
   end
 
   def create
-
     @game = Game.find(params[:game_id])
     @dilemmas = @game.dilemmas
     if @dilemmas.empty?
