@@ -2,6 +2,9 @@
 <div class="main-container" id="lobby-container">
   <div class="container" data-controller="game-subscription" data-game-subscription-game-id-value="<%= @game.id %>">
 
+
+    <h2>Waiting for other players to join before starting...<h2>
+
     <div id="lobby-grid">
       <div class="player-section">
         <div class="card">
@@ -15,11 +18,12 @@
 
       <div class="avatars-section">
         <div class="team-boxed">
-          <h4>Waiting for other players to join before starting...</h4>
-          <div class="avatars-grid justify-content-around col-sm-8 item" data-game-subscription-target="players">
+          <div id="lobby-avatars-grid" data-game-subscription-target="players">
             <% @game.players.each do |player| %>
               <% unless player.user.id == current_user.id %>
+              <div class="results-avatars-grid-items">
               <%= render "players/player", player: player %>
+              </div>
               <% end %>
             <% end %>
             <%# @game.players.each do |player|%>
