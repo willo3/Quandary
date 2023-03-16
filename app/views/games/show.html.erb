@@ -13,7 +13,7 @@
           <img src="<%= @game.players.select{ |player| player.user.id == current_user.id }.first.avatar_url %>" class="card-img-top">
           <h4 class="current-user-name"><%= current_user.name %></h4>
           <%= link_to "Change avatar", new_user_session_path, class: "quandary-button tertiary-button change-avatar-button" %>
-        </div>
+        </div> 
       </div>
 
       <div class="avatars-section">
