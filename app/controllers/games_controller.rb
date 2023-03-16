@@ -2,21 +2,29 @@ class GamesController < ApplicationController
   def index
     if params[:room_code]
       @game = Game.find_by(room_code: params[:room_code])
-      @player = Player.new(avatar_url: Player::AVATARS.sample)
-      @player.game = @game
-      @player.user = current_user
-      if @player.save
-        @game.player_count += 1
-        @game.save
+      unless @game.players.where(user: current_user).any?
+        @player = Player.new(avatar_url: Player::AVATARS.sample)
+        @player.game = @game
+        @player.user = current_user
+        if @player.save
+          @game.player_count += 1
+          @game.save
+          GameChannel.broadcast_to(
+            @game,
+            render_to_string(partial: "players/player", locals: {player: @player})
+          )
+          redirect_to game_path(@game)
+          # head :ok
+        else
+          render :index, status: :unprocessable_entity
+        end
+      else
+        # Comment out the broadcast if the avatar appears twice
         GameChannel.broadcast_to(
           @game,
           render_to_string(partial: "players/player", locals: {player: @player})
         )
         redirect_to game_path(@game)
-        # head :ok
-
-      else
-        render :index, status: :unprocessable_entity
       end
     else
       flash[:error] = "Game not found"
@@ -42,8 +50,7 @@ class GamesController < ApplicationController
     until @ranked_players.size >= 3
       @ranked_players << nil
     end
-  
-  end
+ end
 
   def create
     # Next 2 lines are original room code generator
