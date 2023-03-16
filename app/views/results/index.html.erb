@@ -16,11 +16,16 @@
 
     </div>
 
+
     <% if @game.user == current_user %>
       <div data-result-subscription-target="button" class=<%= "invisible" unless @results_total >= @players_total %> >
         <% if @next_dilemma != nil %>
           <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma) do %>
             <%= "NEXT DILEMMA" %>
+          <% end %>
+        <% else %>
+          <%= link_to leaderboard_game_path(@game) do %>
+            <%= "PODIUM" %>
           <% end %>
         <% end %>
       <% end %>
@@ -36,8 +41,3 @@
 <h3 id='score'>Your score: <%= @user.score %></h3>
 
 </div>
-
-
-
-        <%= link_to  %>
-            <%= "" %>

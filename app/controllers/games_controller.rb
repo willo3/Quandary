@@ -38,8 +38,12 @@ class GamesController < ApplicationController
 
   def leaderboard
     @game = Game.find(params[:id])
-    @users = @game.users
-    
+    @players = @game.players
+
+    @users = []
+    @players.each do |player|
+      @users << player.user
+    end
   end
 
   def create
