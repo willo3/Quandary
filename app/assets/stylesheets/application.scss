@@ -287,3 +287,8 @@ h1 {
     background-position-y: 30%;
   }
 }
+
+.appear {
+  position: relative;
+  z-index: 10;
+}
