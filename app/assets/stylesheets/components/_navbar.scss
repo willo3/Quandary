@@ -81,3 +81,20 @@ a {
     color: $secondary-medium;
   }
 }
+
+@media (min-width: 300px) and (max-width: 1000px) {
+  body {
+    background-size: 300%;
+    background-position-y: 30%;
+  }
+
+  .navbar-lewagon {
+    height: 48px;
+  }
+
+  .navbar-brand {
+    img {
+      height: 40px;
+    }
+  }
+}
