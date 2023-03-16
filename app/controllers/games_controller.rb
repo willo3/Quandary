@@ -46,23 +46,48 @@ class GamesController < ApplicationController
 
   def leaderboard
     @game = Game.find(params[:id])
-    @players = @game.players
-    @old_dilemma = @game.dilemmas.last
-    @users = []
-    @players.each do |player|
-      @users << player.user
+    @ranked_players = @game.players.joins(:user).order('users.score' => :desc).to_a
+    until @ranked_players.size >= 3
+      @ranked_players << nil
     end
-
-    DilemmaChannel.broadcast_to(
-      @old_dilemma,
-      leaderboard_game_url(@game)
-    )
-  end
+ end
 
   def create
     # Next 2 lines are original room code generator
     # room_code = [('A'..'Z')].map(&:to_a).flatten
     # room_code_string = (0...4).map { room_code[rand(room_code.length)] }.join
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     # Profanity check
     profane_words =   [
