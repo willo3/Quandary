@@ -1,0 +1,5 @@
+meta_product_name: "Quandary"
+meta_title: "Quandary - A Game of Absurd Dilemmas"
+meta_description: "Quandary is a fast-paced, exciting game where players try to predict which of two ridiculous options will be the majority choice"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
