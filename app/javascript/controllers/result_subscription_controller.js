@@ -10,7 +10,6 @@ export default class extends Controller {
       { channel: "DilemmaChannel", id: this.dilemmaIdValue },
       {
         received: data => {
-          console.log("Received data:", data)
           this.#insertPlayerAnswerOrGoToDilemma(data)
         }
       }
@@ -29,19 +28,23 @@ export default class extends Controller {
       console.log("THIS IS A VALID URL")
       window.location.href = data
     } else {
-      let sum = data.results >= data.players
-      console.log(sum)
-      if (sum) {
-        this.buttonTarget.classList.remove("d-none")
-        this.buttonTarget.classList.add("appear")
-      }
+      console.log({data})
+      const result = data.search(/data-senario-id=()/)
 
-      console.log("this is a player answer")
-      this.playersTarget.insertAdjacentHTML("beforeend", data.message)
 
-      document.getElementById('resulta').innerHTML='Result A Count:'+ data.result_a
-      document.getElementById('resultb').innerHTML='Result B Count:'+ data.result_b
-      document.getElementById('score').innerHTML='Your Score:'+ data.score
+      // let sum = data.results >= data.players
+      // console.log(sum)
+      // if (sum) {
+      //   this.buttonTarget.classList.remove("d-none")
+      //   this.buttonTarget.classList.add("appear")
+      // }
+
+      // console.log("this is a player answer")
+      // this.playersTarget.insertAdjacentHTML("beforeend", data.message)
+
+      // document.getElementById('resulta').innerHTML='Result A Count:'+ data.result_a
+      // document.getElementById('resultb').innerHTML='Result B Count:'+ data.result_b
+      // document.getElementById('score').innerHTML='Your Score:'+ data.score
 
     }
   }
