@@ -32,8 +32,8 @@
 
 <%# THIS IS THE SECTION CURRENTLY USED FOR FRONTEND: %>
 
-<div class="dilemma-section dilemma-result-section" 
-  data-controller="result-subscription" 
+<div class="dilemma-section dilemma-result-section"
+  data-controller="result-subscription"
   data-result-subscription-dilemma-id-value="<%= @dilemma.id %>"
   data-result-subscription-one-value="<%= @dilemma.scenarios.first.id %>"
   data-result-subscription-two-value="<%= @dilemma.scenarios.second.id %>"
@@ -49,8 +49,8 @@
   <% else %>
   <div class="scenario-card scenario-left" id="result-card">
   <% end %>
-    <div id="results-avatars-grid" 
-      data-game-subscription-target="players" 
+    <div id="results-avatars-grid"
+      data-game-subscription-target="players"
       data-result-subscription-target="scenaria">
       <% @game.players.each do |player| %>
         <% selected_result = player.user.results.find_by(dilemma: @dilemma) %>
@@ -70,8 +70,8 @@
   <% else %>
   <div class="scenario-card scenario-right" id="result-card">
   <% end %>
-    <div id="results-avatars-grid" 
-      data-game-subscription-target="players" 
+    <div id="results-avatars-grid"
+      data-game-subscription-target="players"
       data-result-subscription-target="scenarib">
       <% @game.players.each do |player| %>
         <% selected_result = player.user.results.find_by(dilemma: @dilemma) %>
@@ -95,7 +95,7 @@
             <%# code for next dilemma button commented out %>
           <%# <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma), class: "btn btn-primary" do %>
             <%= link_to game_dilemma_path(@dilemma.game, @next_dilemma), class: "quandary-button tertiary-button change-avatar-button" do %>
-            <%= "NEXT DILEMMA" %>
+            <%= "NEXT QUANDARY" %>
             <% end %>
           <% else %>
             <%= link_to leaderboard_game_path(@game), class: "quandary-button tertiary-button change-avatar-button" do %>
@@ -106,4 +106,3 @@
       <% end %>
   </div>
 </div>
-
