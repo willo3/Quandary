@@ -48,3 +48,15 @@
     color: rgba(255, 255, 255, .7);
   }
 }
+
+@media (max-width: 1000px) {
+  body {
+    background-size: 300%;
+    background-position-y: 30%;
+  }
+
+  .quandary-button {
+    font-size: 1rem;
+    padding: 4px;
+  }
+}

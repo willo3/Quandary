@@ -105,3 +105,9 @@ body {
     display:block;
   }
 }
+
+@media (max-width: 568px) {
+  .page-title {
+    font-size: 1.5rem;
+  }
+}
