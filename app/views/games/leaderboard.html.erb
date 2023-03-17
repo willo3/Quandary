@@ -182,13 +182,40 @@
         </div>
 
 
-  <div class="spacer-small"></div>
-    <%= link_to "Go To Menu", new_user_session_path, class: "quandary-button tertiary-button change-avatar-button" %>
+<%# added this script to make sure the music doesn't get reloaded when leaving the page on button click %>
+<%# it only works when before the button, so don't move it, cheers :) %>
+
+<script>
+  function stopAudio() {
+    var audio = document.getElementsByTagName("audio")[0];
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }
+
+  var audioPlayed = false;
+  document.addEventListener("DOMContentLoaded", function() {
+    var audio = document.getElementsByTagName("audio")[0];
+    if (audio && !audioPlayed) {
+      audio.play();
+      audioPlayed = true;
+    }
+  });
+
+  document.addEventListener("turbolinks:before-visit", function(event) {
+    stopAudio();
+  });
+</script>
+
+<div class="spacer-small"></div>
+  <%= link_to "Go To Menu", new_user_session_path, class: "quandary-button tertiary-button change-avatar-button" %>
 </div>
 
-<audio autoplay>
- <source src='/podium_music.mp3' type="audio/mpeg">
+<audio>
+  <source src='/podium_music.mp3' type="audio/mpeg">
 </audio>
+
 
 
      <%# please leave, this is to add other players later %>
