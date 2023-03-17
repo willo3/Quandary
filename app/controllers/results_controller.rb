@@ -30,6 +30,7 @@ class ResultsController < ApplicationController
       results: @results_total,
       score: @user.score
     }
+    config.log('DDAD')
     DilemmaChannel.broadcast_to(@dilemma, message)
   end
 
@@ -48,6 +49,16 @@ class ResultsController < ApplicationController
         # "#{current_user.name} chose: #{@scenario.content}"
         render_to_string(partial: "players/player", locals: { player: @player, scenario: @scenario })
       )
+      # @players_total = Game.find(params[:game_id]).player_count
+      # @results_total = Result.where(dilemma: @dilemma).count
+      # message = {
+      #   players: @players_total,
+      #   # result_a: @result_a.count,
+      #   # result_b: @result_b.count,
+      #   results: @results_total
+      #   # score: @user.score
+      # }
+      # DilemmaChannel.broadcast_to(@dilemma, message)
       redirect_to game_dilemma_results_path(@game, @dilemma)
     else
       redirect_to game_dilemma_path(@game, @dilemma)

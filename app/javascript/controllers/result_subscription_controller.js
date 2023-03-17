@@ -27,26 +27,20 @@ export default class extends Controller {
   }
 
   #insertPlayerAnswerOrGoToDilemma(data) {
-    console.log("ANY MESSAGE")
     if (this.#isValidHttpUrl(data)) {
       console.log("THIS IS A VALID URL")
       window.location.href = data
-    } else {
-      console.log({ data })
+    } else if(typeof data.match === 'function') {
       const matchResult = data.match(/data-scenario-id="(\d{1,3}")/)
-
-      console.log({matchResult})
-
+      console.log('Regex result: ',{matchResult})
       const scenarioId = Number.parseInt(matchResult[1])
       const oneId = this.oneValue
       const twoId = this.twoValue
-
       console.log({
         scenarioId,
         oneId,
         twoId,
       })
-
       if (scenarioId === oneId) {
         const newAvatarElement = this.#buildAvatarWrapper(data)
         console.log({newAvatarElement})
@@ -58,17 +52,14 @@ export default class extends Controller {
         this.scenaribTarget.insertAdjacentElement('beforeend', newAvatarElement)
         // insert in the div with target two
       }
-
+    } else {
+      console.log('Data: ',{ data })
       let sum = data.results >= data.players
-      console.log(sum)
       if (sum) {
         this.buttonTarget.classList.remove("d-none")
         this.buttonTarget.classList.add("appear")
       }
-
-      console.log("this is a player answer")
       this.playersTarget.insertAdjacentHTML("beforeend", data.message)
-
       document.getElementById('resulta').innerHTML='Result A Count:'+ data.result_a
       document.getElementById('resultb').innerHTML='Result B Count:'+ data.result_b
       document.getElementById('score').innerHTML='Your Score:'+ data.score

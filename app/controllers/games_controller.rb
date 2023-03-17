@@ -40,11 +40,6 @@ class GamesController < ApplicationController
     @user = current_user
     @user.score = 0
     @user.save
-    # @game_first = Game.first
-    # @dilemmas = @game_first.dilemmas
-    # @game_first.dilemmas.update_all(game_id: @game.id)
-    # @game.dilemmas << @dilemmas
-    # @dilemma = @game.dilemmas.first
   end
 
   def leaderboard
@@ -63,42 +58,6 @@ class GamesController < ApplicationController
   end
 
   def create
-    # Next 2 lines are original room code generator
-    # room_code = [('A'..'Z')].map(&:to_a).flatten
-    # room_code_string = (0...4).map { room_code[rand(room_code.length)] }.join
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     # Profanity check
     profane_words =   [
       "ARSE", "BALS", "BALZ", "BALL", "BENT", "BERK", "BINT", "BONK", "CACK", "CHAV", "COCK", "CRAP", "FVCK", "CVNT",
