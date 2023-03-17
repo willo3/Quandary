@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   def index
     if params[:room_code]
-      @game = Game.find_by(room_code: params[:room_code])
+      @game = Game.find_by(room_code: params[:room_code].upcase)
       unless @game.players.where(user: current_user).any?
         @player = Player.new(avatar_url: Player::AVATARS.sample)
         @player.game = @game
